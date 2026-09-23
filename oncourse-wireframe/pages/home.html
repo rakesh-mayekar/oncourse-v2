@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnCourse Global | Endless Possibility &bull; Premier Admissions Advisory</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/wireframe.css?v=3">
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
@@ -532,39 +535,239 @@
     <section id="results" class="py-16 bg-gray-50 border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Empirical Verification</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">
-            Proven Results Across Leading Institutions
+        <!-- Section Header (Inspiration: Crimson "Numbers Don't Lie. Proven Success. Unmatched Results.") -->
+        <div class="mb-10 text-left max-w-4xl">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded bg-gray-100 text-gray-700 text-[10px] font-bold uppercase tracking-widest font-mono border border-gray-300">
+              Empirical Verification
+            </span>
+          </div>
+          <div class="text-xl sm:text-2xl font-serif italic text-[#C21427] mb-1.5" style="font-family: 'Playfair Display', Georgia, serif;">
+            Numbers Don't Lie.
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#6B0E1A] tracking-tight leading-[1.08]" style="font-family: 'Playfair Display', Georgia, serif;">
+            Proven Success.<br>Unmatched Results.
           </h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-1">
-            Verified acceptance rates up to 6.9x the global average through our dual-mentor architecture.
-          </p>
         </div>
 
-        <!-- Verified Acceptance Rate Comparison Strip -->
-        <div class="bg-black text-white rounded-2xl p-6 sm:p-8 mb-10 max-w-4xl mx-auto">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-gray-800">
-            <div class="pt-4 sm:pt-0">
-              <div class="text-3xl sm:text-4xl font-black text-white">28.6%</div>
-              <div class="text-xs font-bold text-gray-300 uppercase tracking-wide mt-1">OnCourse Ivy Admit Rate</div>
-              <div class="text-[11px] text-gray-500 mt-0.5 font-mono">vs 4.1% Global Average (6.9x)</div>
+        <!-- Empirical Verification 3-Card Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-16">
+          
+          <!-- Card 1: Student Spotlight (Left, 4 Columns) -->
+          <div class="lg:col-span-4 bg-[#F8F6F4] border border-[#E5DFD7] rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow">
+            <div class="p-6 pb-2">
+              <h3 class="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight leading-none" style="font-family: 'Playfair Display', Georgia, serif;">
+                Michael
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-600 font-sans mt-1">
+                Vanderbilt Admit, Class of 2028
+              </p>
             </div>
-            <div class="pt-4 sm:pt-0 sm:pl-6">
-              <div class="text-3xl sm:text-4xl font-black text-white">39.2%</div>
-              <div class="text-xs font-bold text-gray-300 uppercase tracking-wide mt-1">Oxbridge Offer Rate</div>
-              <div class="text-[11px] text-gray-500 mt-0.5 font-mono">vs 14.5% Global Average (2.7x)</div>
-            </div>
-            <div class="pt-4 sm:pt-0 sm:pl-6">
-              <div class="text-3xl sm:text-4xl font-black text-white">48.6%</div>
-              <div class="text-xs font-bold text-gray-300 uppercase tracking-wide mt-1">Global MBA Admit Rate</div>
-              <div class="text-[11px] text-gray-500 mt-0.5 font-mono">Wharton, HBS, Stanford &amp; INSEAD</div>
+
+            <!-- Student Photo with Campus Background & Bottom Stat Overlay -->
+            <div class="relative w-full mt-2 flex-1 min-h-[340px] sm:min-h-[380px] lg:min-h-[420px] flex items-end overflow-hidden">
+              <img src="../assets/images/student-admit-spotlight.jpg" alt="Michael - Vanderbilt Admit" class="absolute inset-0 w-full h-full object-cover object-top filter contrast-[1.03]">
+              
+              <!-- Gradient Overlay with 98% Stat -->
+              <div class="relative z-10 w-full pt-28 pb-6 px-6 bg-gradient-to-t from-black/95 via-black/60 to-transparent text-white">
+                <div class="text-4xl sm:text-5xl font-black text-white tracking-tight leading-none">
+                  98%
+                </div>
+                <p class="text-xs sm:text-sm text-white/95 font-medium leading-snug mt-2">
+                  Of our students are admitted to at least 1 of their Top 5 college choices.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Column 2: Stacked Stat Cards (Middle, 3 Columns) -->
+          <div class="lg:col-span-3 flex flex-col gap-6 h-full justify-between">
+            <!-- Top Stat Card: 7x -->
+            <div class="bg-[#F8F6F4] border border-[#E5DFD7] rounded-2xl p-6 sm:p-8 flex flex-col justify-center flex-1 shadow-2xs hover:shadow-md transition-shadow">
+              <div class="text-5xl sm:text-6xl font-black text-[#6B0E1A] tracking-tight leading-none">
+                7x
+              </div>
+              <p class="text-xs sm:text-sm font-medium text-gray-700 leading-snug mt-4">
+                Our students are 7x more likely to get into the Ivy League and Top 15 colleges.
+              </p>
+            </div>
+
+            <!-- Bottom Stat Card: 1,740 -->
+            <div class="bg-[#F8F6F4] border border-[#E5DFD7] rounded-2xl p-6 sm:p-8 flex flex-col justify-center flex-1 shadow-2xs hover:shadow-md transition-shadow">
+              <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#E51E2B] tracking-tight leading-none">
+                1,740
+              </div>
+              <p class="text-xs sm:text-sm font-medium text-gray-700 leading-snug mt-4">
+                Total Offers to the Ivy League
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: College-Specific Acceptance Rates (Right, 5 Columns) -->
+          <div class="lg:col-span-5 bg-[#F8F6F4] border border-[#E5DFD7] rounded-2xl p-6 sm:p-7 shadow-2xs hover:shadow-md transition-shadow h-full flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-[#6B0E1A] tracking-tight" style="font-family: 'Playfair Display', Georgia, serif;">
+                College-Specific Acceptance Rates
+              </h3>
+
+              <!-- Legend -->
+              <div class="flex flex-wrap items-center gap-4 mt-2.5 mb-5 text-[11px] sm:text-xs">
+                <div class="flex items-center gap-1.5">
+                  <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#D5CEC7]"></span>
+                  <span class="text-[#7D756E] font-medium">General Admit Rate</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#E51E2B]"></span>
+                  <span class="text-[#E51E2B] font-bold">OnCourse Student Admit Rate</span>
+                </div>
+              </div>
+
+              <!-- Bar Chart Rows (9 Institutions) -->
+              <div class="space-y-3 sm:space-y-3.5">
+                
+                <!-- 1. Harvard: 3% vs 26.2% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Harvard</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 5.5%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">3%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 44%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">26.2%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. Stanford: 3.5% vs 31.1% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Stanford</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 6.5%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">3.5%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 52%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">31.1%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Yale: 4.2% vs 23.6% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Yale</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 7.8%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">4.2%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 39%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">23.6%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. Columbia: 4.2% vs 31% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Columbia</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 7.8%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">4.2%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 52%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">31%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5. UPenn: 4.9% vs 40.3% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">UPenn</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 9%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">4.9%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 67%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">40.3%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 6. Dartmouth: 5.8% vs 28.4% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Dartmouth</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 10.5%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">5.8%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 47%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">28.4%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 7. Princeton: 4.3% vs 23.4% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Princeton</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 8%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">4.3%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 39%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">23.4%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 8. Cornell: 7% vs 54.1% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">Cornell</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 13%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">7%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 90%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">54.1%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 9. MIT: 4.6% vs 27.6% -->
+                <div class="flex items-center gap-3">
+                  <div class="w-18 sm:w-20 shrink-0 text-xs sm:text-[13px] font-semibold text-gray-800">MIT</div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2 rounded-full bg-[#D5CEC7]" style="width: 8.5%;"></div>
+                      <span class="text-[10px] text-gray-600 font-semibold leading-none">4.6%</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="h-2.5 rounded-full bg-gradient-to-r from-[#7A121D] to-[#E51E2B]" style="width: 46%;"></div>
+                      <span class="text-[11px] font-bold text-gray-900 leading-none">27.6%</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Interactive Success Stories Carousel Container -->
-        <div class="relative max-w-6xl mx-auto">
+        <div class="relative max-w-6xl mx-auto pt-10 border-t border-gray-200">
           
           <!-- Carousel Subhead & Controls Row -->
           <div class="flex items-center justify-between mb-6">
