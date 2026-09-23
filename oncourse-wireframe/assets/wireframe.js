@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarouselSlider();
   initHeroSlider();
   initConsultationModal();
+  initEmpiricalDashboard();
 });
 
 // 1. Mobile Menu Toggle
@@ -575,5 +576,245 @@ function initConsultationModal() {
   const existingModal = document.getElementById('consultation-modal');
   if (existingModal) {
     setupModalEvents(existingModal);
+  }
+}
+
+// 9. Interactive Empirical Verification Dashboard (OnCourse Architectural Theme)
+function initEmpiricalDashboard() {
+  const container = document.getElementById('results');
+  if (!container) return;
+
+  // --- A. Student Spotlight Data & Controller ---
+  const students = [
+    {
+      name: 'Advait M.',
+      uni: 'Harvard College &bull; Class of 2028',
+      major: 'Computer Science &amp; Robotics Spike',
+      stat: '98%',
+      label: 'Top-5 Placement Rate for Dual-Mentor UG Candidates',
+      quote: '“Having two mentors meant my robotics research spike had technical academic credibility while my deadlines never slipped.”',
+      badge: 'UG Pathway',
+      admits: ['Harvard', 'MIT', 'Stanford']
+    },
+    {
+      name: 'Tanya K.',
+      uni: 'University of Oxford &bull; Class of 2028',
+      major: 'Philosophy, Politics &amp; Economics (PPE)',
+      stat: '39.2%',
+      label: 'Oxbridge Offer Rate vs 14.5% Global Average (2.7x)',
+      quote: '“Rigorous TSA admissions prep and Oxford collegiate mock interviews with alumni mentors gave me unmatched clarity and composure.”',
+      badge: 'Oxbridge Pathway',
+      admits: ['Oxford', 'LSE', 'UCL']
+    },
+    {
+      name: 'Rohan S.',
+      uni: 'The Wharton School &bull; Class of 2027',
+      major: 'MBA &bull; $40K Merit Fellowship',
+      stat: '$40K',
+      label: 'Merit Fellowship Secured with M7 Dual-Admit',
+      quote: '“My mentors reframed 6 years in emerging-market fintech into an airtight leadership thesis that secured Wharton and Columbia admits.”',
+      badge: 'MBA Executive',
+      admits: ['Wharton', 'Columbia', 'INSEAD']
+    }
+  ];
+
+  const studentTabs = container.querySelectorAll('.spotlight-tab-btn');
+  const spotlightName = document.getElementById('spotlight-name');
+  const spotlightUni = document.getElementById('spotlight-uni');
+  const spotlightMajor = document.getElementById('spotlight-major');
+  const spotlightStat = document.getElementById('spotlight-stat');
+  const spotlightLabel = document.getElementById('spotlight-label');
+  const spotlightQuote = document.getElementById('spotlight-quote');
+  const spotlightBadge = document.getElementById('spotlight-badge');
+  const spotlightAdmits = document.getElementById('spotlight-admits');
+
+  function renderStudent(index) {
+    const s = students[index];
+    if (!s) return;
+
+    studentTabs.forEach((btn, i) => {
+      if (i === index) {
+        btn.classList.add('active', 'bg-white', 'text-black', 'shadow-xs');
+        btn.classList.remove('text-gray-600');
+      } else {
+        btn.classList.remove('active', 'bg-white', 'text-black', 'shadow-xs');
+        btn.classList.add('text-gray-600');
+      }
+    });
+
+    if (spotlightName) spotlightName.textContent = s.name;
+    if (spotlightUni) spotlightUni.innerHTML = s.uni;
+    if (spotlightMajor) spotlightMajor.innerHTML = s.major;
+    if (spotlightStat) spotlightStat.textContent = s.stat;
+    if (spotlightLabel) spotlightLabel.textContent = s.label;
+    if (spotlightQuote) spotlightQuote.innerHTML = `&ldquo;${s.quote.replace(/[“”"]/g, '')}&rdquo;`;
+    if (spotlightBadge) spotlightBadge.textContent = s.badge;
+
+    if (spotlightAdmits) {
+      spotlightAdmits.innerHTML = s.admits.map(a => `<span class="px-2 py-0.5 rounded bg-white/10 text-white text-[10px] font-mono border border-white/20">${a}</span>`).join('') + '<span class="text-[10px] text-emerald-400 font-mono font-bold ml-auto">&check; Verified</span>';
+    }
+  }
+
+  studentTabs.forEach((btn, idx) => {
+    btn.addEventListener('click', () => renderStudent(idx));
+  });
+
+  // --- B. Dynamic Multiplier Cohort Switcher ---
+  const multiplierData = {
+    ivy: {
+      stat: '6.9x',
+      title: 'Ivy League Admit Advantage',
+      desc: 'OnCourse Ivy admit rate of 28.6% versus the 4.1% global baseline average.'
+    },
+    oxbridge: {
+      stat: '2.7x',
+      title: 'Oxbridge Offer Multiplier',
+      desc: 'OnCourse Oxbridge offer rate of 39.2% versus the 14.5% global average.'
+    },
+    mba: {
+      stat: '4.2x',
+      title: 'Global M7 MBA Admit Advantage',
+      desc: 'OnCourse MBA candidates achieve 48.6% admit rates across Wharton, Columbia & INSEAD.'
+    }
+  };
+
+  const multiplierBtns = container.querySelectorAll('.multiplier-btn');
+  const multiplierStat = document.getElementById('multiplier-stat');
+  const multiplierTitle = document.getElementById('multiplier-title');
+  const multiplierDesc = document.getElementById('multiplier-desc');
+
+  multiplierBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-multiplier');
+      const data = multiplierData[type];
+      if (!data) return;
+
+      multiplierBtns.forEach(b => {
+        b.classList.remove('active', 'bg-black', 'text-white');
+        b.classList.add('text-gray-600');
+      });
+      btn.classList.add('active', 'bg-black', 'text-white');
+      btn.classList.remove('text-gray-600');
+
+      if (multiplierStat) {
+        multiplierStat.classList.add('scale-105', 'transition-transform');
+        multiplierStat.textContent = data.stat;
+        setTimeout(() => multiplierStat.classList.remove('scale-105'), 180);
+      }
+      if (multiplierTitle) multiplierTitle.textContent = data.title;
+      if (multiplierDesc) multiplierDesc.textContent = data.desc;
+    });
+  });
+
+  // --- C. Audited Acceptance Comparison Engine (Bar Chart) ---
+  const cohortData = {
+    all: [
+      { name: 'Harvard University', global: 3.4, oncourse: 28.6, mult: '8.4x', spike: 'Robotics & Bio-Policy Spike' },
+      { name: 'Univ. of Pennsylvania (Wharton)', global: 4.9, oncourse: 40.3, mult: '8.2x', spike: 'Fintech & Applied Math Spike' },
+      { name: 'Stanford University', global: 3.6, oncourse: 31.1, mult: '8.6x', spike: 'AI Ethics & Civic Research' },
+      { name: 'Columbia University', global: 4.2, oncourse: 31.0, mult: '7.4x', spike: 'Data Science & Journalism' },
+      { name: 'University of Oxford', global: 14.5, oncourse: 39.2, mult: '2.7x', spike: 'PPE & TSA Masterclass' },
+      { name: 'Cornell University', global: 7.0, oncourse: 54.1, mult: '7.7x', spike: 'Early Decision Alignment' },
+      { name: 'MIT', global: 4.6, oncourse: 27.6, mult: '6.0x', spike: 'Hardware Olympiad Track' },
+      { name: 'University of Cambridge', global: 15.8, oncourse: 42.1, mult: '2.7x', spike: 'Natural Sciences & STEP Math' },
+      { name: 'Yale University', global: 4.2, oncourse: 23.6, mult: '5.6x', spike: 'International Diplomacy' }
+    ],
+    ivy: [
+      { name: 'Harvard University', global: 3.4, oncourse: 28.6, mult: '8.4x', spike: 'Robotics & Bio-Policy Spike' },
+      { name: 'Univ. of Pennsylvania', global: 4.9, oncourse: 40.3, mult: '8.2x', spike: 'Fintech & Applied Math' },
+      { name: 'Columbia University', global: 4.2, oncourse: 31.0, mult: '7.4x', spike: 'Data Science & Journalism' },
+      { name: 'Cornell University', global: 7.0, oncourse: 54.1, mult: '7.7x', spike: 'ED Strategy & Operations' },
+      { name: 'Yale University', global: 4.2, oncourse: 23.6, mult: '5.6x', spike: 'International Diplomacy' },
+      { name: 'Dartmouth College', global: 5.8, oncourse: 28.4, mult: '4.9x', spike: 'Environmental Economics' },
+      { name: 'Princeton University', global: 4.3, oncourse: 23.4, mult: '5.4x', spike: 'Theoretical Physics Spike' },
+      { name: 'Brown University', global: 5.1, oncourse: 26.8, mult: '5.3x', spike: 'Open Curriculum & Neuro' }
+    ],
+    uk: [
+      { name: 'University of Oxford', global: 14.5, oncourse: 39.2, mult: '2.7x', spike: 'PPE & TSA Masterclass' },
+      { name: 'University of Cambridge', global: 15.8, oncourse: 42.1, mult: '2.7x', spike: 'Natural Sciences & STEP Math' },
+      { name: 'Imperial College London', global: 11.2, oncourse: 46.5, mult: '4.2x', spike: 'Aero & Mechanical Engineering' },
+      { name: 'London School of Economics', global: 8.9, oncourse: 38.0, mult: '4.3x', spike: 'TMUA Prep & Economics' },
+      { name: 'University College London', global: 12.0, oncourse: 49.3, mult: '4.1x', spike: 'Architecture & Urban Planning' }
+    ],
+    mba: [
+      { name: 'The Wharton School (Penn)', global: 11.5, oncourse: 48.6, mult: '4.2x', spike: 'Fintech Venture Thesis' },
+      { name: 'Columbia Business School', global: 13.6, oncourse: 52.4, mult: '3.9x', spike: 'PE & Corporate Turnaround' },
+      { name: 'INSEAD (Global MBA)', global: 28.0, oncourse: 74.2, mult: '2.7x', spike: 'Multinational Operator' },
+      { name: 'Stanford GSB', global: 6.2, oncourse: 21.8, mult: '3.5x', spike: 'Venture & Social Impact' },
+      { name: 'Harvard Business School', global: 9.5, oncourse: 32.0, mult: '3.4x', spike: 'Healthtech Scaling' }
+    ]
+  };
+
+  const barsContainer = document.getElementById('cohort-bars-container');
+  const cohortFilterBtns = container.querySelectorAll('.cohort-filter-btn');
+
+  function renderBars(category) {
+    if (!barsContainer) return;
+    const list = cohortData[category] || cohortData.all;
+    const maxScale = 60;
+
+    barsContainer.innerHTML = list.map((item) => {
+      const gWidth = Math.max(3.5, (item.global / maxScale) * 100);
+      const ocWidth = Math.min(96, (item.oncourse / maxScale) * 100);
+
+      return `
+        <div class="group/bar p-2 -mx-2 rounded-xl hover:bg-gray-50 transition-colors">
+          <div class="flex items-center justify-between text-xs font-semibold mb-1">
+            <span class="text-gray-900 font-bold tracking-tight">${item.name}</span>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-mono text-gray-500 hidden sm:inline opacity-0 group-hover/bar:opacity-100 transition-opacity">Spike: ${item.spike}</span>
+              <span class="px-1.5 py-0.5 rounded bg-black text-white text-[10px] font-mono font-bold">${item.mult} Advantage</span>
+            </div>
+          </div>
+          
+          <div class="space-y-1">
+            <!-- Global Baseline Bar -->
+            <div class="flex items-center gap-2">
+              <div class="h-2 rounded bg-gray-200 transition-all duration-500 ease-out" style="width: ${gWidth.toFixed(1)}%;"></div>
+              <span class="text-[10px] font-mono text-gray-400 font-semibold leading-none">${item.global}%</span>
+            </div>
+            <!-- OnCourse Audited Bar -->
+            <div class="flex items-center gap-2">
+              <div class="h-3 rounded bg-black transition-all duration-500 ease-out" style="width: ${ocWidth.toFixed(1)}%;"></div>
+              <span class="text-[11px] font-mono font-black text-black leading-none">${item.oncourse}%</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  cohortFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-cohort');
+      cohortFilterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-black', 'text-white');
+        b.classList.add('text-gray-600');
+      });
+      btn.classList.add('active', 'bg-black', 'text-white');
+      btn.classList.remove('text-gray-600');
+      renderBars(cat);
+    });
+  });
+
+  // Initial render
+  renderBars('all');
+
+  // --- D. Audit Methodology Modal Controller ---
+  const auditModal = document.getElementById('audit-methodology-modal');
+  const btnOpenModal = document.getElementById('btn-open-audit-modal');
+  const btnCloseModal = document.getElementById('btn-close-audit-modal');
+  const btnDismissModal = document.getElementById('btn-dismiss-audit-modal');
+
+  if (auditModal) {
+    const openAudit = () => auditModal.classList.remove('hidden');
+    const closeAudit = () => auditModal.classList.add('hidden');
+
+    if (btnOpenModal) btnOpenModal.addEventListener('click', openAudit);
+    if (btnCloseModal) btnCloseModal.addEventListener('click', closeAudit);
+    if (btnDismissModal) btnDismissModal.addEventListener('click', closeAudit);
+    auditModal.addEventListener('click', (e) => {
+      if (e.target === auditModal) closeAudit();
+    });
   }
 }
