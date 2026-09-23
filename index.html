@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnCourse Global — UX Wireframe Prototype Suite | Swara Studio & K Webmaker</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="oncourse-wireframe/assets/wireframe.css?v=2">
+  <link rel="stylesheet" href="oncourse-wireframe/assets/wireframe.css?v=3">
   <style>
     .viewport-frame {
       transition: width 0.3s ease, height 0.3s ease;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
     }
   </style>
 </head>
@@ -55,17 +55,23 @@
             <option value="oncourse-wireframe/pages/undergraduate-success.html">09. UG Success Stories</option>
             <option value="oncourse-wireframe/pages/undergraduate-events.html">10. UG Events & Webinars</option>
           </optgroup>
+          <optgroup label="Master's Content Hubs">
+            <option value="oncourse-wireframe/pages/masters-program.html">11. Master's Programs & Roadmaps</option>
+            <option value="oncourse-wireframe/pages/masters-knowledge.html">12. Master's Knowledge Centre</option>
+            <option value="oncourse-wireframe/pages/masters-success.html">13. Master's Success Stories</option>
+            <option value="oncourse-wireframe/pages/masters-events.html">14. Master's Events & Panels</option>
+          </optgroup>
           <optgroup label="MBA Content Hubs">
-            <option value="oncourse-wireframe/pages/mba-program.html">11. MBA Programs & Roadmaps</option>
-            <option value="oncourse-wireframe/pages/mba-knowledge.html">12. MBA Knowledge Centre</option>
-            <option value="oncourse-wireframe/pages/mba-success.html">13. MBA Success Stories</option>
-            <option value="oncourse-wireframe/pages/mba-events.html">14. MBA Events & Panels</option>
+            <option value="oncourse-wireframe/pages/mba-program.html">15. MBA Programs & Roadmaps</option>
+            <option value="oncourse-wireframe/pages/mba-knowledge.html">16. MBA Knowledge Centre</option>
+            <option value="oncourse-wireframe/pages/mba-success.html">17. MBA Success Stories</option>
+            <option value="oncourse-wireframe/pages/mba-events.html">18. MBA Events & Panels</option>
           </optgroup>
           <optgroup label="Contact & Careers">
-            <option value="oncourse-wireframe/pages/contact.html">15. Contact Us & Offices (contact.html)</option>
-            <option value="oncourse-wireframe/pages/careers.html">16. Careers & Culture (careers.html)</option>
-            <option value="oncourse-wireframe/pages/careers-openings.html">17. Careers Openings (careers-openings.html)</option>
-            <option value="oncourse-wireframe/pages/careers-apply.html">18. Careers Apply Form (careers-apply.html)</option>
+            <option value="oncourse-wireframe/pages/contact.html">19. Contact Us & Offices (contact.html)</option>
+            <option value="oncourse-wireframe/pages/careers.html">20. Careers & Culture (careers.html)</option>
+            <option value="oncourse-wireframe/pages/careers-openings.html">21. Careers Openings (careers-openings.html)</option>
+            <option value="oncourse-wireframe/pages/careers-apply.html">22. Careers Apply Form (careers-apply.html)</option>
           </optgroup>
         </select>
       </div>
@@ -86,11 +92,13 @@
         </button>
       </div>
 
+      <span id="viewport-dims-badge" class="hidden xl:inline text-[11px] font-mono text-gray-400 px-2 py-1 rounded bg-gray-900 border border-gray-800">100% Fluid</span>
+
     </div>
 
-    <!-- Quick External Link -->
-    <div class="hidden lg:flex items-center space-x-2">
-      <a id="direct-link" href="oncourse-wireframe/pages/home.html" target="_blank" rel="noopener" class="text-xs px-3 py-1.5 rounded bg-gray-900 hover:bg-gray-800 text-gray-200 font-semibold flex items-center gap-1 border border-gray-700">
+    <!-- Quick External Link (Open Standalone) -->
+    <div class="flex items-center space-x-2 flex-shrink-0">
+      <a id="direct-link" href="oncourse-wireframe/pages/home.html" target="_blank" rel="noopener" title="Open currently selected page in a new full browser tab" class="text-xs px-3.5 py-1.5 rounded-md bg-white hover:bg-gray-200 text-black font-bold flex items-center gap-1.5 shadow-sm transition-all border border-gray-300 cursor-pointer">
         <span>Open Standalone</span>
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
       </a>
@@ -99,20 +107,11 @@
   </header>
 
   <!-- WORKSPACE VIEWPORT STAGE -->
-  <main class="flex-grow bg-black flex items-center justify-center p-2 sm:p-4 overflow-hidden relative">
+  <main class="flex-grow bg-[#F2F2F2] flex items-center justify-center p-2 sm:p-4 overflow-hidden relative">
     
     <!-- IFRAME CONTAINER -->
-    <div id="frame-container" class="viewport-frame w-full h-full bg-white rounded-lg overflow-hidden border border-gray-800 flex flex-col">
-      <div id="frame-header" class="bg-gray-100 border-b border-gray-200 px-3 py-1 flex items-center justify-between text-[11px] text-gray-500 font-mono select-none">
-        <div class="flex items-center space-x-1.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-gray-400 inline-block"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-gray-300 inline-block"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-gray-200 inline-block"></span>
-          <span id="frame-url-label" class="ml-2 text-gray-600 font-semibold truncate max-w-xs sm:max-w-md">oncourse-wireframe/pages/home.html</span>
-        </div>
-        <div id="viewport-dims-badge" class="text-gray-400">100% &bull; Fluid View</div>
-      </div>
-      <iframe id="preview-frame" src="oncourse-wireframe/pages/home.html" class="w-full flex-grow border-0" allow="fullscreen; autoplay; clipboard-write" loading="eager"></iframe>
+    <div id="frame-container" class="viewport-frame w-full h-full bg-white rounded-xl overflow-hidden border border-gray-300 flex flex-col">
+      <iframe id="preview-frame" src="oncourse-wireframe/pages/home.html" class="w-full h-full border-0" allow="fullscreen; autoplay; clipboard-write" loading="eager"></iframe>
     </div>
 
   </main>
@@ -123,7 +122,6 @@
     const previewFrame = document.getElementById('preview-frame');
     const directLink = document.getElementById('direct-link');
     const frameContainer = document.getElementById('frame-container');
-    const frameUrlLabel = document.getElementById('frame-url-label');
     const dimsBadge = document.getElementById('viewport-dims-badge');
 
     const btnMobile = document.getElementById('view-mobile');
@@ -145,34 +143,33 @@
       const url = e.target.value;
       previewFrame.src = url;
       directLink.href = url;
-      frameUrlLabel.textContent = url;
     });
 
     btnMobile.addEventListener('click', () => {
       frameContainer.style.width = '375px';
       frameContainer.style.height = '667px';
-      dimsBadge.textContent = '375px × 667px (Mobile)';
+      if (dimsBadge) dimsBadge.textContent = '375px × 667px (Mobile)';
       setActiveBtn(btnMobile);
     });
 
     btnTablet.addEventListener('click', () => {
       frameContainer.style.width = '768px';
       frameContainer.style.height = '1024px';
-      dimsBadge.textContent = '768px × 1024px (Tablet)';
+      if (dimsBadge) dimsBadge.textContent = '768px × 1024px (Tablet)';
       setActiveBtn(btnTablet);
     });
 
     btnDesktop.addEventListener('click', () => {
       frameContainer.style.width = '1280px';
       frameContainer.style.height = '100%';
-      dimsBadge.textContent = '1280px × 100% (Desktop)';
+      if (dimsBadge) dimsBadge.textContent = '1280px × 100% (Desktop)';
       setActiveBtn(btnDesktop);
     });
 
     btnFull.addEventListener('click', () => {
       frameContainer.style.width = '100%';
       frameContainer.style.height = '100%';
-      dimsBadge.textContent = '100% Fluid View';
+      if (dimsBadge) dimsBadge.textContent = '100% Fluid View';
       setActiveBtn(btnFull);
     });
   </script>

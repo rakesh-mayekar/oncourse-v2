@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQAccordion();
   initCarouselSlider();
   initHeroSlider();
+  initConsultationModal();
 });
 
 // 1. Mobile Menu Toggle
@@ -49,17 +50,13 @@ function initStickyCTA() {
   const dismissBtn = document.getElementById('sticky-cta-dismiss');
   if (!stickyBar) return;
 
-  // Check if dismissed in this session
-  if (sessionStorage.getItem('oncourse_sticky_dismissed') === 'true') {
-    stickyBar.classList.add('hidden');
-    return;
-  }
+  let isDismissed = false;
 
   window.addEventListener('scroll', () => {
-    if (sessionStorage.getItem('oncourse_sticky_dismissed') === 'true') return;
+    if (isDismissed) return;
 
     if (window.scrollY > 280) {
-      stickyBar.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+      stickyBar.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none', 'hidden');
       stickyBar.classList.add('translate-y-0', 'opacity-100');
     } else {
       stickyBar.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
@@ -69,8 +66,8 @@ function initStickyCTA() {
 
   if (dismissBtn) {
     dismissBtn.addEventListener('click', () => {
+      isDismissed = true;
       stickyBar.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
-      sessionStorage.setItem('oncourse_sticky_dismissed', 'true');
     });
   }
 }
@@ -321,4 +318,262 @@ function initHeroSlider() {
 
   updateSlide(0);
   startTimer();
+}
+
+// 8. Consultation Request Popup Modal Controller
+function initConsultationModal() {
+  function ensureModal() {
+    let modal = document.getElementById('consultation-modal');
+    if (!modal) {
+      const modalWrapper = document.createElement('div');
+      modalWrapper.innerHTML = `
+<div id="consultation-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <!-- Backdrop -->
+  <div id="consultation-modal-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity cursor-pointer"></div>
+
+  <!-- Modal Dialog Window -->
+  <div class="relative bg-white text-neutral-900 rounded-2xl shadow-2xl border border-neutral-200 max-w-lg w-full p-6 sm:p-8 transform transition-transform duration-300 scale-95 overflow-hidden z-10 max-h-[90vh] overflow-y-auto">
+    
+    <!-- Top Bar with Monogram & Close Button -->
+    <div class="flex items-center justify-between pb-4 border-b border-neutral-100">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center font-black text-xs tracking-tighter shadow-sm">
+          OG
+        </div>
+        <div>
+          <span class="text-xs font-black tracking-tight text-neutral-900 uppercase block">OnCourse Global</span>
+          <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-wider block">Endless Possibility • Dual Mentors</span>
+        </div>
+      </div>
+      <button id="consultation-modal-close" type="button" class="w-8 h-8 rounded-lg text-neutral-400 hover:text-black hover:bg-neutral-100 flex items-center justify-center transition-colors cursor-pointer" aria-label="Close dialog">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Modal Header -->
+    <div class="mt-4 mb-5">
+      <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-neutral-100 text-neutral-800 border border-neutral-200 mb-2">
+        Diagnostic Consultation
+      </span>
+      <h3 id="modal-title" class="text-xl sm:text-2xl font-black text-neutral-950 tracking-tight leading-snug">
+        Request a Consultation
+      </h3>
+      <p class="text-xs sm:text-sm text-neutral-600 mt-1 leading-relaxed">
+        Speak with our senior admissions leadership in Mumbai, Delhi, Gurgaon, Dubai, or via secure video advisory.
+      </p>
+    </div>
+
+    <!-- Consultation Form -->
+    <form id="consultation-popup-form" class="space-y-4">
+      
+      <!-- Area of Interest -->
+      <div>
+        <label for="popup-segment" class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">
+          Admissions Pathway *
+        </label>
+        <select id="popup-segment" name="pathway" required class="w-full px-3.5 py-2.5 rounded-lg border border-neutral-300 bg-neutral-50 focus:bg-white text-xs sm:text-sm text-neutral-900 focus:ring-2 focus:ring-black focus:border-black transition-all font-medium">
+          <option value="undergraduate" selected>Undergraduate Admissions (Class 8–12)</option>
+          <option value="masters">Master’s &amp; Postgraduate Degrees</option>
+          <option value="mba">MBA &amp; Executive Degrees (M7 / European)</option>
+          <option value="test-prep">Test Prep (SAT / ACT / GRE / GMAT)</option>
+          <option value="parent-advisory">Parent &amp; Strategic Family Advisory</option>
+        </select>
+      </div>
+
+      <!-- Applicant Name & Phone -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <div>
+          <label for="popup-name" class="block text-xs font-semibold text-neutral-700 mb-1">
+            Applicant Name *
+          </label>
+          <input type="text" id="popup-name" name="applicant_name" required placeholder="e.g. Aarav Sharma" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+        </div>
+        <div>
+          <label for="popup-phone" class="block text-xs font-semibold text-neutral-700 mb-1">
+            Phone / WhatsApp *
+          </label>
+          <input type="tel" id="popup-phone" name="phone" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+        </div>
+      </div>
+
+      <!-- Email & Preferred Hub -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <div>
+          <label for="popup-email" class="block text-xs font-semibold text-neutral-700 mb-1">
+            Email Address *
+          </label>
+          <input type="email" id="popup-email" name="email" required placeholder="name@example.com" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+        </div>
+        <div>
+          <label for="popup-hub" class="block text-xs font-semibold text-neutral-700 mb-1">
+            Preferred Hub *
+          </label>
+          <select id="popup-hub" name="hub" required class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 bg-white focus:ring-2 focus:ring-black focus:border-black font-medium">
+            <option value="mumbai">Mumbai (HQ - Nariman Pt / Bandra)</option>
+            <option value="delhi">New Delhi (Connaught Place)</option>
+            <option value="gurgaon">Gurgaon (DLF Cyber City)</option>
+            <option value="dubai">Dubai (DIFC / Downtown)</option>
+            <option value="online" selected>Online / Virtual Advisory</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Current Grade / Work Exp (Optional Context) -->
+      <div>
+        <label for="popup-context" class="block text-xs font-semibold text-neutral-700 mb-1">
+          Current Grade / College / Work Experience (Optional)
+        </label>
+        <input type="text" id="popup-context" name="academic_context" placeholder="e.g. Class 11 IBDP or 3 yrs tech consulting" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+      </div>
+
+      <!-- Submit CTA -->
+      <div class="pt-2">
+        <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-black hover:bg-neutral-800 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 group cursor-pointer">
+          <span>Schedule Diagnostic Consultation</span>
+          <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+        </button>
+      </div>
+
+      <!-- Trust Footer -->
+      <div class="pt-1 flex items-center justify-center gap-2 text-[10px] text-neutral-500 font-mono text-center">
+        <span>🔒 Confidential Profile Diagnostic</span>
+        <span>&bull;</span>
+        <span>2 Dedicated Mentors</span>
+        <span>&bull;</span>
+        <span>Response &lt; 24h</span>
+      </div>
+
+    </form>
+
+    <!-- Success Confirmation State (Hidden initially) -->
+    <div id="consultation-popup-success" class="hidden text-center py-8 space-y-4">
+      <div class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center mx-auto shadow-lg">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+      </div>
+      <div>
+        <h4 class="text-xl font-black text-neutral-900">Consultation Request Received</h4>
+        <p class="text-xs sm:text-sm text-neutral-600 max-w-sm mx-auto mt-1 leading-relaxed">
+          Thank you! Our senior admissions advisory team will review your profile details and reach out within 24 business hours to confirm your diagnostic slot.
+        </p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-neutral-50 border border-neutral-200 text-[11px] font-mono text-neutral-600 max-w-xs mx-auto text-left space-y-1">
+        <div><strong>Mentors:</strong> Senior Counsellor + Dedicated Mentor</div>
+        <div><strong>Hub:</strong> Active in Mumbai, Delhi, Gurgaon &amp; Dubai</div>
+      </div>
+      <div class="pt-2">
+        <button id="consultation-success-close" type="button" class="px-6 py-2.5 rounded-lg bg-black text-white font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-colors cursor-pointer">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>`;
+      document.body.appendChild(modalWrapper.firstElementChild);
+      modal = document.getElementById('consultation-modal');
+      setupModalEvents(modal);
+    }
+    return modal;
+  }
+
+  function setupModalEvents(modal) {
+    if (!modal || modal.dataset.eventsBound === 'true') return;
+    modal.dataset.eventsBound = 'true';
+
+    const dialogWin = modal.querySelector('.relative.bg-white');
+    const closeBtn = document.getElementById('consultation-modal-close');
+    const backdrop = document.getElementById('consultation-modal-backdrop');
+    const form = document.getElementById('consultation-popup-form');
+    const successState = document.getElementById('consultation-popup-success');
+    const successClose = document.getElementById('consultation-success-close');
+
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      if (dialogWin) {
+        dialogWin.classList.remove('scale-100');
+        dialogWin.classList.add('scale-95');
+      }
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        if (form) {
+          form.reset();
+          form.classList.remove('hidden');
+        }
+        if (successState) {
+          successState.classList.add('hidden');
+        }
+      }, 250);
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+    if (successClose) successClose.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Processing...</span>';
+        }
+        setTimeout(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Schedule Diagnostic Consultation</span> <span class=\"transition-transform group-hover:translate-x-1\">&rarr;</span>';
+          }
+          form.classList.add('hidden');
+          if (successState) {
+            successState.classList.remove('hidden');
+          }
+        }, 400);
+      });
+    }
+  }
+
+  function openModal() {
+    const modal = ensureModal();
+    setupModalEvents(modal);
+    const dialogWin = modal.querySelector('.relative.bg-white');
+    modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      modal.classList.remove('opacity-0');
+      if (dialogWin) {
+        dialogWin.classList.remove('scale-95');
+        dialogWin.classList.add('scale-100');
+      }
+    });
+    document.body.style.overflow = 'hidden';
+    const firstInput = modal.querySelector('input:not([type="hidden"]), select');
+    if (firstInput) setTimeout(() => firstInput.focus(), 120);
+  }
+
+  // Bind delegated click listener for triggers
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('a, button');
+    if (!target) return;
+
+    const text = target.textContent ? target.textContent.trim().toLowerCase() : '';
+    const isStickyBtn = target.id === 'sticky-cta-btn' || target.closest('#sticky-cta-bar a');
+    const hasModalAttr = target.matches('[data-open-consultation-modal], [data-open-modal="consultation"]');
+    const isRequestConsultation = text === 'request a consultation' || text === 'request consultation' || text.includes('request a consultation') || text.includes('request consultation');
+
+    if (isStickyBtn || hasModalAttr || isRequestConsultation) {
+      e.preventDefault();
+      openModal();
+    }
+  });
+
+  // If modal exists on page load, bind events immediately
+  const existingModal = document.getElementById('consultation-modal');
+  if (existingModal) {
+    setupModalEvents(existingModal);
+  }
 }

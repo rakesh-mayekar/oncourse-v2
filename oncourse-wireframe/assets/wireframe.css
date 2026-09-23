@@ -1,21 +1,48 @@
 /* OnCourse Global — Architectural Wireframe Styling System */
-/* CLIENT SPECIFICATION COLOR PALETTE */
+/* COLOR PALETTE & HIERARCHY SPECIFICATION (Based on Client Wireframing Reference) */
 /*
-   Image 1:
-   - White:        #FFFFFF (RGB 255/255/255)
-   - Fog grey:     #CCCCCC (RGB 204/204/204, Pantone Cool Gray 1 C)
-   - Smoke grey:   #7D7D7D (RGB 125/125/125, Pantone Cool Gray 8 C)
-   - Iron grey:    #4D4D4D (RGB 77/77/77, Pantone Cool Gray 10 C)
-   - Midnight grey:#262626 (RGB 38/38/38, Pantone 426 C)
-   - Black:        #1A1A1A (RGB 26/26/26, Pantone 419 C)
-
-   Image 2:
-   - White Sand:   #E7E7DD (RGB 231/231/221, Pantone 427 C)
-   - White Ivory:  #FFFFF7 (RGB 255/255/247, Pantone 663 C)
-   - Black C:      #1D1D1B (RGB 29/29/27, Pantone Black C)
+   Visual Hierarchy:
+   - Canvas / Backdrop:          #F2F2F2 (RGB 242/242/242)
+   - Primary Cards / Containers: #FFFFFF (RGB 255/255/255)
+   - Sub-cards / Nested Insets:  #F5F5F5 (RGB 245/245/245)
+   - Chips / Tags / Inset Pills: #EBEBEB (RGB 235/235/235)
+   - Card Borders / Dividers:    #DADADA (RGB 218/218/218)
+   - Medium Borders / Outlines:  #CCCCCC (RGB 204/204/204, Pantone Cool Gray 1 C)
+   - Muted / Caption Typography: #7D7D7D (RGB 125/125/125, Pantone Cool Gray 8 C)
+   - Body Typography:            #6B6B6B (RGB 107/107/107)
+   - Subheadings & Section Head: #3D3D3D / #4D4D4D (RGB 77/77/77, Pantone Cool Gray 10 C)
+   - Midnight Charcoal Accent:   #262626 (RGB 38/38/38, Pantone 426 C)
+   - Primary Headings & Dark CTA:#1A1A1A (RGB 26/26/26, Pantone 419 C)
+   - Deep Black C:               #1D1D1B (RGB 29/29/27, Pantone Black C)
 */
 
 :root {
+  /* Surfaces */
+  --surface-canvas: #F2F2F2;
+  --surface-card: #FFFFFF;
+  --surface-sub: #F5F5F5;
+  --surface-inset: #EBEBEB;
+  --surface-chip: #EBEBEB;
+  --surface-dark: #1A1A1A;
+  --surface-midnight: #262626;
+
+  /* Borders */
+  --border-hairline: #EBEBEB;
+  --border-subtle: #DADADA;
+  --border-medium: #CCCCCC;
+  --border-strong: #7D7D7D;
+  --border-dark: #4D4D4D;
+
+  /* Typography */
+  --text-heading: #1A1A1A;
+  --text-subheading: #3D3D3D;
+  --text-body: #6B6B6B;
+  --text-muted: #7D7D7D;
+  --text-light: #9CA3AF;
+  --text-on-dark: #FFFFFF;
+  --text-sub-on-dark: #CCCCCC;
+
+  /* Legacy architectural tokens for backwards compatibility */
   --color-white: #FFFFFF;
   --color-white-ivory: #FFFFF7;
   --color-white-sand: #E7E7DD;
@@ -35,20 +62,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* Selection */
 ::selection {
-  background-color: #E7E7DD !important;
+  background-color: #DADADA !important;
   color: #1A1A1A !important;
 }
 
 /* ================= 2. Wireframe Placeholder Visual Tokens (NO STRIPES) ================= */
-/* Strictly NO repeating linear gradients or stripes. Uses solid palette colors. */
+/* Clean, solid architectural fills with subtle borders and clear typography. Zero diagonal stripes. */
 .wireframe-placeholder {
-  background-color: #E7E7DD !important; /* White Sand */
+  background-color: #F2F2F2 !important; /* Neutral Canvas Grey */
   background-image: none !important;
-  border: 1px solid #CCCCCC !important; /* Fog grey */
+  border: 1px solid #DADADA !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4D4D4D !important; /* Iron grey */
+  color: #6B6B6B !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.875rem;
   font-weight: 500;
@@ -57,13 +84,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .wireframe-placeholder-dark {
-  background-color: #262626 !important; /* Midnight grey */
+  background-color: #262626 !important; /* Midnight Grey */
   background-image: none !important;
-  border: 1px solid #4D4D4D !important; /* Iron grey */
+  border: 1px solid #4D4D4D !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #CCCCCC !important; /* Fog grey */
+  color: #DADADA !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.875rem;
   font-weight: 500;
@@ -71,18 +98,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   padding: 1rem;
 }
 
-/* Palette Specific Image Placeholders (Solid Fills, Zero Stripes) */
-.wireframe-placeholder-sand {
-  background-color: #E7E7DD !important;
+/* Specific Solid Placeholders */
+.wireframe-placeholder-canvas {
+  background-color: #F2F2F2 !important;
   background-image: none !important;
-  border: 1px solid #CCCCCC !important;
+  border: 1px solid #DADADA !important;
+  color: #6B6B6B !important;
+}
+
+.wireframe-placeholder-sand {
+  background-color: #EBEBEB !important;
+  background-image: none !important;
+  border: 1px solid #DADADA !important;
   color: #4D4D4D !important;
 }
 
 .wireframe-placeholder-fog {
-  background-color: #CCCCCC !important;
+  background-color: #DADADA !important;
   background-image: none !important;
-  border: 1px solid #7D7D7D !important;
+  border: 1px solid #CCCCCC !important;
   color: #1A1A1A !important;
 }
 
@@ -90,14 +124,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background-color: #7D7D7D !important;
   background-image: none !important;
   border: 1px solid #4D4D4D !important;
-  color: #FFFFF7 !important;
+  color: #FFFFFF !important;
 }
 
 .wireframe-placeholder-iron {
   background-color: #4D4D4D !important;
   background-image: none !important;
   border: 1px solid #262626 !important;
-  color: #FFFFF7 !important;
+  color: #FFFFFF !important;
 }
 
 .wireframe-placeholder-midnight {
@@ -111,20 +145,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background-color: #1A1A1A !important;
   background-image: none !important;
   border: 1px solid #262626 !important;
-  color: #E7E7DD !important;
+  color: #EBEBEB !important;
 }
 
 .wireframe-placeholder-ivory {
-  background-color: #FFFFF7 !important;
+  background-color: #F5F5F5 !important;
   background-image: none !important;
-  border: 1px solid #CCCCCC !important;
+  border: 1px solid #DADADA !important;
   color: #1A1A1A !important;
 }
 
 .wireframe-placeholder-white {
   background-color: #FFFFFF !important;
   background-image: none !important;
-  border: 1px solid #CCCCCC !important;
+  border: 1px solid #DADADA !important;
   color: #1A1A1A !important;
 }
 
@@ -147,9 +181,9 @@ html {
   scrollbar-width: none;
 }
 
-/* ================= 3. CLIENT PALETTE MAPPINGS ================= */
+/* ================= 3. SYSTEMATIC COLOR PALETTE & HIERARCHY MAPPINGS ================= */
 
-/* Backgrounds */
+/* Background Surfaces */
 .bg-black {
   background-color: #1A1A1A !important;
 }
@@ -166,7 +200,7 @@ html {
   background-color: #4D4D4D !important;
 }
 .bg-gray-600 {
-  background-color: #7D7D7D !important;
+  background-color: #6B6B6B !important;
 }
 .bg-gray-500 {
   background-color: #7D7D7D !important;
@@ -175,22 +209,22 @@ html {
   background-color: #CCCCCC !important;
 }
 .bg-gray-300 {
-  background-color: #CCCCCC !important;
+  background-color: #DADADA !important;
 }
 .bg-gray-200 {
-  background-color: #E7E7DD !important;
+  background-color: #EBEBEB !important; /* Secondary Inset / Chip */
 }
 .bg-gray-100 {
-  background-color: #E7E7DD !important;
+  background-color: #F2F2F2 !important; /* Clean Canvas Grey */
 }
 .bg-gray-50 {
-  background-color: #FFFFF7 !important;
+  background-color: #F5F5F5 !important; /* Neutral Off-White Sub-Surface */
 }
 .bg-white {
-  background-color: #FFFFFF !important;
+  background-color: #FFFFFF !important; /* Pure White Card Surface */
 }
 
-/* Any previously colored utility classes mapped to palette */
+/* Fallback mappings for any utility classes */
 .bg-blue-950, .bg-blue-900, .bg-blue-800, .bg-blue-700 {
   background-color: #1D1D1B !important;
 }
@@ -198,51 +232,51 @@ html {
   background-color: #262626 !important;
 }
 .bg-blue-200, .bg-blue-100, .bg-amber-100, .bg-emerald-100, .bg-indigo-100, .bg-purple-100, .bg-red-100 {
-  background-color: #E7E7DD !important;
+  background-color: #EBEBEB !important;
 }
 .bg-blue-50, .bg-amber-50, .bg-emerald-50 {
-  background-color: #FFFFF7 !important;
+  background-color: #F5F5F5 !important;
 }
 .bg-amber-400, .bg-emerald-400, .bg-cyan-400 {
-  background-color: #CCCCCC !important;
+  background-color: #DADADA !important;
 }
 
-/* Text Colors */
+/* Typography Hierarchy */
 .text-black, .text-gray-950 {
   color: #1A1A1A !important;
 }
 .text-gray-900 {
-  color: #1D1D1B !important;
+  color: #1A1A1A !important; /* Primary Headings */
 }
 .text-gray-800 {
-  color: #262626 !important;
+  color: #262626 !important; /* Section Titles */
 }
 .text-gray-700 {
-  color: #4D4D4D !important;
+  color: #3D3D3D !important; /* Subheadings */
 }
 .text-gray-600 {
-  color: #4D4D4D !important;
+  color: #4D4D4D !important; /* High-readability Body */
 }
 .text-gray-500 {
-  color: #7D7D7D !important;
+  color: #6B6B6B !important; /* Neutral Body Text */
 }
 .text-gray-400 {
-  color: #7D7D7D !important;
+  color: #7D7D7D !important; /* Muted & Helper Text */
 }
 .text-gray-300 {
-  color: #CCCCCC !important;
+  color: #DADADA !important;
 }
 .text-gray-200 {
-  color: #E7E7DD !important;
+  color: #EBEBEB !important;
 }
 .text-gray-100 {
-  color: #FFFFF7 !important;
+  color: #F5F5F5 !important;
 }
 .text-white {
   color: #FFFFFF !important;
 }
 
-/* Text Overrides for colored utility classes */
+/* Typography Overrides for colored utility classes */
 .text-blue-950, .text-blue-900, .text-blue-800, .text-blue-700,
 .text-amber-900, .text-amber-800, .text-amber-700,
 .text-emerald-900, .text-emerald-800, .text-emerald-700, .text-emerald-600,
@@ -250,7 +284,7 @@ html {
   color: #1A1A1A !important;
 }
 .text-blue-100, .text-blue-200, .text-blue-300, .text-amber-300, .text-emerald-300 {
-  color: #E7E7DD !important;
+  color: #EBEBEB !important;
 }
 .text-blue-400 {
   color: #CCCCCC !important;
@@ -266,7 +300,7 @@ nav .border-amber-400 {
   border-color: #FFFFFF !important;
 }
 
-/* Border Colors */
+/* Border Hierarchy */
 .border-black, .border-gray-950 {
   border-color: #1A1A1A !important;
 }
@@ -280,7 +314,7 @@ nav .border-amber-400 {
   border-color: #4D4D4D !important;
 }
 .border-gray-600 {
-  border-color: #7D7D7D !important;
+  border-color: #6B6B6B !important;
 }
 .border-gray-500 {
   border-color: #7D7D7D !important;
@@ -289,13 +323,13 @@ nav .border-amber-400 {
   border-color: #CCCCCC !important;
 }
 .border-gray-300 {
-  border-color: #CCCCCC !important;
+  border-color: #DADADA !important; /* Crisp Card / Divider Border */
 }
 .border-gray-200 {
-  border-color: #E7E7DD !important;
+  border-color: #DADADA !important; /* Subtle Border */
 }
 .border-gray-100 {
-  border-color: #E7E7DD !important;
+  border-color: #EBEBEB !important; /* Hairline Divider */
 }
 .border-white {
   border-color: #FFFFFF !important;
@@ -309,7 +343,7 @@ nav .border-amber-400 {
   border-color: #4D4D4D !important;
 }
 .border-blue-300, .border-blue-200, .border-blue-100, .border-amber-200, .border-emerald-200 {
-  border-color: #E7E7DD !important;
+  border-color: #DADADA !important;
 }
 .border-amber-400, .border-amber-500 {
   border-color: #1A1A1A !important;
@@ -322,10 +356,10 @@ nav .border-amber-400 {
 
 /* Hover States */
 .hover\:bg-gray-100:hover {
-  background-color: #E7E7DD !important;
+  background-color: #F2F2F2 !important;
 }
 .hover\:bg-gray-200:hover {
-  background-color: #CCCCCC !important;
+  background-color: #EBEBEB !important;
 }
 .hover\:bg-gray-800:hover {
   background-color: #262626 !important;
@@ -350,7 +384,7 @@ nav .border-amber-400 {
   background-color: #262626 !important;
 }
 .hover\:bg-blue-50:hover {
-  background-color: #E7E7DD !important;
+  background-color: #EBEBEB !important;
 }
 .hover\:text-blue-900:hover, .hover\:text-blue-800:hover, .group:hover .group-hover\:text-blue-900 {
   color: #1A1A1A !important;
@@ -359,11 +393,36 @@ nav .border-amber-400 {
   background-color: #262626 !important;
 }
 
+/* Card Elevation & Refinement (Wireframe Clean Cards) */
+.wireframe-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid #DADADA !important;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.wireframe-card:hover {
+  border-color: #1A1A1A !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Input Fields & Forms */
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  border-color: #DADADA !important;
+  background-color: #FFFFFF !important;
+  color: #1A1A1A !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #1A1A1A !important;
+  box-shadow: 0 0 0 1px #1A1A1A !important;
+}
+
 /* Dedicated Palette Utility Classes */
 .bg-palette-white { background-color: #FFFFFF !important; }
-.bg-palette-ivory { background-color: #FFFFF7 !important; }
-.bg-palette-sand  { background-color: #E7E7DD !important; }
-.bg-palette-fog   { background-color: #CCCCCC !important; }
+.bg-palette-ivory { background-color: #F5F5F5 !important; }
+.bg-palette-sand  { background-color: #EBEBEB !important; }
+.bg-palette-canvas{ background-color: #F2F2F2 !important; }
+.bg-palette-fog   { background-color: #DADADA !important; }
 .bg-palette-smoke { background-color: #7D7D7D !important; }
 .bg-palette-iron  { background-color: #4D4D4D !important; }
 .bg-palette-midnight { background-color: #262626 !important; }
@@ -371,17 +430,17 @@ nav .border-amber-400 {
 .bg-palette-black-c { background-color: #1D1D1B !important; }
 
 .text-palette-white { color: #FFFFFF !important; }
-.text-palette-ivory { color: #FFFFF7 !important; }
-.text-palette-sand  { color: #E7E7DD !important; }
-.text-palette-fog   { color: #CCCCCC !important; }
+.text-palette-ivory { color: #F5F5F5 !important; }
+.text-palette-sand  { color: #EBEBEB !important; }
+.text-palette-fog   { color: #DADADA !important; }
 .text-palette-smoke { color: #7D7D7D !important; }
 .text-palette-iron  { color: #4D4D4D !important; }
 .text-palette-midnight { color: #262626 !important; }
 .text-palette-black { color: #1A1A1A !important; }
 .text-palette-black-c { color: #1D1D1B !important; }
 
-.border-palette-sand { border-color: #E7E7DD !important; }
-.border-palette-fog  { border-color: #CCCCCC !important; }
+.border-palette-sand { border-color: #EBEBEB !important; }
+.border-palette-fog  { border-color: #DADADA !important; }
 .border-palette-smoke { border-color: #7D7D7D !important; }
 .border-palette-iron  { border-color: #4D4D4D !important; }
 .border-palette-midnight { border-color: #262626 !important; }
