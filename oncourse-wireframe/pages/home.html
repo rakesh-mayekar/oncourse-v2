@@ -6,6 +6,30 @@
   <title>OnCourse Global | Endless Possibility &bull; Premier Admissions Advisory</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/wireframe.css?v=3">
+  <style>
+    @keyframes marqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marqueeRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-marquee-left {
+      display: flex;
+      width: max-content;
+      animation: marqueeLeft 38s linear infinite;
+    }
+    .animate-marquee-right {
+      display: flex;
+      width: max-content;
+      animation: marqueeRight 38s linear infinite;
+    }
+    .marquee-wrapper:hover .animate-marquee-left,
+    .marquee-wrapper:hover .animate-marquee-right {
+      animation-play-state: paused;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
@@ -51,8 +75,7 @@
               <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
-              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-between">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-gray-600">For Parents &bull; Grades 8–12</span>
+              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
                 <a href="undergraduate.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
               </div>
               <a href="undergraduate-program.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -77,18 +100,11 @@
           <!-- 3. MASTER'S (With Red Dot & Programs Dropdown) -->
           <div class="relative group h-full flex items-center nav-item-has-menu">
             <a href="masters.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
-              <span class="relative">
-                Master's
-                <span class="absolute -top-1 -right-1.5 flex h-2 w-2" title="Highlighted for Students">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-                </span>
-              </span>
+              <span>Master's</span>
               <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
-              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-between">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-black">For Students &bull; MS / Postgraduate</span>
+              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
                 <a href="masters.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
               </div>
               <a href="masters-program.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -113,18 +129,11 @@
           <!-- 4. MBA (With Red Dot & Programs Dropdown) -->
           <div class="relative group h-full flex items-center nav-item-has-menu">
             <a href="mba.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
-              <span class="relative">
-                MBA
-                <span class="absolute -top-1 -right-1.5 flex h-2 w-2" title="Highlighted for Students">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-                </span>
-              </span>
+              <span>MBA</span>
               <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
-              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-between">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-black">For Students &bull; M7 Candidates</span>
+              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
                 <a href="mba.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
               </div>
               <a href="mba-program.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -146,8 +155,34 @@
             </div>
           </div>
 
-          <!-- 5. TEST PREP (Direct Link, No Dropdown) -->
-          <a href="test-prep.html" class="hover:text-black transition-colors py-2 text-gray-800">Test Prep</a>
+          <!-- 5. TEST PREP (With Dropdown) -->
+          <div class="relative group h-full flex items-center nav-item-has-menu">
+            <a href="test-prep.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+              <span>Test Prep</span>
+              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
+              <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
+                <a href="test-prep.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
+              </div>
+              <a href="test-prep-sat-act.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">SAT &amp; ACT</span>
+                <span class="text-[11px] text-gray-500 block">Digital SAT &amp; ACT adaptive prep</span>
+              </a>
+              <a href="test-prep-gmat-gre.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">GMAT &amp; GRE</span>
+                <span class="text-[11px] text-gray-500 block">GMAT Focus &amp; GRE score elevation</span>
+              </a>
+              <a href="test-prep-success.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">Success Stories</span>
+                <span class="text-[11px] text-gray-500 block">1500+ SAT, 740+ GMAT admit outcomes</span>
+              </a>
+              <a href="test-prep-transfer.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">Transfer Admissions</span>
+                <span class="text-[11px] text-gray-500 block">US &amp; UK university transfer pathways</span>
+              </a>
+            </div>
+          </div>
 
           <!-- 6. CONTACT US (Direct Link, No Dropdown) -->
           <a href="contact.html" class="hover:text-black transition-colors py-2 text-gray-800">Contact Us</a>
@@ -211,13 +246,7 @@
     <div class="border-b border-gray-100 pb-3">
       <div class="flex items-center justify-between mb-1">
         <a href="masters.html" class="text-xs font-black uppercase tracking-wider text-black flex items-center gap-1.5">
-          <span class="relative">
-            Master's
-            <span class="absolute -top-1 -right-1.5 flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-            </span>
-          </span>
+          <span>Master's</span>
         </a>
         <span class="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-black text-white font-bold">For Students</span>
       </div>
@@ -234,13 +263,7 @@
     <div class="border-b border-gray-100 pb-3">
       <div class="flex items-center justify-between mb-1">
         <a href="mba.html" class="text-xs font-black uppercase tracking-wider text-black flex items-center gap-1.5">
-          <span class="relative">
-            MBA
-            <span class="absolute -top-1 -right-1.5 flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-            </span>
-          </span>
+          <span>MBA</span>
         </a>
         <span class="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-black text-white font-bold">For Students</span>
       </div>
@@ -253,9 +276,19 @@
       </div>
     </div>
 
-    <!-- 5. Test Prep -->
-    <div class="border-b border-gray-100 pb-2">
-      <a href="test-prep.html" class="text-xs font-black uppercase tracking-wider text-black block py-1">Test Prep</a>
+    <!-- 5. Test Prep (With Dropdown) -->
+    <div class="border-b border-gray-100 pb-3">
+      <div class="flex items-center justify-between mb-1">
+        <a href="test-prep.html" class="text-xs font-black uppercase tracking-wider text-black">Test Prep &amp; Transfer</a>
+        <span class="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-gray-100 text-gray-700 border border-gray-300 font-bold">Standardized Testing</span>
+      </div>
+      <div class="space-y-1 pl-2 text-xs text-gray-700">
+        <a href="test-prep.html" class="block py-1 hover:text-black font-semibold">&bull; Overview</a>
+        <a href="test-prep-sat-act.html" class="block py-1 hover:text-black">&bull; SAT &amp; ACT</a>
+        <a href="test-prep-gmat-gre.html" class="block py-1 hover:text-black">&bull; GMAT &amp; GRE</a>
+        <a href="test-prep-success.html" class="block py-1 hover:text-black">&bull; Success Stories</a>
+        <a href="test-prep-transfer.html" class="block py-1 hover:text-black">&bull; Transfer Admissions</a>
+      </div>
     </div>
 
     <!-- 6. Contact Us -->
@@ -283,122 +316,91 @@
 
   <main class="flex-grow">
 
-    <!-- ================= 1. HERO SECTION: ENDLESS POSSIBILITY & DUAL-MENTOR ADVISORY ================= -->
-    <section id="hero" class="relative bg-white border-b border-gray-200 overflow-hidden py-12 lg:py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <!-- ================= 1. HERO SECTION: FULL-SCREEN BACKGROUND VIDEO/IMAGE (WHITE OVERLAY & BLACK TEXT) ================= -->
+    <section id="hero" class="relative bg-white text-black min-h-[92vh] flex items-center overflow-hidden py-16 lg:py-24 border-b border-gray-200">
+      <!-- Full-screen Background Video / Image Container -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <!-- Video Element with Fallback Poster Image -->
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-students-walking-in-a-university-campus-43387-large.mp4" type="video/mp4">
+        </video>
+        <!-- Fallback Image if video is loading or restricted -->
+        <div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80');"></div>
+        <!-- High-end White Gradient Overlay: solid on left for text legibility, transparent on right to showcase video/image -->
+        <div class="absolute inset-0" style="background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.98) 32%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0.15) 68%, rgba(255, 255, 255, 0) 100%);"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 15%, transparent 85%, rgba(255, 255, 255, 0.5) 100%);"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="max-w-3xl space-y-6">
           
-          <!-- Left Content Column (7 cols) -->
-          <div class="lg:col-span-7 space-y-5">
-            
-            <!-- Main Tagline Pill -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-gray-100 text-black border border-gray-300 shadow-2xs">
-              <span class="w-2 h-2 rounded-full bg-black animate-pulse"></span>
-              <span>Endless Possibility &bull; Admissions Advisory 2027–2028</span>
-            </div>
-            
-            <!-- Punchy Main Heading -->
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight">
-              Guiding Ambition to Ivy League & Endless Possibility
-            </h1>
-            
-            <!-- Concise Value Proposition -->
-            <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              India's recognized admissions thought leader. For every student, OnCourse assigns <strong>two mentors: a Senior Counselor</strong> for admissions strategy and a <strong>Dedicated Mentor</strong> for authentic narrative craftsmanship and execution.
-            </p>
+          <!-- Main Tagline Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-black/5 text-black border border-black/10 backdrop-blur-md shadow-2xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>Endless Possibility &bull; Premier Admissions Advisory</span>
+          </div>
+          
+          <!-- Punchy Main Heading (Reduced to 5 Words) -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tight leading-[1.1]">
+            Guiding Ambition to Endless Possibility
+          </h1>
+          
+          <!-- Concise Value Proposition (Reduced to 2 Lines on Desktop) -->
+          <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl font-normal">
+            India’s recognized admissions leader. Every student is paired with two dedicated mentors for strategic positioning, authentic storytelling, and top-tier placement.
+          </p>
 
-            <!-- 3 High-Impact Numbers Highlights Strip -->
-            <div class="grid grid-cols-3 gap-3 pt-1 max-w-xl">
-              <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-200">
-                <div class="text-2xl sm:text-3xl font-black text-black">2 Mentors</div>
-                <div class="text-[11px] font-bold text-gray-800 uppercase tracking-wide mt-0.5">Senior Counselor + Mentor</div>
-                <div class="text-[10px] text-gray-500 mt-0.5 font-mono">For Every Student</div>
-              </div>
-              <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-200">
-                <div class="text-2xl sm:text-3xl font-black text-black">28.6%</div>
-                <div class="text-[11px] font-bold text-gray-800 uppercase tracking-wide mt-0.5">Ivy Admit Rate</div>
-                <div class="text-[10px] text-gray-500 mt-0.5 font-mono">vs 4.1% Global Avg</div>
-              </div>
-              <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-200">
-                <div class="text-2xl sm:text-3xl font-black text-black">1,200+</div>
-                <div class="text-[11px] font-bold text-gray-800 uppercase tracking-wide mt-0.5">Top 30 Offers</div>
-                <div class="text-[10px] text-gray-500 mt-0.5 font-mono">$14.2M+ Merit Aid</div>
-              </div>
+          <!-- 3 Stat Metrics (Glassmorphism Cards in Black & White) -->
+          <div class="grid grid-cols-3 gap-3.5 pt-2 max-w-xl">
+            <div class="bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl p-4 shadow-sm hover:border-black transition-all">
+              <div class="text-2xl sm:text-3xl font-black text-black tracking-tight">2 Mentors</div>
+              <div class="text-[11px] font-mono text-gray-500 mt-1">For Every Student</div>
             </div>
-
-            <!-- Primary CTAs -->
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              <a href="contact.html#consultation-form" class="px-6 py-3.5 rounded-lg bg-black text-white hover:bg-gray-800 font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2">
-                <span>Book a Consultation</span>
-                <span>&rarr;</span>
-              </a>
-              <a href="#pathways" class="px-6 py-3.5 rounded-lg border-2 border-black text-black hover:bg-gray-100 font-bold text-xs uppercase tracking-wider transition-all">
-                Explore Pathways &darr;
-              </a>
+            <div class="bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl p-4 shadow-sm hover:border-black transition-all">
+              <div class="text-2xl sm:text-3xl font-black text-black tracking-tight">100%</div>
+              <div class="text-[11px] font-mono text-gray-500 mt-1">Top-3 Placement</div>
             </div>
-
-            <!-- Hero Segment Self-Selection Prompt (Visually Lightweight) -->
-            <div class="pt-4 border-t border-gray-100 space-y-2">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-gray-500 font-mono">What are you preparing for?</span>
-                <span class="text-[10px] text-gray-400 font-mono">&bull; Select your pathway</span>
-              </div>
-              <div class="flex flex-wrap items-center gap-2">
-                <a href="undergraduate.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-black text-gray-800 hover:text-white border border-gray-200 hover:border-black text-xs font-semibold transition-all shadow-2xs group">
-                  <span>🎓</span>
-                  <span>Undergraduate</span>
-                  <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
-                </a>
-                <a href="masters.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-black text-gray-800 hover:text-white border border-gray-200 hover:border-black text-xs font-semibold transition-all shadow-2xs group">
-                  <span>🔬</span>
-                  <span>Master's</span>
-                  <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
-                </a>
-                <a href="mba.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-black text-gray-800 hover:text-white border border-gray-200 hover:border-black text-xs font-semibold transition-all shadow-2xs group">
-                  <span>💼</span>
-                  <span>MBA</span>
-                  <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
-                </a>
-                <a href="test-prep.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-black text-gray-800 hover:text-white border border-gray-200 hover:border-black text-xs font-semibold transition-all shadow-2xs group">
-                  <span>📊</span>
-                  <span>Test Prep</span>
-                  <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
-                </a>
-              </div>
+            <div class="bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl p-4 shadow-sm hover:border-black transition-all">
+              <div class="text-2xl sm:text-3xl font-black text-black tracking-tight">1,200+</div>
+              <div class="text-[11px] font-mono text-gray-500 mt-1">Offers Received</div>
             </div>
-
           </div>
 
-          <!-- Right Column: Hero Video Showcase (5 cols) -->
-          <div class="lg:col-span-5">
-            <div class="wireframe-placeholder-sand rounded-2xl h-80 sm:h-96 lg:h-[390px] flex flex-col justify-between text-left p-6 shadow-xl border border-gray-300 relative overflow-hidden bg-palette-sand group">
-              <div class="flex items-center justify-between w-full">
-                <span class="px-2.5 py-1 rounded bg-black text-white text-[10px] font-mono font-bold tracking-wide uppercase flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                  Hero Video &bull; 3 Min
-                </span>
-                <span class="text-[10px] font-mono text-gray-700 bg-white px-2 py-0.5 rounded border border-gray-300">
-                  Admissions Documentary
-                </span>
-              </div>
+          <!-- Primary CTA (Book a Consultation) -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="contact.html#consultation-form" class="px-7 py-3.5 rounded-xl bg-black text-white hover:bg-neutral-800 font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center gap-2 group cursor-pointer">
+              <span>Book a Consultation</span>
+              <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
 
-              <!-- Central Video Play Button -->
-              <div class="my-auto text-center py-4">
-                <button type="button" class="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-3 text-2xl shadow-xl hover:scale-105 transition-transform group-hover:bg-gray-800" aria-label="Play admissions documentary">
-                  ▶
-                </button>
-                <div class="font-black text-black text-base">
-                  [HERO VIDEO: Endless Possibility & The OnCourse Experience]
-                </div>
-                <p class="text-xs text-gray-700 mt-1.5 max-w-sm mx-auto leading-relaxed">
-                  Watch our founding directors and alumni explain the 2-mentor methodology and how it transforms student applications.
-                </p>
-              </div>
-
-              <div class="w-full pt-3 border-t border-gray-300 flex items-center justify-between text-[11px] text-gray-700 font-mono">
-                <span>Target: Harvard &bull; Stanford &bull; Oxford &bull; Wharton</span>
-                <span class="font-bold text-black">2 Mentors For Every Student</span>
-              </div>
+          <!-- Hero Segment Self-Selection Prompt -->
+          <div class="pt-5 border-t border-gray-200 space-y-2.5">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-gray-900 font-mono">What are you preparing for?</span>
+              <span class="text-[10px] text-gray-500 font-mono">&bull; Select your pathway</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2.5">
+              <a href="undergraduate.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/90 hover:bg-black text-black hover:text-white border border-gray-200 hover:border-black text-xs font-bold transition-all backdrop-blur-md shadow-2xs group">
+                <span>🎓</span>
+                <span>Undergraduate</span>
+                <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
+              </a>
+              <a href="masters.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/90 hover:bg-black text-black hover:text-white border border-gray-200 hover:border-black text-xs font-bold transition-all backdrop-blur-md shadow-2xs group">
+                <span>🔬</span>
+                <span>Master's</span>
+                <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
+              </a>
+              <a href="mba.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/90 hover:bg-black text-black hover:text-white border border-gray-200 hover:border-black text-xs font-bold transition-all backdrop-blur-md shadow-2xs group">
+                <span>💼</span>
+                <span>MBA</span>
+                <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
+              </a>
+              <a href="test-prep.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/90 hover:bg-black text-black hover:text-white border border-gray-200 hover:border-black text-xs font-bold transition-all backdrop-blur-md shadow-2xs group">
+                <span>📊</span>
+                <span>Test Prep</span>
+                <span class="text-gray-400 group-hover:text-white text-[10px] transition-transform group-hover:translate-x-0.5">&rarr;</span>
+              </a>
             </div>
           </div>
 
@@ -406,38 +408,431 @@
       </div>
     </section>
 
-    <!-- ================= 2. TRUST BAR ================= -->
-    <section class="bg-gray-50 border-b border-gray-200 py-6 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto space-y-6">
-        
-        <!-- 4 Key Fast Figures -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-2xs">
-            <div class="text-2xl font-black text-gray-900">15+ Years</div>
-            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">Admissions Excellence</div>
-          </div>
-          <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-2xs">
-            <div class="text-2xl font-black text-gray-900">4 Global Hubs</div>
-            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">Mumbai, Delhi, Gurgaon, Dubai</div>
-          </div>
-          <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-2xs">
-            <div class="text-2xl font-black text-gray-900">98%</div>
-            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">Top-3 Choice Placement</div>
-          </div>
-          <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-2xs">
-            <div class="text-2xl font-black text-gray-900">$14.2M+</div>
-            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">Merit Scholarships Won</div>
+    <!-- ================= 2. FULL-WIDTH HORIZONTAL MARQUEE CARDS (100% WIDTH, OPPOSITE DIRECTIONS) ================= -->
+    <section class="bg-gray-50 border-b border-gray-200 py-14 relative overflow-hidden w-full">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 px-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">12+ Years</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight mt-1">
+          Admissions Excellence &amp; Advisory Matrix
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">
+          Continuous advisory track record across global hubs with dedicated dual mentorship.
+        </p>
+      </div>
+
+      <!-- 100% Full-Width Infinite Horizontal Marquee Container (Not restricted in center container) -->
+      <div class="w-full overflow-hidden relative flex flex-col gap-4 marquee-wrapper">
+        <!-- Left & Right Edge Gradient Fade Masks -->
+        <div class="pointer-events-none absolute left-0 inset-y-0 w-20 sm:w-32 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent z-20"></div>
+        <div class="pointer-events-none absolute right-0 inset-y-0 w-20 sm:w-32 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent z-20"></div>
+
+        <!-- Row 1: Marquee Left -->
+        <div class="overflow-hidden w-full flex">
+          <div class="animate-marquee-left flex gap-4 pr-4">
+            <!-- 8 Cards -->
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <!-- Duplicates for seamless infinite loop -->
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
           </div>
         </div>
 
-        <!-- Trust Statement Note -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-center sm:text-left border-t border-gray-200/80">
-          <div class="flex items-center gap-2 text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">
-            <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
-            <span>Empirical Advisory Excellence</span>
+        <!-- Row 2: Marquee Right (Opposite Direction) -->
+        <div class="overflow-hidden w-full flex">
+          <div class="animate-marquee-right flex gap-4 pr-4">
+            <!-- 8 Cards -->
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <!-- Duplicates -->
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
           </div>
-          <div class="text-xs text-gray-600 font-medium">
-            Personalized dual-mentor architecture across Ivy League, Oxbridge &amp; Global Top 30 admissions.
+        </div>
+
+        <!-- Row 3: Marquee Left (Opposite Direction) -->
+        <div class="overflow-hidden w-full flex">
+          <div class="animate-marquee-left flex gap-4 pr-4">
+            <!-- 8 Cards -->
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <!-- Duplicates -->
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
+            <div class="w-[280px] sm:w-[320px] p-4 rounded-xl bg-white border border-gray-200 shadow-2xs hover:border-black transition-all flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase text-gray-400">Place Holder Text</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+              </div>
+              <div class="text-xs font-bold text-gray-900">Place Holder Text</div>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Place Holder Text</p>
+            </div>
           </div>
         </div>
 
@@ -445,80 +840,80 @@
     </section>
 
     <!-- ================= 3. THE 2-MENTOR MODEL (PROMINENT HOME PAGE FEATURE) ================= -->
-    <section id="dual-mentor" class="py-16 bg-white border-b border-gray-200">
+    <section id="dual-mentor" class="py-14 lg:py-16 bg-white border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-black text-white mb-3">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-black text-white mb-2.5">
             <span>The OnCourse Differentiator</span>
           </div>
           <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
             2 Dedicated Mentors For Every Student
           </h2>
-          <p class="text-base text-gray-600 mt-2.5 leading-relaxed">
-            One advisor cannot do everything. Every student will have two mentors: a Senior Counselor for admissions strategy and a Dedicated Mentor for authentic narrative craftsmanship and execution.
+          <p class="text-sm sm:text-base text-gray-600 mt-2 leading-relaxed">
+            One advisor cannot do everything. Every student is guided by two specialized mentors: a Senior Counselor for admissions strategy and a Dedicated Mentor for authentic narrative craftsmanship and execution.
           </p>
         </div>
 
         <!-- 2 Symmetrical Mentor Role Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           
           <!-- Mentor 1: Senior Counselor -->
-          <div class="p-8 rounded-2xl bg-gray-50 border-2 border-gray-300 hover:border-black transition-colors shadow-xs flex flex-col justify-between">
+          <div class="p-6 sm:p-7 rounded-2xl bg-gray-50 border-2 border-gray-300 hover:border-black transition-colors shadow-xs flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider">Mentor 01</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full bg-black text-white text-[11px] font-bold uppercase tracking-wider">Mentor 01</span>
                 <span class="text-xs font-mono font-bold text-gray-500">Admissions Strategy</span>
               </div>
-              <h3 class="text-2xl font-black text-gray-900 mb-2">Senior Counselor</h3>
-              <p class="text-sm font-semibold text-gray-700 mb-4">Longitudinal Roadmap & Family Lead</p>
-              <ul class="space-y-3 text-sm text-gray-600">
-                <li class="flex items-start gap-2.5">
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-1">Senior Counselor</h3>
+              <p class="text-xs font-semibold text-gray-600 mb-4">Admissions Strategy & Timeline Lead</p>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700">
+                <li class="flex items-start gap-2">
                   <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Longitudinal Academic Plan:</strong> High school subject selection (IBDP, Cambridge, AP) and GPA rigor calibration.</span>
+                  <span><strong>University Shortlisting:</strong> Calibrated dream, target, and safe university lists.</span>
                 </li>
-                <li class="flex items-start gap-2.5">
+                <li class="flex items-start gap-2">
                   <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>School List Tiering:</strong> Data-calibrated Dream, Target, and Safe university lists across US, UK, and Canada.</span>
+                  <span><strong>Academic Roadmap:</strong> Curriculum choice and rigor calibration for global targets.</span>
                 </li>
-                <li class="flex items-start gap-2.5">
+                <li class="flex items-start gap-2">
                   <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Family Partnership:</strong> Structured parent syncs, timeline governance, and fiduciary peace of mind.</span>
+                  <span><strong>Milestone Governance:</strong> Structured family syncs and deadline management.</span>
                 </li>
               </ul>
             </div>
-            <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-gray-700 flex items-center justify-between">
-              <span>Timeline Governance & Oversight</span>
+            <div class="mt-6 pt-3 border-t border-gray-200 text-xs font-bold text-gray-700 flex items-center justify-between">
+              <span>Strategy &amp; Oversight</span>
               <span class="text-black">&rarr;</span>
             </div>
           </div>
 
           <!-- Mentor 2: Dedicated Mentor -->
-          <div class="p-8 rounded-2xl bg-gray-50 border-2 border-gray-300 hover:border-black transition-colors shadow-xs flex flex-col justify-between">
+          <div class="p-6 sm:p-7 rounded-2xl bg-gray-50 border-2 border-gray-300 hover:border-black transition-colors shadow-xs flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider">Mentor 02</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full bg-black text-white text-[11px] font-bold uppercase tracking-wider">Mentor 02</span>
                 <span class="text-xs font-mono font-bold text-gray-500">Narrative & Execution</span>
               </div>
-              <h3 class="text-2xl font-black text-gray-900 mb-2">Dedicated Mentor</h3>
-              <p class="text-sm font-semibold text-gray-700 mb-4">Extracurricular Spikes & Essay Narratives</p>
-              <ul class="space-y-3 text-sm text-gray-600">
-                <li class="flex items-start gap-2.5">
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-1">Dedicated Mentor</h3>
+              <p class="text-xs font-semibold text-gray-600 mb-4">Narrative Craftsmanship & Extracurricular Spikes</p>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700">
+                <li class="flex items-start gap-2">
                   <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Extracurricular Spikes:</strong> Designing independent research capstones, startups, and distinctive community initiatives.</span>
+                  <span><strong>Extracurricular Spikes:</strong> Independent research, initiatives, and community impact.</span>
                 </li>
-                <li class="flex items-start gap-2.5">
+                <li class="flex items-start gap-2">
                   <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Essay Crafting:</strong> 1-on-1 drafting for Common App personal essays, UCAS statements, and institutional supplements.</span>
+                  <span><strong>Essay Crafting:</strong> 1-on-1 drafting for personal statements and institutional supplements.</span>
                 </li>
-                <li class="flex items-start gap-2.5">
+                <li class="flex items-start gap-2">
                   <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Interview Coaching:</strong> Collegiate mock interview simulations and committee positioning prep.</span>
+                  <span><strong>Interview Prep:</strong> Collegiate mock interview simulations and positioning prep.</span>
                 </li>
               </ul>
             </div>
-            <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-gray-700 flex items-center justify-between">
-              <span>Authentic Voice & Spike Building</span>
+            <div class="mt-6 pt-3 border-t border-gray-200 text-xs font-bold text-gray-700 flex items-center justify-between">
+              <span>Authentic Voice &amp; Craft</span>
               <span class="text-black">&rarr;</span>
             </div>
           </div>
@@ -528,232 +923,365 @@
       </div>
     </section>
 
-    <!-- ================= 7. PROVEN RESULTS & SUCCESS STORIES CAROUSEL ================= -->
-    <section id="results" class="py-16 bg-gray-50 border-b border-gray-200">
+    <!-- ================= 4. EMPIRICAL VERIFICATION & INSTAGRAM REELS (EXACT DESIGN AS ATTACHED) ================= -->
+    <section id="results" class="py-16 lg:py-20 bg-[#f8f9fa] border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Empirical Verification</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">
-            Proven Results Across Leading Institutions
-          </h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-1">
-            Verified acceptance rates up to 6.9x the global average through our dual-mentor architecture.
-          </p>
-        </div>
+        <!-- Section Header (Centered with top-right carousel controls) -->
+        <div class="relative max-w-7xl mx-auto mb-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-gray-500">EMPIRICAL VERIFICATION</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-black text-gray-900 tracking-tight mt-2 leading-tight">
+              Proven Results Across Leading Institutions
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-500 mt-2.5">
+              Verified acceptance rates up to 6.9x the global average through our dual-mentor architecture.
+            </p>
+          </div>
 
-        <!-- Verified Acceptance Rate Comparison Strip -->
-        <div class="bg-black text-white rounded-2xl p-6 sm:p-8 mb-10 max-w-4xl mx-auto">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-gray-800">
-            <div class="pt-4 sm:pt-0">
-              <div class="text-3xl sm:text-4xl font-black text-white">28.6%</div>
-              <div class="text-xs font-bold text-gray-300 uppercase tracking-wide mt-1">OnCourse Ivy Admit Rate</div>
-              <div class="text-[11px] text-gray-500 mt-0.5 font-mono">vs 4.1% Global Average (6.9x)</div>
-            </div>
-            <div class="pt-4 sm:pt-0 sm:pl-6">
-              <div class="text-3xl sm:text-4xl font-black text-white">39.2%</div>
-              <div class="text-xs font-bold text-gray-300 uppercase tracking-wide mt-1">Oxbridge Offer Rate</div>
-              <div class="text-[11px] text-gray-500 mt-0.5 font-mono">vs 14.5% Global Average (2.7x)</div>
-            </div>
-            <div class="pt-4 sm:pt-0 sm:pl-6">
-              <div class="text-3xl sm:text-4xl font-black text-white">48.6%</div>
-              <div class="text-xs font-bold text-gray-300 uppercase tracking-wide mt-1">Global MBA Admit Rate</div>
-              <div class="text-[11px] text-gray-500 mt-0.5 font-mono">Wharton, HBS, Stanford &amp; INSEAD</div>
-            </div>
+          <!-- Carousel Navigation Arrows (Top Right matching mockup) -->
+          <div class="absolute right-0 bottom-1 hidden sm:flex items-center gap-2">
+            <button id="carousel-prev" type="button" class="w-8 h-8 rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white text-gray-700 flex items-center justify-center transition-all shadow-2xs cursor-pointer text-xs font-bold" aria-label="Previous">
+              &larr;
+            </button>
+            <button id="carousel-next" type="button" class="w-8 h-8 rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white text-gray-700 flex items-center justify-center transition-all shadow-2xs cursor-pointer text-xs font-bold" aria-label="Next">
+              &rarr;
+            </button>
           </div>
         </div>
 
-        <!-- Interactive Success Stories Carousel Container -->
-        <div class="relative max-w-6xl mx-auto">
+        <!-- TOP ROW: 4 Columns (Stacked Metrics, Tall Metric, Testimonial Cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 items-stretch">
           
-          <!-- Carousel Subhead & Controls Row -->
-          <div class="flex items-center justify-between mb-6">
+          <!-- Column 1: Two Stacked Black Cards (Metric 01 & Metric 03) -->
+          <div class="flex flex-col gap-4 justify-between h-full">
+            
+            <!-- Metric 01: 99% Top-Choice Placement -->
+            <div class="bg-[#14151a] text-white rounded-2xl p-5 border border-neutral-800 shadow-md flex flex-col justify-between flex-1">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">METRIC 01</span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                </div>
+                <div class="text-4xl sm:text-[40px] font-black tracking-tight text-white leading-none">99%</div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-neutral-300 mt-2">TOP-CHOICE PLACEMENT</div>
+              </div>
+              <div class="text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-2.5 mt-3">
+                [CLIENT TO CONFIRM]
+              </div>
+            </div>
+
+            <!-- Metric 03: $14.2M+ Merit Aid Secured -->
+            <div class="bg-[#14151a] text-white rounded-2xl p-5 border border-neutral-800 shadow-md flex flex-col justify-between flex-1">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">METRIC 03</span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                </div>
+                <div class="text-3xl sm:text-[36px] font-black tracking-tight text-white leading-none">$14.2M+</div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-neutral-300 mt-2">MERIT AID SECURED</div>
+              </div>
+              <div class="text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-2.5 mt-3">
+                [CLIENT TO CONFIRM]
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: One Tall Black Card (Metric 02: 1,200+ Offers Received) -->
+          <div class="bg-[#14151a] text-white rounded-2xl p-6 border border-neutral-800 shadow-md flex flex-col justify-between h-full">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">METRIC 02</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+            </div>
+            <div class="my-auto py-8">
+              <div class="text-4xl sm:text-5xl font-black tracking-tight text-white leading-none">1,200+</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-neutral-300 mt-2">OFFERS RECEIVED</div>
+            </div>
+            <div class="text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-3">
+              [CLIENT TO CONFIRM]
+            </div>
+          </div>
+
+          <!-- Column 3: White Testimonial Card (Tanya K. - Oxford PPE) -->
+          <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm flex flex-col justify-between h-full">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-500 font-mono">Student Case Studies</span>
-              <p class="text-sm font-semibold text-gray-900 mt-0.5">Real Outcomes from Our Dual-Mentor Model</p>
+              <div class="flex items-center justify-between pb-2 mb-2">
+                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[9px] font-bold uppercase font-mono tracking-wider">UNDERGRADUATE</span>
+                <div class="flex items-center gap-1 text-amber-500 text-[10px] font-bold font-mono">
+                  <span>★★★★★</span>
+                  <span class="text-gray-900 text-[9px]">VERIFIED</span>
+                </div>
+              </div>
+              <div class="text-2xl font-serif text-gray-300 leading-none select-none">&ldquo;</div>
+              <blockquote class="text-[11px] font-medium text-gray-800 leading-relaxed italic mt-1">
+                Rigorous TSA test prep and Oxford mock collegiate interviews with former alumni mentors gave me the exact composure and intellectual confidence I needed to secure an unconditional offer.
+              </blockquote>
+
+              <!-- Inner admissions result grey box -->
+              <div class="bg-gray-50 rounded-xl p-3 border border-gray-200/70 mt-3 text-[10px]">
+                <div class="font-mono text-[8px] font-bold uppercase text-gray-500 tracking-wider">ADMISSIONS RESULT</div>
+                <div class="font-bold text-gray-900 mt-0.5 text-[11px]">TSA Top 1% &bull; Unconditional Offer</div>
+                <div class="text-gray-500 text-[9px]">University of Oxford &bull; PPE Class of 2028</div>
+              </div>
             </div>
-            
-            <!-- Previous / Next Navigation Arrows -->
-            <div class="flex items-center gap-2">
-              <button id="carousel-prev" type="button" class="w-9 h-9 rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white text-gray-700 flex items-center justify-center transition-all shadow-2xs cursor-pointer" aria-label="Previous story">
-                &larr;
-              </button>
-              <button id="carousel-next" type="button" class="w-9 h-9 rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white text-gray-700 flex items-center justify-center transition-all shadow-2xs cursor-pointer" aria-label="Next story">
-                &rarr;
-              </button>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 flex flex-col gap-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-[#0d121c] text-white flex items-center justify-center font-bold text-[10px]">TK</div>
+                <div>
+                  <div class="font-bold text-xs text-gray-900 leading-tight">Tanya K.</div>
+                  <div class="text-[10px] text-gray-500">PPE &bull; University of Oxford</div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-gray-500 pt-1 border-t border-gray-100/60">
+                <span>Admits: Oxford &bull; LSE</span>
+                <a href="undergraduate-success.html" class="text-black font-bold hover:underline">Read Story &rarr;</a>
+              </div>
             </div>
           </div>
 
-          <!-- Carousel Track: 3 cards desktop, 1 card mobile with snap scroll -->
-          <div id="carousel-track" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar pb-3">
-            
-            <!-- Card 1: Advait M. (UG) -->
-            <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] snap-start bg-white p-6 rounded-2xl border border-gray-200 shadow-xs hover:border-black transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Pathway</span>
-                  <span class="text-[11px] font-mono text-gray-500">Class 8–12</span>
+          <!-- Column 4: Second White Testimonial Card (Matching Design) -->
+          <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center justify-between pb-2 mb-2">
+                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[9px] font-bold uppercase font-mono tracking-wider">UNDERGRADUATE</span>
+                <div class="flex items-center gap-1 text-amber-500 text-[10px] font-bold font-mono">
+                  <span>★★★★★</span>
+                  <span class="text-gray-900 text-[9px]">VERIFIED</span>
                 </div>
-                <div class="flex items-center gap-3 mb-3">
-                  <div class="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center font-bold text-sm text-black">AM</div>
-                  <div>
-                    <div class="font-bold text-sm text-gray-900">Advait M.</div>
-                    <div class="text-xs text-black font-semibold">Harvard College &bull; Class of 2028</div>
-                    <div class="text-[11px] text-gray-500">Computer Science &amp; Robotics</div>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-600 leading-relaxed italic">
-                  &ldquo;Having 2 mentors was game-changing. My Senior Counselor managed my timeline and school lists, while my Mentor helped me articulate my robotics research into a powerful personal essay.&rdquo;
-                </p>
               </div>
-              <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-mono text-gray-500 flex items-center justify-between">
-                <span>Admit: Harvard &bull; MIT &bull; Stanford</span>
-                <span class="text-black font-bold">&check; Verified</span>
+              <div class="text-2xl font-serif text-gray-300 leading-none select-none">&ldquo;</div>
+              <blockquote class="text-[11px] font-medium text-gray-800 leading-relaxed italic mt-1">
+                Rigorous TSA test prep and Oxford mock collegiate interviews with former alumni mentors gave me the exact composure and intellectual confidence I needed to secure an unconditional offer.
+              </blockquote>
+
+              <!-- Inner admissions result grey box -->
+              <div class="bg-gray-50 rounded-xl p-3 border border-gray-200/70 mt-3 text-[10px]">
+                <div class="font-mono text-[8px] font-bold uppercase text-gray-500 tracking-wider">ADMISSIONS RESULT</div>
+                <div class="font-bold text-gray-900 mt-0.5 text-[11px]">TSA Top 1% &bull; Unconditional Offer</div>
+                <div class="text-gray-500 text-[9px]">University of Oxford &bull; PPE Class of 2028</div>
               </div>
             </div>
 
-            <!-- Card 2: Tanya K. (UG) -->
-            <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] snap-start bg-white p-6 rounded-2xl border border-gray-200 shadow-xs hover:border-black transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Pathway</span>
-                  <span class="text-[11px] font-mono text-gray-500">Class 8–12</span>
+            <div class="mt-4 pt-3 border-t border-gray-100 flex flex-col gap-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-[#0d121c] text-white flex items-center justify-center font-bold text-[10px]">TK</div>
+                <div>
+                  <div class="font-bold text-xs text-gray-900 leading-tight">Tanya K.</div>
+                  <div class="text-[10px] text-gray-500">PPE &bull; University of Oxford</div>
                 </div>
-                <div class="flex items-center gap-3 mb-3">
-                  <div class="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center font-bold text-sm text-black">TK</div>
-                  <div>
-                    <div class="font-bold text-sm text-gray-900">Tanya K.</div>
-                    <div class="text-xs text-black font-semibold">University of Oxford &bull; Class of 2028</div>
-                    <div class="text-[11px] text-gray-500">Philosophy, Politics &amp; Economics (PPE)</div>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-600 leading-relaxed italic">
-                  &ldquo;Rigorous TSA test prep and Oxford mock collegiate interviews with former alumni mentors gave me the exact composure and confidence I needed.&rdquo;
-                </p>
               </div>
-              <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-mono text-gray-500 flex items-center justify-between">
-                <span>Admit: Oxford &bull; LSE &bull; UCL</span>
-                <span class="text-black font-bold">&check; Verified</span>
+              <div class="flex items-center justify-between text-[10px] font-mono text-gray-500 pt-1 border-t border-gray-100/60">
+                <span>Admits: Oxford &bull; LSE</span>
+                <a href="undergraduate-success.html" class="text-black font-bold hover:underline">Read Story &rarr;</a>
               </div>
             </div>
-
-            <!-- Card 3: Rohan S. (MBA) -->
-            <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] snap-start bg-white p-6 rounded-2xl border border-gray-200 shadow-xs hover:border-black transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">MBA Pathway</span>
-                  <span class="text-[11px] font-mono text-gray-500">Executive</span>
-                </div>
-                <div class="flex items-center gap-3 mb-3">
-                  <div class="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center font-bold text-sm text-black">RS</div>
-                  <div>
-                    <div class="font-bold text-sm text-gray-900">Rohan S.</div>
-                    <div class="text-xs text-black font-semibold">The Wharton School &bull; Class of 2027</div>
-                    <div class="text-[11px] text-gray-500">MBA &bull; $40K Merit Fellowship</div>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-600 leading-relaxed italic">
-                  &ldquo;My mentors helped me differentiate my fintech experience into a high-conviction leadership story, securing an M7 admit and a $40K fellowship.&rdquo;
-                </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-mono text-gray-500 flex items-center justify-between">
-                <span>Admit: Wharton &bull; Columbia &bull; INSEAD</span>
-                <span class="text-black font-bold">&check; Verified</span>
-              </div>
-            </div>
-
-            <!-- Card 4: Ananya R. (Master's) -->
-            <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] snap-start bg-white p-6 rounded-2xl border border-gray-200 shadow-xs hover:border-black transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Master's Pathway</span>
-                  <span class="text-[11px] font-mono text-gray-500">Postgraduate</span>
-                </div>
-                <div class="flex items-center gap-3 mb-3">
-                  <div class="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center font-bold text-sm text-black">AR</div>
-                  <div>
-                    <div class="font-bold text-sm text-gray-900">Ananya R.</div>
-                    <div class="text-xs text-black font-semibold">Columbia University &bull; Class of 2026</div>
-                    <div class="text-[11px] text-gray-500">MS Data Science (DSI)</div>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-600 leading-relaxed italic">
-                  &ldquo;From faculty outreach to technical SOP positioning, my mentors helped me translate academic projects into funded research offers.&rdquo;
-                </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-mono text-gray-500 flex items-center justify-between">
-                <span>Admit: Columbia &bull; CMU &bull; Georgia Tech</span>
-                <span class="text-black font-bold">&check; Verified</span>
-              </div>
-            </div>
-
-            <!-- Card 5: Kabir S. (UG) -->
-            <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] snap-start bg-white p-6 rounded-2xl border border-gray-200 shadow-xs hover:border-black transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Pathway</span>
-                  <span class="text-[11px] font-mono text-gray-500">Class 8–12</span>
-                </div>
-                <div class="flex items-center gap-3 mb-3">
-                  <div class="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center font-bold text-sm text-black">KS</div>
-                  <div>
-                    <div class="font-bold text-sm text-gray-900">Kabir S.</div>
-                    <div class="text-xs text-black font-semibold">Stanford University &bull; Class of 2028</div>
-                    <div class="text-[11px] text-gray-500">Economics &amp; Public Policy</div>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-600 leading-relaxed italic">
-                  &ldquo;The dual-mentor approach allowed me to build an independent policy research spike while my counsellor kept every early deadline on track.&rdquo;
-                </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-mono text-gray-500 flex items-center justify-between">
-                <span>Admit: Stanford &bull; Yale &bull; Northwestern</span>
-                <span class="text-black font-bold">&check; Verified</span>
-              </div>
-            </div>
-
-            <!-- Card 6: Meera D. (MBA) -->
-            <div class="flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] snap-start bg-white p-6 rounded-2xl border border-gray-200 shadow-xs hover:border-black transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">MBA Pathway</span>
-                  <span class="text-[11px] font-mono text-gray-500">Executive</span>
-                </div>
-                <div class="flex items-center gap-3 mb-3">
-                  <div class="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center font-bold text-sm text-black">MD</div>
-                  <div>
-                    <div class="font-bold text-sm text-gray-900">Meera D.</div>
-                    <div class="text-xs text-black font-semibold">INSEAD &bull; Class of 2026</div>
-                    <div class="text-[11px] text-gray-500">Global Executive MBA</div>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-600 leading-relaxed italic">
-                  &ldquo;Strategic narrative positioning around cross-border product scaling helped me secure admission to INSEAD with full merit fellowship consideration.&rdquo;
-                </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-mono text-gray-500 flex items-center justify-between">
-                <span>Admit: INSEAD &bull; LBS &bull; Kellogg</span>
-                <span class="text-black font-bold">&check; Verified</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Carousel Pagination Dots -->
-          <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-6">
-            <button type="button" class="w-2.5 h-2.5 rounded-full bg-black transition-all cursor-pointer" data-index="0" aria-label="Go to story slide 1"></button>
-            <button type="button" class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="1" aria-label="Go to story slide 2"></button>
-            <button type="button" class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="2" aria-label="Go to story slide 3"></button>
-            <button type="button" class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="3" aria-label="Go to story slide 4"></button>
-            <button type="button" class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="4" aria-label="Go to story slide 5"></button>
-            <button type="button" class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="5" aria-label="Go to story slide 6"></button>
           </div>
 
         </div>
 
-        <div class="text-center mt-8">
+        <!-- BOTTOM ROW: 4 9:16 Vertical Instagram Reel Cards (Exactly As In Image) -->
+        <div id="carousel-track" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+          
+          <!-- Reel 1: Advait M. -->
+          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.92) 100%), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+            
+            <!-- Top Badges -->
+            <div class="relative z-10 p-3.5 flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] font-mono font-bold tracking-wide uppercase border border-white/20 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                9:16 REEL
+              </span>
+              <span class="text-[9px] font-mono text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/20">
+                2:40 Min
+              </span>
+            </div>
+            
+            <!-- Center Play Button -->
+            <div class="relative z-10 my-auto text-center">
+              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+                ▶
+              </button>
+              <span class="inline-block mt-1.5 text-[9px] font-mono text-white/80 bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">Tap to Watch Reel</span>
+            </div>
+            
+            <!-- Bottom Details Overlay -->
+            <div class="relative z-10 p-3.5 bg-gradient-to-t from-black via-black/95 to-transparent pt-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="px-1.5 py-0.5 rounded bg-white text-black text-[8px] font-bold uppercase font-mono">UNDERGRADUATE</span>
+                <span class="text-[9px] font-mono text-emerald-400 font-semibold">Harvard '28</span>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">AM</div>
+                <div>
+                  <div class="font-bold text-[11px] text-white leading-tight">Advait M.</div>
+                  <div class="text-[9px] text-gray-300">Robotics Spike &bull; CS</div>
+                </div>
+              </div>
+              <p class="text-[10px] text-gray-200 leading-tight italic line-clamp-2 mb-1.5">
+                &ldquo;Having 2 mentors was game-changing. My Mentor helped articulate my research.&rdquo;
+              </p>
+              <div class="pt-1.5 border-t border-white/20 text-[9px] font-mono text-gray-300 flex items-center justify-between">
+                <span class="text-white font-medium">Admit: Harvard &bull; MIT</span>
+                <span class="text-white font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">Watch Reel &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reel 2: Tanya K. -->
+          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.92) 100%), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+            
+            <!-- Top Badges -->
+            <div class="relative z-10 p-3.5 flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] font-mono font-bold tracking-wide uppercase border border-white/20 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                9:16 REEL
+              </span>
+              <span class="text-[9px] font-mono text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/20">
+                3:10 Min
+              </span>
+            </div>
+            
+            <!-- Center Play Button -->
+            <div class="relative z-10 my-auto text-center">
+              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+                ▶
+              </button>
+              <span class="inline-block mt-1.5 text-[9px] font-mono text-white/80 bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">Tap to Watch Reel</span>
+            </div>
+            
+            <!-- Bottom Details Overlay -->
+            <div class="relative z-10 p-3.5 bg-gradient-to-t from-black via-black/95 to-transparent pt-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="px-1.5 py-0.5 rounded bg-white text-black text-[8px] font-bold uppercase font-mono">UNDERGRADUATE</span>
+                <span class="text-[9px] font-mono text-emerald-400 font-semibold">Oxford '28</span>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">TK</div>
+                <div>
+                  <div class="font-bold text-[11px] text-white leading-tight">Tanya K.</div>
+                  <div class="text-[9px] text-gray-300">PPE &bull; University of Oxford</div>
+                </div>
+              </div>
+              <p class="text-[10px] text-gray-200 leading-tight italic line-clamp-2 mb-1.5">
+                &ldquo;Rigorous TSA prep gave me the exact composure and confidence I needed.&rdquo;
+              </p>
+              <div class="pt-1.5 border-t border-white/20 text-[9px] font-mono text-gray-300 flex items-center justify-between">
+                <span class="text-white font-medium">Admit: Oxford &bull; LSE</span>
+                <span class="text-white font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">Watch Reel &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reel 3: Rohan S. -->
+          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.92) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+            
+            <!-- Top Badges -->
+            <div class="relative z-10 p-3.5 flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] font-mono font-bold tracking-wide uppercase border border-white/20 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                9:16 REEL
+              </span>
+              <span class="text-[9px] font-mono text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/20">
+                2:15 Min
+              </span>
+            </div>
+            
+            <!-- Center Play Button -->
+            <div class="relative z-10 my-auto text-center">
+              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+                ▶
+              </button>
+              <span class="inline-block mt-1.5 text-[9px] font-mono text-white/80 bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">Tap to Watch Reel</span>
+            </div>
+            
+            <!-- Bottom Details Overlay -->
+            <div class="relative z-10 p-3.5 bg-gradient-to-t from-black via-black/95 to-transparent pt-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="px-1.5 py-0.5 rounded bg-white text-black text-[8px] font-bold uppercase font-mono">MBA ADVISORY</span>
+                <span class="text-[9px] font-mono text-amber-300 font-semibold">$40K Merit Aid</span>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">RS</div>
+                <div>
+                  <div class="font-bold text-[11px] text-white leading-tight">Rohan S.</div>
+                  <div class="text-[9px] text-gray-300">Wharton MBA &bull; Fintech</div>
+                </div>
+              </div>
+              <p class="text-[10px] text-gray-200 leading-tight italic line-clamp-2 mb-1.5">
+                &ldquo;My mentors helped me differentiate my experience into a high-conviction story.&rdquo;
+              </p>
+              <div class="pt-1.5 border-t border-white/20 text-[9px] font-mono text-gray-300 flex items-center justify-between">
+                <span class="text-white font-medium">Admit: Wharton &bull; Columbia</span>
+                <span class="text-white font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">Watch Reel &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reel 4: Kabir D. -->
+          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.92) 100%), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+            
+            <!-- Top Badges -->
+            <div class="relative z-10 p-3.5 flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] font-mono font-bold tracking-wide uppercase border border-white/20 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                9:16 REEL
+              </span>
+              <span class="text-[9px] font-mono text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/20">
+                1:55 Min
+              </span>
+            </div>
+            
+            <!-- Center Play Button -->
+            <div class="relative z-10 my-auto text-center">
+              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+                ▶
+              </button>
+              <span class="inline-block mt-1.5 text-[9px] font-mono text-white/80 bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">Tap to Watch Reel</span>
+            </div>
+            
+            <!-- Bottom Details Overlay -->
+            <div class="relative z-10 p-3.5 bg-gradient-to-t from-black via-black/95 to-transparent pt-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="px-1.5 py-0.5 rounded bg-white text-black text-[8px] font-bold uppercase font-mono">UNDERGRADUATE</span>
+                <span class="text-[9px] font-mono text-sky-300 font-semibold">Columbia '28</span>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">KD</div>
+                <div>
+                  <div class="font-bold text-[11px] text-white leading-tight">Kabir D.</div>
+                  <div class="text-[9px] text-gray-300">Columbia University &bull; Econ</div>
+                </div>
+              </div>
+              <p class="text-[10px] text-gray-200 leading-tight italic line-clamp-2 mb-1.5">
+                &ldquo;From early grade 9 profile building to ED strategy, my mentor kept my focus razor-sharp.&rdquo;
+              </p>
+              <div class="pt-1.5 border-t border-white/20 text-[9px] font-mono text-gray-300 flex items-center justify-between">
+                <span class="text-white font-medium">Admit: Columbia &bull; Cornell</span>
+                <span class="text-white font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">Watch Reel &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Pagination Bullet Slider (•••• 4 Dots as in Mockup) -->
+        <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-6">
+          <button type="button" class="w-6 h-2 rounded-full bg-black transition-all cursor-pointer" data-index="0" aria-label="Slide 1"></button>
+          <button type="button" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="1" aria-label="Slide 2"></button>
+          <button type="button" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="2" aria-label="Slide 3"></button>
+          <button type="button" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Centered Case Studies Link (As in Mockup) -->
+        <div class="text-center mt-6">
           <a href="undergraduate-success.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:underline">
-            <span>Explore All 1,200+ Verified Case Studies</span>
+            <span>Explore All Verified Case Studies</span>
             <span>&rarr;</span>
           </a>
         </div>
@@ -761,12 +1289,11 @@
       </div>
     </section>
 
-
-    <!-- ================= 4. ADMISSIONS PATHWAYS (CONCISE, SCANNABLE CARDS) ================= -->
-    <section id="pathways" class="py-16 bg-white border-b border-gray-200">
+    <!-- ================= 5. ADMISSIONS PATHWAYS (CONCISE, SCANNABLE CARDS) ================= -->
+    <section id="pathways" class="py-14 lg:py-16 bg-white border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-center max-w-3xl mx-auto mb-10">
           <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Specialized Advisory</span>
           <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight mt-1">
             Choose Your Admissions Pathway
@@ -784,16 +1311,15 @@
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="text-2xl">🎓</span>
-                <span class="px-2 py-0.5 rounded bg-gray-100 text-black text-[10px] font-bold font-mono">CLASS 8–12</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 text-black text-[10px] font-bold font-mono">GRADES 8–12</span>
               </div>
               <h3 class="font-black text-lg text-gray-900 group-hover:text-black">Undergraduate</h3>
-              <div class="text-2xl font-black text-black mt-2">28.6% Ivy Rate</div>
-              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                Longitudinal parent partnership. Subject selection, research capstones, and Common App / UCAS strategy.
+              <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+                Strategic academic roadmapping, extracurricular spike design, and Common App / UCAS guidance.
               </p>
             </div>
             <div class="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-              <span>Explore UG Pathway</span>
+              <span>Explore Undergraduate</span>
               <span>&rarr;</span>
             </div>
           </a>
@@ -806,13 +1332,12 @@
                 <span class="px-2 py-0.5 rounded bg-gray-100 text-black text-[10px] font-bold font-mono">POSTGRADUATE</span>
               </div>
               <h3 class="font-black text-lg text-gray-900 group-hover:text-black">Master's (MS/MA)</h3>
-              <div class="text-2xl font-black text-black mt-2">88% Top 25</div>
-              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                STEM, Data Science & Finance programs. Faculty lab matching, technical SOPs, and funded assistantships.
+              <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+                Specialized graduate advisory for STEM, Data Science, and Finance programs, including technical SOPs and lab targeting.
               </p>
             </div>
             <div class="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-              <span>Explore MS Pathway</span>
+              <span>Explore Master's</span>
               <span>&rarr;</span>
             </div>
           </a>
@@ -825,13 +1350,12 @@
                 <span class="px-2 py-0.5 rounded bg-gray-100 text-black text-[10px] font-bold font-mono">EXECUTIVE</span>
               </div>
               <h3 class="font-black text-lg text-gray-900 group-hover:text-black">MBA Advisory</h3>
-              <div class="text-2xl font-black text-black mt-2">82% M7 Calls</div>
-              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                Targeting Wharton, HBS, Stanford & INSEAD. Executive resume positioning and scholarship negotiation.
+              <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+                Strategic positioning for M7 and premier global business schools, focusing on leadership narratives and interview prep.
               </p>
             </div>
             <div class="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-              <span>Explore MBA Pathway</span>
+              <span>Explore MBA</span>
               <span>&rarr;</span>
             </div>
           </a>
@@ -841,12 +1365,11 @@
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="text-2xl">📊</span>
-                <span class="px-2 py-0.5 rounded bg-gray-100 text-black text-[10px] font-bold font-mono">STANDARDIZED</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 text-black text-[10px] font-bold font-mono">STANDARDIZED TESTS</span>
               </div>
               <h3 class="font-black text-lg text-gray-900 group-hover:text-black">Test Prep</h3>
-              <div class="text-2xl font-black text-black mt-2">1500+ / 705+</div>
-              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                Digital SAT, ACT, GMAT Focus & GRE. Diagnostic evaluations and 1-on-1 personalized score coaching.
+              <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+                Diagnostic evaluations and targeted 1-on-1 coaching for Digital SAT, ACT, GMAT Focus, and GRE General.
               </p>
             </div>
             <div class="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
@@ -860,258 +1383,179 @@
       </div>
     </section>
 
-    <!-- ================= 5. WHY ONCOURSE: 5 CORE THEMES (CLEAN & MINIMAL) ================= -->
-    <section class="py-16 bg-white border-b border-gray-200">
+    <!-- ================= 6. INSTITUTIONAL OUTCOMES & PROVEN TRACK RECORD (EXACT AS USER MOCKUP) ================= -->
+    <section class="py-16 lg:py-20 bg-white border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">The OnCourse Standard</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">
-            Five Core Pillars of Admissions Excellence
-          </h2>
-          <p class="text-sm text-gray-600 mt-2">
-            Every candidate journey is anchored in five institutional pillars:
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 flex flex-col justify-between">
-            <div>
-              <span class="text-xl mb-2 block">💡</span>
-              <h4 class="font-bold text-sm text-gray-900">Thought Leadership</h4>
-              <p class="text-xs text-gray-600 mt-1 leading-relaxed">India's recognized admissions thought leader, publishing empirical committee trends and data models.</p>
-            </div>
-            <span class="mt-4 text-[11px] font-bold text-black font-mono">Pillar 01</span>
-          </div>
-
-          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 flex flex-col justify-between">
-            <div>
-              <span class="text-xl mb-2 block">🤝</span>
-              <h4 class="font-bold text-sm text-gray-900">Mentorship</h4>
-              <p class="text-xs text-gray-600 mt-1 leading-relaxed">2 dedicated mentors for every student: a Senior Counselor and a Dedicated Mentor.</p>
-            </div>
-            <span class="mt-4 text-[11px] font-bold text-black font-mono">Pillar 02</span>
-          </div>
-
-          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 flex flex-col justify-between">
-            <div>
-              <span class="text-xl mb-2 block">🏛️</span>
-              <h4 class="font-bold text-sm text-gray-900">Expertise</h4>
-              <p class="text-xs text-gray-600 mt-1 leading-relaxed">Advisory council led by former Ivy League and Oxbridge admissions officers.</p>
-            </div>
-            <span class="mt-4 text-[11px] font-bold text-black font-mono">Pillar 03</span>
-          </div>
-
-          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 flex flex-col justify-between">
-            <div>
-              <span class="text-xl mb-2 block">📈</span>
-              <h4 class="font-bold text-sm text-gray-900">Methodology</h4>
-              <p class="text-xs text-gray-600 mt-1 leading-relaxed">Structured, phase-gated milestone roadmap that eliminates application anxiety.</p>
-            </div>
-            <span class="mt-4 text-[11px] font-bold text-black font-mono">Pillar 04</span>
-          </div>
-
-          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 flex flex-col justify-between">
-            <div>
-              <span class="text-xl mb-2 block">🏆</span>
-              <h4 class="font-bold text-sm text-gray-900">Outcomes</h4>
-              <p class="text-xs text-gray-600 mt-1 leading-relaxed">1,200+ verified offers to the world's most competitive institutions.</p>
-            </div>
-            <span class="mt-4 text-[11px] font-bold text-black font-mono">Pillar 05</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 6. UNIVERSITY / INSTITUTION LOGO TRUST STRIP ================= -->
-    <section class="py-14 bg-white border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-8">
-          <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Institutional Outcomes &amp; Proven Track Record</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-gray-500">INSTITUTIONAL OUTCOMES &amp; PROVEN TRACK RECORD</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-black text-gray-900 tracking-tight mt-2 leading-tight">
             Our Students Have Earned Offers From Leading Institutions Worldwide
           </h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">
+          <p class="text-xs sm:text-sm text-gray-500 mt-2.5">
             Empirical admissions outcomes across the world's most competitive undergraduate, graduate, and business programs.
           </p>
         </div>
 
-        <!-- 10 Monochrome Institutional Badges (Desktop Grid / Mobile Horizontal Scroll) -->
-        <div class="overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
-          <div class="flex sm:grid sm:grid-cols-2 md:grid-cols-5 gap-3.5 min-w-[700px] sm:min-w-0">
-            
-            <!-- 1. Harvard -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                H
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">Harvard University</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">Cambridge, MA &bull; Ivy League</div>
-            </div>
-
-            <!-- 2. Stanford -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                S
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">Stanford University</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">Stanford, CA &bull; Top 5 US</div>
-            </div>
-
-            <!-- 3. Oxford -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                Ox
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">University of Oxford</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">Oxford, UK &bull; Oxbridge</div>
-            </div>
-
-            <!-- 4. Cambridge -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                Cam
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">University of Cambridge</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">Cambridge, UK &bull; Oxbridge</div>
-            </div>
-
-            <!-- 5. Wharton -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                W
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">The Wharton School</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">UPenn &bull; Ivy League</div>
-            </div>
-
-            <!-- 6. MIT -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-mono font-black text-sm text-gray-800 mb-2">
-                MIT
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">MIT</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">Cambridge, MA &bull; Global #1 STEM</div>
-            </div>
-
-            <!-- 7. Columbia -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                CU
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">Columbia University</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">New York, NY &bull; Ivy League</div>
-            </div>
-
-            <!-- 8. Yale -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-base text-gray-800 mb-2">
-                Y
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">Yale University</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">New Haven, CT &bull; Ivy League</div>
-            </div>
-
-            <!-- 9. INSEAD -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-sans font-black text-xs text-gray-800 mb-2">
-                INS
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">INSEAD</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">France &amp; Singapore &bull; Top MBA</div>
-            </div>
-
-            <!-- 10. Imperial -->
-            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-white hover:border-black transition-all group flex flex-col justify-between items-center text-center">
-              <div class="w-10 h-10 rounded-lg bg-gray-200 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center font-serif font-black text-sm text-gray-800 mb-2">
-                ICL
-              </div>
-              <div class="font-bold text-xs text-gray-900 tracking-tight">Imperial College London</div>
-              <div class="text-[10px] text-gray-500 font-mono mt-0.5">London, UK &bull; Russell Group</div>
-            </div>
-
+        <!-- 10 Institutional Outcome Cards (2 Rows of 5 on Desktop) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5 max-w-6xl mx-auto">
+          
+          <!-- 1. Harvard University -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">H</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Harvard University</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Cambridge, MA &bull; Ivy League</div>
           </div>
+
+          <!-- 2. Stanford University -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">S</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Stanford University</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Stanford, CA &bull; Top 5 US</div>
+          </div>
+
+          <!-- 3. University of Oxford -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-lg text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">Ox</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">University of Oxford</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Oxford, UK &bull; Oxbridge</div>
+          </div>
+
+          <!-- 4. University of Cambridge -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-base text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">Cam</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">University of Cambridge</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Cambridge, UK &bull; Oxbridge</div>
+          </div>
+
+          <!-- 5. The Wharton School -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">W</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">The Wharton School</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">UPenn &bull; Ivy League</div>
+          </div>
+
+          <!-- 6. MIT -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-mono font-black text-sm text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">MIT</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">MIT</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Cambridge, MA &bull; Global #1 STEM</div>
+          </div>
+
+          <!-- 7. Columbia University -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-base text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">CU</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Columbia University</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">New York, NY &bull; Ivy League</div>
+          </div>
+
+          <!-- 8. Yale University -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">Y</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Yale University</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">New Haven, CT &bull; Ivy League</div>
+          </div>
+
+          <!-- 9. INSEAD -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-sans font-black text-xs text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">INS</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">INSEAD</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">France &amp; Singapore &bull; Top MBA</div>
+          </div>
+
+          <!-- 10. Imperial College London -->
+          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-sm text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">ICL</div>
+            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Imperial College London</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">London, UK &bull; Russell Group</div>
+          </div>
+
         </div>
 
-        <div class="mt-4 text-center">
-          <span class="text-[11px] text-gray-500 font-mono">
+        <!-- Bottom Centered Subtitle / Note -->
+        <div class="text-center mt-8">
+          <p class="text-xs font-mono text-gray-400">
             Direct mentorship outcomes across undergraduate, postgraduate, and business school admissions.
-          </span>
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- ================= 8. KNOWLEDGE CENTRE & UPCOMING WEBINAR ================= -->
-    <section class="py-16 bg-gray-50 border-b border-gray-200">
+    <!-- ================= 7. ADMISSIONS MASTERCLASSES & LIVE EVENTS ================= -->
+    <section class="py-14 lg:py-16 bg-gray-50 border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Admissions Intelligence &amp; Live Events</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">Knowledge Centre &amp; Masterclasses</h2>
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Upcoming Events</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">Upcoming Live Events</h2>
             <p class="text-xs sm:text-sm text-gray-600 mt-1">
-              Empirical admissions insights from our leadership team, paired with interactive live briefing sessions.
+              Interactive live briefings with admissions directors and senior mentors for students and parents.
             </p>
           </div>
-          <a href="undergraduate-knowledge.html" class="text-xs font-bold text-black hover:underline flex items-center gap-1 whitespace-nowrap">
-            Browse All Insights &rarr;
+          <a href="upcoming-events.html" class="text-xs font-bold text-black hover:underline flex items-center gap-1 whitespace-nowrap">
+            View All Events &rarr;
           </a>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
-          <!-- Left Columns (7 cols): 2 Admissions Insights Guides -->
-          <div class="lg:col-span-7 flex flex-col justify-between space-y-5">
+          <!-- Left Columns (7 cols): 2 Upcoming Masterclass Events -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
             
-            <div class="flex items-center justify-between pb-1 border-b border-gray-100">
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-500 font-mono">Featured Admissions Guides</span>
-              <span class="text-[11px] text-gray-400 font-mono">Admissions Whitepapers &amp; Playbooks</span>
-            </div>
-
-            <!-- Insight Guide 1 -->
-            <div class="p-6 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all flex flex-col justify-between">
+            <!-- Event Card 1 -->
+            <div class="p-5 rounded-2xl border border-gray-200 bg-white hover:border-black transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Admissions Playbook</span>
-                  <span class="text-[11px] font-mono text-gray-500">Class 8–12</span>
+                  <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Admissions</span>
+                  <span class="text-xs font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                    Saturday &bull; 4:00 PM IST
+                  </span>
                 </div>
                 <h3 class="font-bold text-base text-gray-900 mt-1">
-                  <a href="undergraduate-knowledge.html" class="hover:underline">The Class 8–12 Extracurricular Spike: Building Standout Depth</a>
+                  <a href="contact.html#consultation-form" class="hover:underline">The Class 8–12 Ivy League Profile: Extracurricular Spikes &amp; Research Capstones</a>
                 </h3>
-                <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                  Why institutional review committees favor authentic independent research capstones and distinctive community impact over generic laundry lists of clubs.
+                <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                  Live workshop on building authentic independent research capstones and distinctive community initiatives over generic activity lists.
                 </p>
+                <div class="mt-2.5 text-[11px] text-gray-500 font-mono">
+                  Speaker: Senior Admissions Counselor &bull; Stanford &amp; Columbia Alumni
+                </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between">
-                <a href="undergraduate-knowledge.html" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
-                  Read Admissions Playbook &rarr;
+              <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+                  Reserve Seat &rarr;
                 </a>
-                <span class="text-[11px] font-mono text-gray-500">8 Min Read</span>
+                <span class="text-[11px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
               </div>
             </div>
 
-            <!-- Insight Guide 2 -->
-            <div class="p-6 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all flex flex-col justify-between">
+            <!-- Event Card 2 -->
+            <div class="p-5 rounded-2xl border border-gray-200 bg-white hover:border-black transition-all flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
                   <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">MBA Strategy</span>
-                  <span class="text-[11px] font-mono text-gray-500">Executive</span>
+                  <span class="text-xs font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                    Sunday &bull; 11:30 AM IST
+                  </span>
                 </div>
                 <h3 class="font-bold text-base text-gray-900 mt-1">
-                  <a href="mba-knowledge.html" class="hover:underline">The M7 MBA Roadmap: Crafting a High-Conviction Leadership Narrative</a>
+                  <a href="contact.html#consultation-form" class="hover:underline">The M7 MBA Roadmap: Crafting a High-Conviction Leadership Narrative</a>
                 </h3>
-                <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                  How applicants differentiate their corporate and entrepreneurial trajectory beyond standard GMAT test scores and GPA benchmarks for Wharton, HBS, and Stanford GSB.
+                <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                  Interactive director roundtable on differentiating your corporate trajectory beyond standard test scores for Wharton, HBS, and Stanford GSB.
                 </p>
+                <div class="mt-2.5 text-[11px] text-gray-500 font-mono">
+                  Speaker: Former Wharton Admissions Interviewer &bull; M7 Alum
+                </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between">
-                <a href="mba-knowledge.html" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
-                  Read MBA Strategy Guide &rarr;
+              <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+                  Reserve Seat &rarr;
                 </a>
-                <span class="text-[11px] font-mono text-gray-500">10 Min Read</span>
+                <span class="text-[11px] font-mono text-gray-400">Virtual (Zoom) &bull; 75 Min</span>
               </div>
             </div>
 
@@ -1119,52 +1563,43 @@
 
           <!-- Right Column (5 cols): Prominently Featured Upcoming Webinar / Masterclass -->
           <div class="lg:col-span-5">
-            <div class="p-6 sm:p-7 rounded-2xl border-2 border-black bg-white shadow-lg flex flex-col justify-between h-full relative overflow-hidden">
+            <div class="p-6 rounded-2xl border-2 border-black bg-white shadow-lg flex flex-col justify-between h-full relative overflow-hidden">
               
-              <!-- Spotlight Decorative Header -->
               <div>
-                <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center justify-between mb-3">
                   <span class="px-3 py-1 rounded-full bg-red-600 text-white text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                    Live Masterclass
+                    Live Event
                   </span>
-                  <span class="text-xs font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2.5 py-0.5 rounded">
-                    Upcoming Saturday &bull; 5:00 PM IST
+                  <span class="text-xs font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                    Saturday &bull; 5:00 PM IST
                   </span>
                 </div>
 
                 <div class="text-[11px] font-bold uppercase tracking-wider text-gray-500 font-mono mb-1">
-                  Featured Live Event &bull; Interactive Q&amp;A
+                  Featured Live Event
                 </div>
 
-                <h3 class="font-black text-lg sm:text-xl text-gray-900 leading-snug">
-                  Parent Masterclass: Ivy League &amp; Oxbridge Strategy for High School Families
+                <h3 class="font-black text-lg text-gray-900 leading-snug">
+                  Parent Strategy Briefing: Ivy League &amp; Oxbridge Strategy for High School Families
                 </h3>
 
                 <div class="mt-3 p-3 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-700">
                   <div class="font-bold text-gray-900">Speaker: Senior Admissions Advisory Lead</div>
-                  <div class="text-[11px] text-gray-500 mt-0.5">Former Committee Interviewer &bull; Oxford &amp; UPenn Alumni</div>
+                  <div class="text-[11px] text-gray-500 mt-0.5">Oxford &amp; UPenn Alumni</div>
                 </div>
 
-                <p class="text-xs text-gray-600 mt-3.5 leading-relaxed">
-                  A live 60-minute strategic briefing for parents of Grade 8–11 students covering curriculum choice (IBDP vs Cambridge), building authentic extracurricular research spikes, and timeline planning to eliminate application anxiety.
+                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                  A live strategic briefing for parents covering curriculum choice (IBDP vs Cambridge), extracurricular research spikes, and timeline planning.
                 </p>
-
-                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500 font-mono">
-                  <span>Format: Online via Zoom</span>
-                  <span class="font-bold text-amber-700">Cap: 50 Families</span>
-                </div>
               </div>
 
               <!-- CTA Button -->
-              <div class="mt-6 pt-2">
-                <a href="contact.html#consultation-form" class="w-full text-center py-3.5 px-4 rounded-xl bg-black text-white hover:bg-gray-800 font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2">
+              <div class="mt-5 pt-2">
+                <a href="contact.html#consultation-form" class="w-full text-center py-3 px-4 rounded-xl bg-black text-white hover:bg-gray-800 font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2">
                   <span>Reserve Seat</span>
                   <span>&rarr;</span>
                 </a>
-                <p class="text-[10px] text-center text-gray-500 font-mono mt-2">
-                  Includes live interactive Q&amp;A and downloadable roadmap checklist
-                </p>
               </div>
 
             </div>
@@ -1175,25 +1610,20 @@
       </div>
     </section>
 
-
-
   </main>
 
   <!-- OnCourse Global Reusable Component: Redesigned Global Editorial Footer -->
 <footer class="bg-black text-neutral-300 relative overflow-hidden border-t border-neutral-800">
 
-  <!-- ================= TIER 1: OPENING DISTINCT CTA BAND ("THE CONCLUSION") ================= -->
-  <!-- User Specified: #6d6d6d Grey Background with Compact Spacing & Crisp Contrast -->
+  <!-- ================= 8. FINAL CONSULTATION CTA BAND ================= -->
+  <!-- #6d6d6d Grey Background with Compact Spacing & Crisp Contrast -->
   <div class="border-b border-neutral-600/70 bg-[#6d6d6d] py-10 sm:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
     
     <!-- Architectural grid texture with subtle dark lines on grey -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none"></div>
-    
-    <!-- Top ambient light sheen & subtle perimeter vignette -->
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(255,255,255,0.18),transparent_75%)] pointer-events-none"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.15)_100%)] pointer-events-none"></div>
     
-    <div class="max-w-5xl mx-auto text-center relative z-10 space-y-4">
+    <div class="max-w-4xl mx-auto text-center relative z-10 space-y-4">
       
       <!-- Brand Device Pill -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black text-white text-xs font-mono font-bold uppercase tracking-widest shadow-md">
@@ -1208,7 +1638,7 @@
 
       <!-- Supporting Copy -->
       <p class="text-sm sm:text-base text-neutral-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-sm">
-        Work with two dedicated mentors to build your strategy, story and application.
+        Work with two dedicated mentors to build your strategy, story, and application.
       </p>
 
       <!-- Primary & Secondary CTAs -->
@@ -1217,18 +1647,10 @@
           <span>Book a Consultation</span>
           <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
         </a>
-        <a href="home.html#pathways" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white border border-black/80 font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2">
+        <a href="#pathways" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white border border-black/80 font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2">
           <span>Explore Admissions Pathways</span>
           <span>&darr;</span>
         </a>
-      </div>
-
-      <!-- Credibility Sub-strip -->
-      <div class="pt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-[11px] font-mono text-neutral-200 uppercase tracking-wider font-semibold">
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>Senior Counselor + Dedicated Mentor</span>
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>15+ Years Track Record</span>
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>98% Top-3 Choice Placement</span>
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>4 Global Hubs</span>
       </div>
 
     </div>
@@ -1417,11 +1839,11 @@
                   <span class="text-[11px] text-neutral-400 block">Guides &amp; Whitepapers</span>
                 </li>
                 <li>
-                  <a href="undergraduate-events.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Webinars</span>
+                  <a href="upcoming-events.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Live Events</span>
                     <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
                   </a>
-                  <span class="text-[11px] text-neutral-400 block">Live Masterclasses</span>
+                  <span class="text-[11px] text-neutral-400 block">Upcoming Live Events</span>
                 </li>
                 <li>
                   <a href="contact.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
@@ -1481,7 +1903,7 @@
               </summary>
               <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
                 <a href="undergraduate-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5">Admissions Insights</a>
-                <a href="undergraduate-events.html" class="block text-neutral-200 hover:text-white py-0.5">Events &amp; Webinars</a>
+                <a href="upcoming-events.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">Upcoming Live Events</a>
                 <a href="contact.html" class="block text-neutral-200 hover:text-white py-0.5">Contact Us</a>
                 <a href="about.html#faq" class="block text-neutral-200 hover:text-white py-0.5">FAQs</a>
               </div>
@@ -1495,7 +1917,7 @@
   </div>
 
   <!-- ================= TIER 3: DESIGNED GLOBAL PRESENCE (4 STRATEGIC HUBS) ================= -->
-  <!-- Dark Slate Background (#16171c) with Reduced Padding & Compact Hub Cards -->
+  <!-- Dark Slate Background (#16171c) with Architectural Grid & 4 Strategic Hub Cards -->
   <div class="border-b border-neutral-800 bg-[#16171c] py-10 sm:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
     
     <!-- Global coordinates / latitude longitude architectural grid -->
@@ -1902,11 +2324,11 @@
         const activeIndex = Math.min(dots.length - 1, Math.max(0, Math.round(scrollLeft / step)));
         dots.forEach((dot, idx) => {
           if (idx === activeIndex) {
-            dot.classList.remove('bg-gray-300');
-            dot.classList.add('bg-black');
+            dot.classList.remove('bg-gray-300', 'w-2.5');
+            dot.classList.add('bg-black', 'w-7');
           } else {
-            dot.classList.remove('bg-black');
-            dot.classList.add('bg-gray-300');
+            dot.classList.remove('bg-black', 'w-7');
+            dot.classList.add('bg-gray-300', 'w-2.5');
           }
         });
       }

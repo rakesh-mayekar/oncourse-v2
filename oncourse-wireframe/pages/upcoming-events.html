@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Live Events & Admissions Briefings | OnCourse Global</title>
+  <meta name="description" content="Browse all upcoming live admissions briefings, strategy workshops, collegiate panels, and interactive webinars led by senior mentors and former admissions directors.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/wireframe.css?v=3">
+</head>
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen font-sans antialiased">
+
+  <!-- ================= GLOBAL HEADER (Standardized 80px Mega-Menu Header) ================= -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-xs h-20">
+    <div class="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
+      <div class="flex items-center justify-between h-full">
+        
+        <!-- Brand Logo -->
+        <div class="flex items-center flex-shrink-0">
+          <a href="home.html" title="OnCourse Global Home" class="flex items-center space-x-2.5 group">
+            <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center font-bold text-lg tracking-wider shadow-sm group-hover:bg-gray-800 transition-colors flex-shrink-0">
+              OG
+            </div>
+            <div>
+              <span class="text-xl font-black tracking-tight text-gray-900 block leading-tight">OnCourse</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Nav Links -->
+        <div class="flex items-center space-x-6 2xl:space-x-8 h-full">
+          <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 text-[13px] 2xl:text-sm font-semibold text-gray-700 h-full">
+            <a href="home.html" class="hover:text-black transition-colors py-2 text-gray-800">Home</a>
+            <a href="about.html" class="hover:text-black transition-colors py-2 text-gray-800">About Us</a>
+
+            <!-- Undergraduate -->
+            <div class="relative group h-full flex items-center nav-item-has-menu">
+              <a href="undergraduate.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+                <span>Undergraduate</span>
+                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+              <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
+                <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
+                  <a href="undergraduate.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
+                </div>
+                <a href="undergraduate-program.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Program</span>
+                  <span class="text-[11px] text-gray-500 block">Strategic roadmaps &amp; profile building</span>
+                </a>
+                <a href="undergraduate-knowledge.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Knowledge Centre</span>
+                  <span class="text-[11px] text-gray-500 block">Ivy League &amp; Oxbridge admissions guides</span>
+                </a>
+                <a href="undergraduate-success.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Success Stories</span>
+                  <span class="text-[11px] text-gray-500 block">Harvard, Stanford, Oxford admits</span>
+                </a>
+                <a href="upcoming-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Live Events</span>
+                  <span class="text-[11px] text-gray-500 block">Admissions workshops &amp; webinars</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Master's -->
+            <div class="relative group h-full flex items-center nav-item-has-menu">
+              <a href="masters.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+                <span>Master's</span>
+                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+              <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
+                <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
+                  <a href="masters.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
+                </div>
+                <a href="masters-program.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Program</span>
+                  <span class="text-[11px] text-gray-500 block">STEM, AI/ML, Data Science, Finance</span>
+                </a>
+                <a href="masters-knowledge.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Knowledge Centre</span>
+                  <span class="text-[11px] text-gray-500 block">SOP frameworks &amp; research funding</span>
+                </a>
+                <a href="masters-success.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Success Stories</span>
+                  <span class="text-[11px] text-gray-500 block">MIT, ETH Zurich, CMU admits</span>
+                </a>
+                <a href="upcoming-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Live Events</span>
+                  <span class="text-[11px] text-gray-500 block">Graduate webinars &amp; faculty panels</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- MBA -->
+            <div class="relative group h-full flex items-center nav-item-has-menu">
+              <a href="mba.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+                <span>MBA</span>
+                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+              <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
+                <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
+                  <a href="mba.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
+                </div>
+                <a href="mba-program.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Program</span>
+                  <span class="text-[11px] text-gray-500 block">M7 roadmaps &amp; career transitions</span>
+                </a>
+                <a href="mba-knowledge.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Knowledge Centre</span>
+                  <span class="text-[11px] text-gray-500 block">M7 essay blueprints &amp; briefs</span>
+                </a>
+                <a href="mba-success.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Success Stories</span>
+                  <span class="text-[11px] text-gray-500 block">Wharton, HBS, Stanford GSB, INSEAD</span>
+                </a>
+                <a href="upcoming-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Live Events</span>
+                  <span class="text-[11px] text-gray-500 block">Admissions director roundtables</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Test Prep -->
+            <div class="relative group h-full flex items-center nav-item-has-menu">
+              <a href="test-prep.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+                <span>Test Prep</span>
+                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+              <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
+                <div class="px-2 py-1 mb-1 border-b border-gray-100 flex items-center justify-end">
+                  <a href="test-prep.html" class="text-[10px] font-bold text-black hover:underline">Overview &rarr;</a>
+                </div>
+                <a href="test-prep-sat-act.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">SAT &amp; ACT</span>
+                  <span class="text-[11px] text-gray-500 block">Digital SAT &amp; ACT adaptive prep</span>
+                </a>
+                <a href="test-prep-gmat-gre.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">GMAT &amp; GRE</span>
+                  <span class="text-[11px] text-gray-500 block">GMAT Focus &amp; GRE score elevation</span>
+                </a>
+                <a href="test-prep-success.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Success Stories</span>
+                  <span class="text-[11px] text-gray-500 block">1500+ SAT, 740+ GMAT outcomes</span>
+                </a>
+                <a href="test-prep-transfer.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                  <span class="text-xs font-bold text-gray-900 block">Transfer Admissions</span>
+                  <span class="text-[11px] text-gray-500 block">US &amp; UK university transfer pathways</span>
+                </a>
+              </div>
+            </div>
+
+            <a href="contact.html" class="hover:text-black transition-colors py-2 text-gray-800">Contact Us</a>
+            <a href="careers.html" class="hover:text-black transition-colors py-2 text-gray-800">Join Our Team</a>
+          </nav>
+
+          <a href="contact.html#consultation-form" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-md bg-black text-white hover:bg-gray-800 font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all whitespace-nowrap">
+            Book Consultation
+          </a>
+
+          <div class="flex xl:hidden items-center space-x-2">
+            <button id="mobile-menu-toggle" type="button" class="p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-100" aria-label="Toggle Navigation">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav-drawer" class="hidden lg:hidden border-t border-gray-200 bg-white px-4 pt-3 pb-8 space-y-4 max-h-[85vh] overflow-y-auto shadow-xl">
+      <div class="border-b border-gray-100 pb-2">
+        <a href="home.html" class="text-xs font-black uppercase tracking-wider text-black block py-1">Home</a>
+      </div>
+      <div class="border-b border-gray-100 pb-2">
+        <a href="about.html" class="text-xs font-black uppercase tracking-wider text-black block py-1">About Us</a>
+      </div>
+      <div class="border-b border-gray-100 pb-3">
+        <a href="undergraduate.html" class="text-xs font-black uppercase tracking-wider text-black block mb-1">Undergraduate</a>
+        <div class="space-y-1 pl-2 text-xs text-gray-700">
+          <a href="undergraduate.html" class="block py-1 hover:text-black">&bull; Overview</a>
+          <a href="undergraduate-program.html" class="block py-1 hover:text-black">&bull; Program Details</a>
+          <a href="undergraduate-knowledge.html" class="block py-1 hover:text-black">&bull; Knowledge Centre</a>
+          <a href="undergraduate-success.html" class="block py-1 hover:text-black">&bull; Success Stories</a>
+          <a href="upcoming-events.html" class="block py-1 hover:text-black">&bull; Upcoming Live Events</a>
+        </div>
+      </div>
+      <div class="border-b border-gray-100 pb-3">
+        <a href="masters.html" class="text-xs font-black uppercase tracking-wider text-black block mb-1">Master's</a>
+        <div class="space-y-1 pl-2 text-xs text-gray-700">
+          <a href="masters.html" class="block py-1 hover:text-black">&bull; Overview</a>
+          <a href="masters-program.html" class="block py-1 hover:text-black">&bull; Programs &amp; Roadmaps</a>
+          <a href="masters-knowledge.html" class="block py-1 hover:text-black">&bull; Knowledge Centre</a>
+          <a href="masters-success.html" class="block py-1 hover:text-black">&bull; Success Stories</a>
+        </div>
+      </div>
+      <div class="border-b border-gray-100 pb-3">
+        <a href="mba.html" class="text-xs font-black uppercase tracking-wider text-black block mb-1">MBA</a>
+        <div class="space-y-1 pl-2 text-xs text-gray-700">
+          <a href="mba.html" class="block py-1 hover:text-black">&bull; Overview</a>
+          <a href="mba-program.html" class="block py-1 hover:text-black">&bull; MBA Program Roadmap</a>
+          <a href="mba-knowledge.html" class="block py-1 hover:text-black">&bull; Knowledge Centre</a>
+          <a href="mba-success.html" class="block py-1 hover:text-black">&bull; MBA Success Stories</a>
+        </div>
+      </div>
+      <div class="border-b border-gray-100 pb-3">
+        <a href="test-prep.html" class="text-xs font-black uppercase tracking-wider text-black block mb-1">Test Prep</a>
+        <div class="space-y-1 pl-2 text-xs text-gray-700">
+          <a href="test-prep.html" class="block py-1 hover:text-black">&bull; Overview</a>
+          <a href="test-prep-sat-act.html" class="block py-1 hover:text-black">&bull; SAT &amp; ACT</a>
+          <a href="test-prep-gmat-gre.html" class="block py-1 hover:text-black">&bull; GMAT &amp; GRE</a>
+        </div>
+      </div>
+      <div class="border-b border-gray-100 pb-2">
+        <a href="upcoming-events.html" class="text-xs font-black uppercase tracking-wider text-black block py-1 font-bold">Upcoming Live Events</a>
+      </div>
+      <div class="border-b border-gray-100 pb-2">
+        <a href="contact.html" class="text-xs font-black uppercase tracking-wider text-black block py-1">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMBS ================= -->
+  <nav class="bg-gray-100/80 border-b border-gray-200 py-2.5 px-4 sm:px-6 lg:px-8 text-xs font-mono text-gray-500">
+    <div class="max-w-7xl mx-auto flex items-center space-x-2">
+      <a href="home.html" class="hover:text-black transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 font-bold">Upcoming Live Events &amp; Admissions Briefings</span>
+    </div>
+  </nav>
+
+  <!-- ================= HERO HEADER ================= -->
+  <section class="py-14 sm:py-16 bg-white border-b border-gray-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-[11px] font-mono font-bold uppercase tracking-widest mb-4">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          <span>Upcoming Live Events</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight leading-tight">
+          Upcoming Live Events &amp; Admissions Briefings
+        </h1>
+        <p class="text-sm sm:text-base text-gray-600 mt-4 leading-relaxed font-normal">
+          Interactive live briefings with admissions directors, senior alumni mentors, and standardized testing chairs. Direct tactical guidance across Undergraduate, Master's, MBA, and Test Prep pathways.
+        </p>
+      </div>
+
+      <!-- Quick Stats Pill Row -->
+      <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap items-center gap-6 sm:gap-10 text-xs font-mono text-gray-600">
+        <div>
+          <span class="font-bold text-gray-900 text-sm">8 Upcoming</span> Live Events
+        </div>
+        <div class="hidden sm:inline text-gray-300">&bull;</div>
+        <div>
+          <span class="font-bold text-gray-900 text-sm">100% Free</span> Virtual Zoom Access
+        </div>
+        <div class="hidden sm:inline text-gray-300">&bull;</div>
+        <div>
+          <span class="font-bold text-gray-900 text-sm">Interactive Q&amp;A</span> With Senior Counselors
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FEATURED LIVE EVENT ================= -->
+  <section class="py-10 bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-3xl border-2 border-black p-6 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-gray-100 rounded-full pointer-events-none -z-0"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-8 space-y-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3 py-1 rounded-full bg-red-600 text-white text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                Featured Live Event
+              </span>
+              <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-mono font-bold">
+                Saturday &bull; 5:00 PM IST
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-[10px] font-mono">
+                Virtual (Zoom) &bull; 75 Min
+              </span>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight leading-snug">
+              Parent Strategy Briefing: Ivy League &amp; Oxbridge Strategy for High School Families
+            </h2>
+
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl">
+              A comprehensive strategic briefing for parents covering early curriculum choices (IBDP vs Cambridge A-Levels vs CBSE), building singular extracurricular spikes, independent research capstones, and navigating dual-mentor admissions architecture.
+            </p>
+
+            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-200 max-w-2xl">
+              <div class="text-[10px] font-mono font-bold uppercase text-gray-500 tracking-wider">Featured Speakers</div>
+              <div class="text-xs font-bold text-gray-900 mt-1">Senior Admissions Advisory Lead &bull; Oxford &amp; UPenn Alumni</div>
+              <div class="text-[11px] text-gray-500 mt-0.5">Joined by former admissions interviewers and parents of recent Stanford admits.</div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col justify-center items-center lg:items-end text-center lg:text-right space-y-4">
+            <div class="w-full max-w-xs bg-gray-50 p-5 rounded-2xl border border-gray-200 text-center">
+              <div class="text-[10px] font-mono uppercase tracking-wider text-gray-500 font-bold">Seats Status</div>
+              <div class="text-xl font-black text-gray-900 mt-1">84% Booked</div>
+              <div class="w-full bg-gray-200 h-2 rounded-full mt-2 overflow-hidden">
+                <div class="bg-red-600 h-full rounded-full" style="width: 84%"></div>
+              </div>
+              <div class="text-[10px] text-gray-500 mt-2 font-mono">Complimentary seat allocation closes in 24 hours</div>
+              
+              <a href="contact.html#consultation-form" class="mt-4 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-black hover:bg-gray-800 text-white font-black text-xs uppercase tracking-wider shadow-lg transition-all">
+                Reserve Seat Now &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EVENTS LISTING FILTER & SEARCH BAR ================= -->
+  <section class="py-8 bg-white border-b border-gray-200 sticky top-20 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar w-full md:w-auto pb-1 md:pb-0" id="filter-tabs">
+          <button type="button" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-black text-white whitespace-nowrap cursor-pointer" data-category="all">
+            All Live Events (8)
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gray-100 hover:bg-gray-200 text-gray-700 whitespace-nowrap cursor-pointer" data-category="ug">
+            Undergraduate (Class 8–12)
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gray-100 hover:bg-gray-200 text-gray-700 whitespace-nowrap cursor-pointer" data-category="mba">
+            MBA Advisory
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gray-100 hover:bg-gray-200 text-gray-700 whitespace-nowrap cursor-pointer" data-category="masters">
+            Master's (MS/MIM)
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gray-100 hover:bg-gray-200 text-gray-700 whitespace-nowrap cursor-pointer" data-category="test-prep">
+            Test Prep (SAT &bull; GMAT)
+          </button>
+        </div>
+
+        <!-- Search input -->
+        <div class="w-full md:w-72 relative">
+          <input type="text" id="event-search" placeholder="Search topics, speakers, universities..." class="w-full pl-9 pr-4 py-2 text-xs border border-gray-300 rounded-xl bg-gray-50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-black">
+          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ALL EVENTS GRID ================= -->
+  <section class="py-12 lg:py-16 bg-gray-50 flex-1">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Event 1: Extracurricular Spikes -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Admissions</span>
+              <span class="text-[11px] font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                Saturday &bull; 4:00 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              The Class 8–12 Ivy League Profile: Extracurricular Spikes &amp; Research Capstones
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Live workshop on building authentic independent research capstones and distinctive community initiatives over generic activity lists.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Senior Counselor &bull; Stanford &amp; Columbia Alum</div>
+              <div><strong class="text-gray-900">Focus:</strong> Independent Capstones &bull; Olympiads &bull; APs</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 2: M7 MBA Roadmap -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="mba">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">MBA Strategy</span>
+              <span class="text-[11px] font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                Sunday &bull; 11:30 AM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              The M7 MBA Roadmap: Crafting a High-Conviction Leadership Narrative
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Interactive director roundtable on differentiating your corporate trajectory beyond standard test scores for Wharton, HBS, and Stanford GSB.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Former Wharton Interviewer &bull; M7 Alum</div>
+              <div><strong class="text-gray-900">Focus:</strong> Post-MBA Goals &bull; Recommendation Briefs</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 75 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 3: Top STEM Master's & SOP Architecture -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="masters">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Master's / Postgrad</span>
+              <span class="text-[11px] font-mono font-bold text-blue-600 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded">
+                Tuesday &bull; 6:00 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              Top STEM Master's &amp; SOP Architecture: MIT, Stanford, &amp; CMU
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Deconstruct academic statements of purpose, research proposal formulation, and lab matching strategies for competitive AI/ML, Data Science, and Robotics MS programs.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Senior STEM Mentor &bull; CMU Computer Science Alum</div>
+              <div><strong class="text-gray-900">Focus:</strong> Research Alignment &bull; RA/TA Funding</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 4: Digital SAT 1550+ Strategy -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="test-prep">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Standardized Tests</span>
+              <span class="text-[11px] font-mono font-bold text-purple-600 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded">
+                Thursday &bull; 5:30 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              Digital SAT 1550+ Architecture: Adaptive Module Tactics &amp; Time Mastery
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Master the Desmos calculator interface, hard Module 2 question patterns in Reading/Writing, and high-difficulty algebra traps tested by the College Board.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Head of Standardized Testing (99th Percentile SAT Faculty)</div>
+              <div><strong class="text-gray-900">Focus:</strong> Digital SAT &bull; Desmos Hacks &bull; Speed Drills</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 5: Oxbridge Admissions Decoded -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Oxbridge Admissions</span>
+              <span class="text-[11px] font-mono font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                Saturday &bull; 3:00 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              Oxford &amp; Cambridge Admissions Decoded: TSA Preparation &amp; Collegiate Interviews
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Live mock collegiate tutorial simulation. Learn how tutors assess intellectual flexibility, critical thinking under pressure, and how to conquer the Thinking Skills Assessment (TSA).
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Former Oxford Admissions Interviewer &bull; PPE Alum</div>
+              <div><strong class="text-gray-900">Focus:</strong> TSA Test Prep &bull; Collegiate Academic Interviews</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 75 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 6: GMAT Focus Edition 705+ -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="test-prep">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">GMAT Focus Prep</span>
+              <span class="text-[11px] font-mono font-bold text-purple-600 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded">
+                Sunday &bull; 4:00 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              GMAT Focus Edition 705+ Blueprint: Data Insights &amp; Adaptive Optimization
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Conquer the newly emphasized Data Insights section, Multi-Source Reasoning, and error logging methodology that propels scores from 645 to 715+.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> GMAT Master Trainer (770 GMAT Scorer)</div>
+              <div><strong class="text-gray-900">Focus:</strong> Data Insights &bull; Quant Traps &bull; Verbal Speed</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 7: Grade 9–10 Summer Blueprint -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Early High School</span>
+              <span class="text-[11px] font-mono font-bold text-teal-600 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded">
+                Wednesday &bull; 5:00 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              The Grade 9–10 Summer Blueprint: High-Impact Competitions &amp; Publications
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Why early grades matter most: how to choose prestigious summer research programs (RSI, PROMYS, TASP) and publish peer-reviewed papers before Grade 11.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Early Profile Advisory Lead &bull; Harvard Alum</div>
+              <div><strong class="text-gray-900">Focus:</strong> Summer Planning &bull; Research Mentorship</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+          </div>
+        </div>
+
+        <!-- Event 8: Executive MBA & Global Careers -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="mba">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Executive MBA</span>
+              <span class="text-[11px] font-mono font-bold text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">
+                Friday &bull; 6:30 PM IST
+              </span>
+            </div>
+            
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-black leading-snug">
+              Global Executive MBA Briefing: INSEAD, Wharton EMBA, &amp; LBS
+            </h3>
+            
+            <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+              Targeted guidance for senior leaders (8–15+ years experience) on executive sponsorships, executive assessment tests, and ROI for premier modular EMBA programs.
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] text-gray-500 font-mono space-y-1">
+              <div><strong class="text-gray-900">Speaker:</strong> Global Executive Lead &bull; INSEAD MBA Alum</div>
+              <div><strong class="text-gray-900">Focus:</strong> Executive Assessment &bull; Career Acceleration</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+              Reserve Seat &rarr;
+            </a>
+            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Found State -->
+      <div id="no-results" class="hidden text-center py-16">
+        <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mx-auto text-xl mb-3">🔍</div>
+        <h4 class="font-bold text-gray-900 text-base">No Events Found</h4>
+        <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">Try clearing your search query or selecting "All Live Events" above.</p>
+        <button type="button" id="reset-filter-btn" class="mt-4 px-4 py-2 rounded-lg bg-black text-white text-xs font-bold hover:bg-gray-800 transition-colors cursor-pointer">
+          Reset All Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WATCH PAST RECORDINGS ON-DEMAND ================= -->
+  <section class="py-14 bg-white border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-gray-500 font-mono">Recorded Archive</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mt-1">Watch Past Briefings On-Demand</h2>
+          <p class="text-xs sm:text-sm text-gray-600 mt-1">
+            Access our library of recorded admissions deep-dives and workshop playbooks.
+          </p>
+        </div>
+        <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+          Request Full Video Archive &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- On Demand 1 -->
+        <div class="rounded-2xl border border-gray-200 overflow-hidden bg-gray-50 hover:border-black transition-all group flex flex-col justify-between">
+          <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Video cover" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform pl-0.5">
+              ▶
+            </div>
+            <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/80 text-white text-[10px] font-mono">54 Min</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono uppercase font-bold text-gray-500">Undergraduate Spikes</span>
+              <h4 class="font-bold text-sm text-gray-900 mt-1 leading-snug">Building Independent Research Publications for High Schoolers</h4>
+            </div>
+            <a href="contact.html#consultation-form" class="mt-4 pt-3 border-t border-gray-200 text-xs font-bold text-black hover:underline flex items-center justify-between">
+              <span>Watch Recording</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- On Demand 2 -->
+        <div class="rounded-2xl border border-gray-200 overflow-hidden bg-gray-50 hover:border-black transition-all group flex flex-col justify-between">
+          <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Video cover" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform pl-0.5">
+              ▶
+            </div>
+            <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/80 text-white text-[10px] font-mono">68 Min</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono uppercase font-bold text-gray-500">M7 MBA Advisory</span>
+              <h4 class="font-bold text-sm text-gray-900 mt-1 leading-snug">Writing Essays that Harvard, Stanford, &amp; Wharton Can't Ignore</h4>
+            </div>
+            <a href="contact.html#consultation-form" class="mt-4 pt-3 border-t border-gray-200 text-xs font-bold text-black hover:underline flex items-center justify-between">
+              <span>Watch Recording</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- On Demand 3 -->
+        <div class="rounded-2xl border border-gray-200 overflow-hidden bg-gray-50 hover:border-black transition-all group flex flex-col justify-between">
+          <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80" alt="Video cover" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform pl-0.5">
+              ▶
+            </div>
+            <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/80 text-white text-[10px] font-mono">48 Min</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono uppercase font-bold text-gray-500">STEM Graduate</span>
+              <h4 class="font-bold text-sm text-gray-900 mt-1 leading-snug">SOP Engineering: How to Communicate Research Impact to Top Labs</h4>
+            </div>
+            <a href="contact.html#consultation-form" class="mt-4 pt-3 border-t border-gray-200 text-xs font-bold text-black hover:underline flex items-center justify-between">
+              <span>Watch Recording</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL EDITORIAL FOOTER ================= -->
+  <footer class="bg-black text-neutral-300 relative overflow-hidden border-t border-neutral-800">
+
+    <!-- CTA BAND -->
+    <div class="border-b border-neutral-600/70 bg-[#6d6d6d] py-10 sm:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto text-center relative z-10 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black text-white text-xs font-mono font-bold uppercase tracking-widest shadow-md">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Endless Possibility &bull; Dual-Mentor Advisory</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+          Your Ambition Deserves a Clearer Path.
+        </h2>
+        <p class="text-sm text-neutral-100 max-w-2xl mx-auto">
+          Work with two dedicated mentors to build your strategy, story, and application.
+        </p>
+        <div class="pt-1 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a href="contact.html#consultation-form" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white hover:bg-neutral-100 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2">
+            <span>Book a Consultation</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="home.html#pathways" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white border border-black/80 font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2">
+            <span>Explore Admissions Pathways</span>
+            <span>&darr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION TIER -->
+    <div class="border-b border-neutral-800 bg-[#121316] py-10 lg:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          
+          <!-- Brand Column -->
+          <div class="lg:col-span-5 bg-neutral-900/85 border border-neutral-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl backdrop-blur-md space-y-5">
+            <div class="space-y-4">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-black text-base tracking-tighter shadow-md">OG</div>
+                  <div>
+                    <div class="text-white font-black text-xl tracking-tight leading-none">OnCourse Global</div>
+                    <div class="text-[10px] text-neutral-400 font-mono tracking-wider uppercase mt-1">Endless Possibility</div>
+                  </div>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-black/60 border border-neutral-700/80 text-[11px] text-neutral-300 font-mono">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>15+ Years Admissions Excellence &bull; 4 Global Hubs</span>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                India's recognized admissions thought leader. We pair every student with two specialized mentors—combining strategic roadmap governance with authentic narrative craftsmanship for Ivy League, Oxbridge, and global top 30 universities.
+              </p>
+            </div>
+            <div class="pt-3.5 border-t border-neutral-800">
+              <a href="careers.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/60 border border-neutral-700/80 text-xs text-neutral-200 hover:text-white transition-all">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span>We're Hiring: Join our mentor network</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nav Columns -->
+          <div class="lg:col-span-7 bg-neutral-900/65 border border-neutral-800 rounded-2xl p-6 sm:p-7 shadow-xl backdrop-blur-md flex flex-col justify-between">
+            <div class="hidden sm:grid sm:grid-cols-3 gap-6">
+              
+              <!-- Column 1: Explore -->
+              <div>
+                <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">Explore</h4>
+                <ul class="space-y-3 text-sm">
+                  <li><a href="undergraduate.html" class="text-neutral-200 hover:text-white font-semibold">Undergraduate</a><span class="text-[11px] text-neutral-400 block">Class 8–12 Advisory</span></li>
+                  <li><a href="masters.html" class="text-neutral-200 hover:text-white font-semibold">Master’s</a><span class="text-[11px] text-neutral-400 block">MS &bull; MiM &bull; Postgrad</span></li>
+                  <li><a href="mba.html" class="text-neutral-200 hover:text-white font-semibold">MBA</a><span class="text-[11px] text-neutral-400 block">M7 &bull; INSEAD &bull; Executive</span></li>
+                  <li><a href="test-prep.html" class="text-neutral-200 hover:text-white font-semibold">Test Prep</a><span class="text-[11px] text-neutral-400 block">SAT &bull; ACT &bull; GMAT &bull; GRE</span></li>
+                </ul>
+              </div>
+
+              <!-- Column 2: OnCourse -->
+              <div>
+                <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">OnCourse</h4>
+                <ul class="space-y-3 text-sm">
+                  <li><a href="about.html" class="text-neutral-200 hover:text-white font-semibold">About Us</a><span class="text-[11px] text-neutral-400 block">Story &amp; Governance</span></li>
+                  <li><a href="about.html#team" class="text-neutral-200 hover:text-white font-semibold">Our Mentors</a><span class="text-[11px] text-neutral-400 block">Dual-Mentor Council</span></li>
+                  <li><a href="undergraduate-success.html" class="text-neutral-200 hover:text-white font-semibold">Success Stories</a><span class="text-[11px] text-neutral-400 block">1,200+ Case Studies</span></li>
+                  <li><a href="undergraduate-knowledge.html" class="text-neutral-200 hover:text-white font-semibold">Knowledge Centre</a><span class="text-[11px] text-neutral-400 block">Playbooks &amp; Data</span></li>
+                  <li><a href="careers.html" class="text-neutral-200 hover:text-white font-semibold">Careers</a><span class="text-[11px] text-neutral-400 block">Join Global Team</span></li>
+                </ul>
+              </div>
+
+              <!-- Column 3: Resources -->
+              <div>
+                <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">Resources</h4>
+                <ul class="space-y-3 text-sm">
+                  <li><a href="undergraduate-knowledge.html" class="text-neutral-200 hover:text-white font-semibold">Insights</a><span class="text-[11px] text-neutral-400 block">Guides &amp; Whitepapers</span></li>
+                  <li><a href="upcoming-events.html" class="text-neutral-200 hover:text-white font-semibold">Live Events</a><span class="text-[11px] text-neutral-400 block font-bold text-white">Upcoming Live Events</span></li>
+                  <li><a href="contact.html" class="text-neutral-200 hover:text-white font-semibold">Contact Us</a><span class="text-[11px] text-neutral-400 block">Admissions Inquiries</span></li>
+                  <li><a href="about.html#faq" class="text-neutral-200 hover:text-white font-semibold">FAQs</a><span class="text-[11px] text-neutral-400 block">Quick Answers</span></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Mobile Accordion -->
+            <div class="sm:hidden space-y-2.5">
+              <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden">
+                <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
+                  <span>Resources</span>
+                  <span>&darr;</span>
+                </summary>
+                <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
+                  <a href="undergraduate-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5">Admissions Insights</a>
+                  <a href="upcoming-events.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">Upcoming Live Events</a>
+                  <a href="contact.html" class="block text-neutral-200 hover:text-white py-0.5">Contact Us</a>
+                  <a href="about.html#faq" class="block text-neutral-200 hover:text-white py-0.5">FAQs</a>
+                </div>
+              </details>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT UTILITY -->
+    <div class="bg-[#060608] py-4 px-4 sm:px-6 lg:px-8 text-xs text-neutral-400 text-center">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <div>&copy; 2026 OnCourse Global. All rights reserved. &bull; Empowering global student ambition.</div>
+        <div class="font-mono text-[11px] text-neutral-400">Mumbai &bull; New Delhi &bull; Gurgaon &bull; Dubai</div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ================= INTERACTIVE FILTER & SEARCH JS ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Drawer Toggle
+      const toggle = document.getElementById('mobile-menu-toggle');
+      const drawer = document.getElementById('mobile-nav-drawer');
+      if (toggle && drawer) {
+        toggle.addEventListener('click', () => drawer.classList.toggle('hidden'));
+      }
+
+      // Filter tabs logic
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.event-card');
+      const searchInput = document.getElementById('event-search');
+      const noResults = document.getElementById('no-results');
+      const resetBtn = document.getElementById('reset-filter-btn');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function applyFilters() {
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesCategory = (currentCategory === 'all') || (cardCategory === currentCategory);
+          const matchesQuery = !currentQuery || cardText.includes(currentQuery);
+
+          if (matchesCategory && matchesQuery) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-black', 'text-white');
+            b.classList.add('bg-gray-100', 'text-gray-700');
+          });
+          btn.classList.add('active', 'bg-black', 'text-white');
+          btn.classList.remove('bg-gray-100', 'text-gray-700');
+          currentCategory = btn.getAttribute('data-category');
+          applyFilters();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.toLowerCase().trim();
+          applyFilters();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          currentQuery = '';
+          const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+          if (allBtn) allBtn.click();
+        });
+      }
+    });
+  </script>
+
+  <script src="../assets/wireframe.js"></script>
+</body>
+</html>
