@@ -299,12 +299,34 @@
 
           <div class="lg:col-span-4 flex flex-col justify-center items-center lg:items-end text-center lg:text-right space-y-4">
             <div class="w-full max-w-xs bg-gray-50 p-5 rounded-2xl border border-gray-200 text-center">
-              <div class="text-[10px] font-mono uppercase tracking-wider text-gray-500 font-bold">Seats Status</div>
-              <div class="text-xl font-black text-gray-900 mt-1">84% Booked</div>
-              <div class="w-full bg-gray-200 h-2 rounded-full mt-2 overflow-hidden">
-                <div class="bg-red-600 h-full rounded-full" style="width: 84%"></div>
+              <div class="flex items-center justify-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-gray-500 font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span>Registration Closes In</span>
               </div>
-              <div class="text-[10px] text-gray-500 mt-2 font-mono">Complimentary seat allocation closes in 24 hours</div>
+              
+              <!-- Countdown Timer -->
+              <div class="grid grid-cols-4 gap-1.5 sm:gap-2 mt-3" id="event-countdown">
+                <div class="bg-white border border-gray-200/90 rounded-xl py-2 px-1 text-center shadow-xs">
+                  <div class="text-lg sm:text-xl font-black text-gray-900 font-mono tracking-tight leading-none" id="timer-days">02</div>
+                  <div class="text-[8px] sm:text-[9px] text-gray-400 uppercase font-mono mt-1 font-semibold">Days</div>
+                </div>
+                <div class="bg-white border border-gray-200/90 rounded-xl py-2 px-1 text-center shadow-xs">
+                  <div class="text-lg sm:text-xl font-black text-gray-900 font-mono tracking-tight leading-none" id="timer-hours">14</div>
+                  <div class="text-[8px] sm:text-[9px] text-gray-400 uppercase font-mono mt-1 font-semibold">Hours</div>
+                </div>
+                <div class="bg-white border border-gray-200/90 rounded-xl py-2 px-1 text-center shadow-xs">
+                  <div class="text-lg sm:text-xl font-black text-gray-900 font-mono tracking-tight leading-none" id="timer-mins">35</div>
+                  <div class="text-[8px] sm:text-[9px] text-gray-400 uppercase font-mono mt-1 font-semibold">Mins</div>
+                </div>
+                <div class="bg-white border border-gray-200/90 rounded-xl py-2 px-1 text-center shadow-xs">
+                  <div class="text-lg sm:text-xl font-black text-red-600 font-mono tracking-tight leading-none" id="timer-secs">48</div>
+                  <div class="text-[8px] sm:text-[9px] text-gray-400 uppercase font-mono mt-1 font-semibold">Secs</div>
+                </div>
+              </div>
+              
+              <div class="text-[10px] text-gray-500 mt-2.5 font-mono">
+                Live Briefing &bull; Saturday, 5:00 PM IST
+              </div>
               
               <a href="contact.html#consultation-form" class="mt-4 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-black hover:bg-gray-800 text-white font-black text-xs uppercase tracking-wider shadow-lg transition-all">
                 Reserve Seat Now &rarr;
@@ -926,6 +948,47 @@
           if (allBtn) allBtn.click();
         });
       }
+
+      // Live Countdown Timer
+      function initCountdown() {
+        const daysEl = document.getElementById('timer-days');
+        const hoursEl = document.getElementById('timer-hours');
+        const minsEl = document.getElementById('timer-mins');
+        const secsEl = document.getElementById('timer-secs');
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+        const now = new Date();
+        const target = new Date();
+        const day = now.getDay();
+        let daysUntilSat = (6 - day + 7) % 7;
+        if (daysUntilSat === 0 && now.getHours() >= 17) {
+          daysUntilSat = 7;
+        }
+        target.setDate(now.getDate() + daysUntilSat);
+        target.setHours(17, 0, 0, 0);
+
+        if (target.getTime() - now.getTime() < 12 * 3600 * 1000) {
+          target.setDate(target.getDate() + 7);
+        }
+
+        function update() {
+          const currentTime = new Date().getTime();
+          const diff = Math.max(0, target.getTime() - currentTime);
+          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+          daysEl.textContent = String(d).padStart(2, '0');
+          hoursEl.textContent = String(h).padStart(2, '0');
+          minsEl.textContent = String(m).padStart(2, '0');
+          secsEl.textContent = String(s).padStart(2, '0');
+        }
+
+        update();
+        setInterval(update, 1000);
+      }
+      initCountdown();
     });
   </script>
 
