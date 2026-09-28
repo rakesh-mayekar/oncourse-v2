@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarouselSlider();
   initHeroSlider();
   initConsultationModal();
+  initInstagramFeed();
 });
 
 // 1. Mobile Menu Toggle
@@ -590,3 +591,95 @@ function initConsultationModal() {
     setupModalEvents(existingModal);
   }
 }
+
+// 9. Instagram Reels & Posts API Controller
+function initInstagramFeed() {
+  const feedGrids = document.querySelectorAll('#instagram-feed-grid, [data-instagram-feed]');
+  if (!feedGrids.length) return;
+
+  feedGrids.forEach(grid => {
+    // Optional: If an API endpoint is configured via window or data-attribute
+    const apiEndpoint = grid.getAttribute('data-api-endpoint') || (window.ONCOURSE_CONFIG && window.ONCOURSE_CONFIG.instagramApiEndpoint);
+    
+    if (apiEndpoint) {
+      fetch(apiEndpoint)
+        .then(res => res.json())
+        .then(data => {
+          if (data && Array.isArray(data.items) && data.items.length > 0) {
+            renderInstagramCards(grid, data.items);
+          }
+        })
+        .catch(err => {
+          console.warn('Instagram API sync fallback to pre-rendered reels:', err);
+        });
+    }
+
+    // Add interactive click/hover enhancements
+    const cards = grid.querySelectorAll('a');
+    cards.forEach(card => {
+      // Like button interaction
+      const heartEl = card.querySelector('.text-neutral-300 span:last-child');
+      if (heartEl) {
+        heartEl.style.cursor = 'pointer';
+        heartEl.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const current = heartEl.textContent.trim();
+          if (!heartEl.classList.contains('liked')) {
+            heartEl.classList.add('liked', 'text-pink-400');
+            heartEl.innerHTML = '❤️ Liked!';
+            setTimeout(() => {
+              heartEl.innerHTML = current;
+              heartEl.classList.add('text-pink-400');
+            }, 1500);
+          }
+        });
+      }
+    });
+  });
+
+  function renderInstagramCards(container, items) {
+    container.innerHTML = '';
+    items.slice(0, 6).forEach(item => {
+      const a = document.createElement('a');
+      a.href = item.permalink || 'https://www.instagram.com/oncourseglobal';
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'group relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-pink-500/70 transition-all duration-300 flex flex-col justify-between aspect-[9/14] shadow-lg hover:shadow-pink-500/10 hover:-translate-y-1 block';
+
+      const mediaUrl = item.media_url || item.thumbnail_url || 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';
+      const isVideo = item.media_type === 'VIDEO';
+      const caption = item.caption || '@oncourseglobal reel';
+      const views = item.views_count ? `▶ ${(item.views_count / 1000).toFixed(1)}K` : '▶ Reel';
+      const likes = item.like_count ? `❤️ ${item.like_count}` : '❤️ OnCourse';
+
+      a.innerHTML = `
+        <img src="${mediaUrl}" alt="${caption}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-95">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/30"></div>
+        <div class="relative z-10 p-2.5 flex items-center justify-between">
+          <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] font-mono font-bold tracking-wider uppercase border border-white/20 flex items-center gap-1">
+            <svg class="w-2.5 h-2.5 fill-pink-400" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M10 8v8l6-4-6-4z"/></svg>
+            <span>${isVideo ? 'REEL' : 'POST'}</span>
+          </span>
+          <span class="text-[10px] font-mono font-bold text-white/90 drop-shadow">${views}</span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+          <div class="w-10 h-10 rounded-full bg-white/95 text-black flex items-center justify-center shadow-xl transform scale-90 group-hover:scale-100 transition-transform pl-0.5">
+            ▶
+          </div>
+        </div>
+        <div class="relative z-10 p-2.5 bg-gradient-to-t from-black via-black/90 to-transparent">
+          <p class="text-[11px] font-bold text-white leading-snug line-clamp-2 drop-shadow">
+            ${caption}
+          </p>
+          <div class="flex items-center justify-between mt-1.5 pt-1.5 border-t border-white/10 text-[9px] font-mono text-neutral-300">
+            <span class="text-pink-400 font-bold">@oncourseglobal</span>
+            <span>${likes}</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(a);
+    });
+  }
+}
+
