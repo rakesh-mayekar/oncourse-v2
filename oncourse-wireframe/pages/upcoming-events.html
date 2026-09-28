@@ -327,9 +327,9 @@
                 Live Briefing &bull; Saturday, 5:00 PM IST
               </div>
               
-              <a href="contact.html#consultation-form" class="mt-4 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-black hover:bg-gray-800 text-white font-black text-xs uppercase tracking-wider shadow-lg transition-all">
+              <button type="button" data-open-modal="consultation" class="mt-4 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-black hover:bg-gray-800 text-white font-black text-xs uppercase tracking-wider shadow-lg transition-all cursor-pointer">
                 Reserve Seat Now &rarr;
-              </a>
+              </button>
             </div>
           </div>
 
@@ -344,12 +344,12 @@
   <section class="py-8 bg-white border-b border-gray-200 sticky top-20 z-40 shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
         
         <!-- Filter Tabs -->
-        <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar w-full md:w-auto pb-1 md:pb-0" id="filter-tabs">
+        <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar w-full lg:w-auto pb-1 lg:pb-0" id="filter-tabs">
           <button type="button" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-black text-white whitespace-nowrap cursor-pointer" data-category="all">
-            All Live Events (8)
+            All Categories (8)
           </button>
           <button type="button" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gray-100 hover:bg-gray-200 text-gray-700 whitespace-nowrap cursor-pointer" data-category="ug">
             Undergraduate (Class 8–12)
@@ -365,10 +365,28 @@
           </button>
         </div>
 
-        <!-- Search input -->
-        <div class="w-full md:w-72 relative">
-          <input type="text" id="event-search" placeholder="Search topics, speakers, universities..." class="w-full pl-9 pr-4 py-2 text-xs border border-gray-300 rounded-xl bg-gray-50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-black">
-          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <!-- Controls: Status Dropdown & Search -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <!-- Status Dropdown (Upcoming vs Completed) -->
+          <div class="relative w-full sm:w-auto min-w-[185px]">
+            <label for="status-filter" class="sr-only">Filter by Event Status</label>
+            <div class="relative">
+              <select id="status-filter" class="w-full appearance-none pl-3.5 pr-8 py-2 text-xs font-bold text-gray-900 border border-gray-300 rounded-xl bg-gray-50 hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-black cursor-pointer shadow-xs transition-colors">
+                <option value="all">All Events (8)</option>
+                <option value="upcoming">Upcoming Events (5)</option>
+                <option value="completed">Completed Events (3)</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-gray-600">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search input -->
+          <div class="w-full sm:w-64 relative">
+            <input type="text" id="event-search" placeholder="Search topics, speakers..." class="w-full pl-9 pr-4 py-2 text-xs border border-gray-300 rounded-xl bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-black shadow-xs">
+            <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
         </div>
 
       </div>
@@ -382,8 +400,8 @@
       
       <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Event 1: Extracurricular Spikes -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug">
+        <!-- Event 1: Extracurricular Spikes (Upcoming) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug" data-status="upcoming">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">UG Admissions</span>
@@ -407,15 +425,15 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-black hover:underline flex items-center gap-1 cursor-pointer">
               Reserve Seat &rarr;
-            </a>
+            </button>
             <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
           </div>
         </div>
 
-        <!-- Event 2: M7 MBA Roadmap -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="mba">
+        <!-- Event 2: M7 MBA Roadmap (Upcoming) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="mba" data-status="upcoming">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">MBA Strategy</span>
@@ -439,15 +457,15 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-black hover:underline flex items-center gap-1 cursor-pointer">
               Reserve Seat &rarr;
-            </a>
+            </button>
             <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 75 Min</span>
           </div>
         </div>
 
-        <!-- Event 3: Top STEM Master's & SOP Architecture -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="masters">
+        <!-- Event 3: Top STEM Master's & SOP Architecture (Upcoming) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="masters" data-status="upcoming">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Master's / Postgrad</span>
@@ -471,15 +489,15 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-black hover:underline flex items-center gap-1 cursor-pointer">
               Reserve Seat &rarr;
-            </a>
+            </button>
             <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
           </div>
         </div>
 
-        <!-- Event 4: Digital SAT 1550+ Strategy -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="test-prep">
+        <!-- Event 4: Digital SAT 1550+ Strategy (Upcoming) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="test-prep" data-status="upcoming">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Standardized Tests</span>
@@ -503,20 +521,21 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-black hover:underline flex items-center gap-1 cursor-pointer">
               Reserve Seat &rarr;
-            </a>
+            </button>
             <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
           </div>
         </div>
 
-        <!-- Event 5: Oxbridge Admissions Decoded -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug">
+        <!-- Event 5: Oxbridge Admissions Decoded (Completed) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug" data-status="completed">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Oxbridge Admissions</span>
-              <span class="text-[11px] font-mono font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
-                Saturday &bull; 3:00 PM IST
+              <span class="text-[11px] font-mono font-bold text-gray-700 bg-gray-100 border border-gray-300 px-2 py-0.5 rounded flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Completed &bull; March 14, 2026</span>
               </span>
             </div>
             
@@ -535,20 +554,21 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
-              Reserve Seat &rarr;
-            </a>
-            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 75 Min</span>
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-gray-900 hover:text-black hover:underline flex items-center gap-1.5 cursor-pointer">
+              <span>Watch Recording</span> &rarr;
+            </button>
+            <span class="text-[10px] font-mono text-gray-400">Archived &bull; 75 Min</span>
           </div>
         </div>
 
-        <!-- Event 6: GMAT Focus Edition 705+ -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="test-prep">
+        <!-- Event 6: GMAT Focus Edition 705+ (Completed) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="test-prep" data-status="completed">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">GMAT Focus Prep</span>
-              <span class="text-[11px] font-mono font-bold text-purple-600 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded">
-                Sunday &bull; 4:00 PM IST
+              <span class="text-[11px] font-mono font-bold text-gray-700 bg-gray-100 border border-gray-300 px-2 py-0.5 rounded flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Completed &bull; March 08, 2026</span>
               </span>
             </div>
             
@@ -567,15 +587,15 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
-              Reserve Seat &rarr;
-            </a>
-            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-gray-900 hover:text-black hover:underline flex items-center gap-1.5 cursor-pointer">
+              <span>Request Recording</span> &rarr;
+            </button>
+            <span class="text-[10px] font-mono text-gray-400">Archived &bull; 60 Min</span>
           </div>
         </div>
 
-        <!-- Event 7: Grade 9–10 Summer Blueprint -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug">
+        <!-- Event 7: Grade 9–10 Summer Blueprint (Upcoming) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="ug" data-status="upcoming">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Early High School</span>
@@ -599,20 +619,21 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-black hover:underline flex items-center gap-1 cursor-pointer">
               Reserve Seat &rarr;
-            </a>
+            </button>
             <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
           </div>
         </div>
 
-        <!-- Event 8: Executive MBA & Global Careers -->
-        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="mba">
+        <!-- Event 8: Executive MBA & Global Careers (Completed) -->
+        <div class="event-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-black hover:shadow-lg transition-all group" data-category="mba" data-status="completed">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-2.5 py-0.5 rounded bg-black text-white text-[10px] font-bold uppercase font-mono">Executive MBA</span>
-              <span class="text-[11px] font-mono font-bold text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">
-                Friday &bull; 6:30 PM IST
+              <span class="text-[11px] font-mono font-bold text-gray-700 bg-gray-100 border border-gray-300 px-2 py-0.5 rounded flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Completed &bull; February 28, 2026</span>
               </span>
             </div>
             
@@ -631,10 +652,10 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-            <a href="contact.html#consultation-form" class="text-xs font-bold text-black hover:underline flex items-center gap-1">
-              Reserve Seat &rarr;
-            </a>
-            <span class="text-[10px] font-mono text-gray-400">Virtual (Zoom) &bull; 60 Min</span>
+            <button type="button" data-open-modal="consultation" class="text-xs font-bold text-gray-900 hover:text-black hover:underline flex items-center gap-1.5 cursor-pointer">
+              <span>Watch Recording</span> &rarr;
+            </button>
+            <span class="text-[10px] font-mono text-gray-400">Archived &bull; 60 Min</span>
           </div>
         </div>
 
@@ -885,26 +906,30 @@
         toggle.addEventListener('click', () => drawer.classList.toggle('hidden'));
       }
 
-      // Filter tabs logic
+      // Filter tabs and status dropdown logic
       const filterBtns = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.event-card');
       const searchInput = document.getElementById('event-search');
+      const statusFilter = document.getElementById('status-filter');
       const noResults = document.getElementById('no-results');
       const resetBtn = document.getElementById('reset-filter-btn');
 
       let currentCategory = 'all';
+      let currentStatus = 'all';
       let currentQuery = '';
 
       function applyFilters() {
         let visibleCount = 0;
         cards.forEach(card => {
           const cardCategory = card.getAttribute('data-category');
+          const cardStatus = card.getAttribute('data-status') || 'upcoming';
           const cardText = card.innerText.toLowerCase();
 
           const matchesCategory = (currentCategory === 'all') || (cardCategory === currentCategory);
+          const matchesStatus = (currentStatus === 'all') || (cardStatus === currentStatus);
           const matchesQuery = !currentQuery || cardText.includes(currentQuery);
 
-          if (matchesCategory && matchesQuery) {
+          if (matchesCategory && matchesStatus && matchesQuery) {
             card.classList.remove('hidden');
             visibleCount++;
           } else {
@@ -932,6 +957,13 @@
         });
       });
 
+      if (statusFilter) {
+        statusFilter.addEventListener('change', (e) => {
+          currentStatus = e.target.value;
+          applyFilters();
+        });
+      }
+
       if (searchInput) {
         searchInput.addEventListener('input', (e) => {
           currentQuery = e.target.value.toLowerCase().trim();
@@ -943,8 +975,19 @@
         resetBtn.addEventListener('click', () => {
           if (searchInput) searchInput.value = '';
           currentQuery = '';
+          if (statusFilter) statusFilter.value = 'all';
+          currentStatus = 'all';
           const allBtn = document.querySelector('.filter-btn[data-category="all"]');
-          if (allBtn) allBtn.click();
+          if (allBtn) {
+            filterBtns.forEach(b => {
+              b.classList.remove('active', 'bg-black', 'text-white');
+              b.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            allBtn.classList.add('active', 'bg-black', 'text-white');
+            allBtn.classList.remove('bg-gray-100', 'text-gray-700');
+            currentCategory = 'all';
+          }
+          applyFilters();
         });
       }
 
@@ -990,6 +1033,151 @@
       initCountdown();
     });
   </script>
+
+  <!-- Consultation Request Popup Modal -->
+  <div id="consultation-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    
+    <!-- Backdrop -->
+    <div id="consultation-modal-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity cursor-pointer"></div>
+
+    <!-- Modal Dialog Window -->
+    <div class="relative bg-white text-neutral-900 rounded-2xl shadow-2xl border border-neutral-200 max-w-lg w-full p-6 sm:p-8 transform transition-transform duration-300 scale-95 overflow-hidden z-10 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Top Bar with Monogram & Close Button -->
+      <div class="flex items-center justify-between pb-4 border-b border-neutral-100">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center font-black text-xs tracking-tighter shadow-sm">
+            OG
+          </div>
+          <div>
+            <span class="text-xs font-black tracking-tight text-neutral-900 uppercase block">OnCourse Global</span>
+            <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-wider block">Endless Possibility &bull; Dual Mentors</span>
+          </div>
+        </div>
+        <button id="consultation-modal-close" type="button" class="w-8 h-8 rounded-lg text-neutral-400 hover:text-black hover:bg-neutral-100 flex items-center justify-center transition-colors cursor-pointer" aria-label="Close dialog">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Modal Header -->
+      <div class="mt-4 mb-5">
+        <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-neutral-100 text-neutral-800 border border-neutral-200 mb-2">
+          Diagnostic Consultation
+        </span>
+        <h3 id="modal-title" class="text-xl sm:text-2xl font-black text-neutral-950 tracking-tight leading-snug">
+          Request a Consultation
+        </h3>
+        <p class="text-xs sm:text-sm text-neutral-600 mt-1 leading-relaxed">
+          Connect with our senior admissions leadership in Mumbai, Delhi, Gurgaon, Dubai, or via secure video advisory.
+        </p>
+      </div>
+
+      <!-- Consultation Form -->
+      <form id="consultation-popup-form" class="space-y-4">
+        
+        <!-- Area of Interest -->
+        <div>
+          <label for="popup-segment" class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">
+            Admissions Pathway *
+          </label>
+          <select id="popup-segment" name="pathway" required class="w-full px-3.5 py-2.5 rounded-lg border border-neutral-300 bg-neutral-50 focus:bg-white text-xs sm:text-sm text-neutral-900 focus:ring-2 focus:ring-black focus:border-black transition-all font-medium">
+            <option value="undergraduate" selected>Undergraduate Admissions (Class 8–12)</option>
+            <option value="masters">Master’s &amp; Postgraduate Degrees</option>
+            <option value="mba">MBA &amp; Executive Degrees (M7 / European)</option>
+            <option value="test-prep">Test Prep (SAT / ACT / GRE / GMAT)</option>
+            <option value="parent-advisory">Parent &amp; Strategic Family Advisory</option>
+          </select>
+        </div>
+
+        <!-- Applicant Name & Phone -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="popup-name" class="block text-xs font-semibold text-neutral-700 mb-1">
+              Applicant Name *
+            </label>
+            <input type="text" id="popup-name" name="applicant_name" required placeholder="e.g. Aarav Sharma" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+          </div>
+          <div>
+            <label for="popup-phone" class="block text-xs font-semibold text-neutral-700 mb-1">
+              Phone / WhatsApp *
+            </label>
+            <input type="tel" id="popup-phone" name="phone" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+          </div>
+        </div>
+
+        <!-- Email & Preferred Hub -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="popup-email" class="block text-xs font-semibold text-neutral-700 mb-1">
+              Email Address *
+            </label>
+            <input type="email" id="popup-email" name="email" required placeholder="name@example.com" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+          </div>
+          <div>
+            <label for="popup-hub" class="block text-xs font-semibold text-neutral-700 mb-1">
+              Preferred Hub *
+            </label>
+            <select id="popup-hub" name="hub" required class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 bg-white focus:ring-2 focus:ring-black focus:border-black font-medium">
+              <option value="mumbai">Mumbai (HQ - Nariman Pt / Bandra)</option>
+              <option value="delhi">New Delhi (Connaught Place)</option>
+              <option value="gurgaon">Gurgaon (DLF Cyber City)</option>
+              <option value="dubai">Dubai (DIFC / Downtown)</option>
+              <option value="online" selected>Online / Virtual Advisory</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Current Grade / Work Exp (Optional Context) -->
+        <div>
+          <label for="popup-context" class="block text-xs font-semibold text-neutral-700 mb-1">
+            Current Grade / College / Work Experience (Optional)
+          </label>
+          <input type="text" id="popup-context" name="academic_context" placeholder="e.g. Class 11 IBDP or 3 yrs tech consulting" class="w-full px-3.5 py-2 rounded-lg border border-neutral-300 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-black focus:border-black">
+        </div>
+
+        <!-- Submit CTA -->
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-black hover:bg-neutral-800 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 group cursor-pointer">
+            <span>Schedule Diagnostic Consultation</span>
+            <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Trust Footer -->
+        <div class="pt-1 flex items-center justify-center gap-2 text-[10px] text-neutral-500 font-mono text-center">
+          <span>🔒 Confidential Profile Diagnostic</span>
+          <span>&bull;</span>
+          <span>2 Dedicated Mentors</span>
+          <span>&bull;</span>
+          <span>Response &lt; 24h</span>
+        </div>
+
+      </form>
+
+      <!-- Success Confirmation State (Hidden initially) -->
+      <div id="consultation-popup-success" class="hidden text-center py-8 space-y-4">
+        <div class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center mx-auto shadow-lg">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <div>
+          <h4 class="text-xl font-black text-neutral-900">Consultation Request Received</h4>
+          <p class="text-xs sm:text-sm text-neutral-600 max-w-sm mx-auto mt-1 leading-relaxed">
+            Thank you! Our senior admissions advisory team will review your profile details and reach out within 24 business hours to confirm your diagnostic slot.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-lg bg-neutral-50 border border-neutral-200 text-[11px] font-mono text-neutral-600 max-w-xs mx-auto text-left space-y-1">
+          <div><strong>Mentors:</strong> Senior Counsellor + Dedicated Mentor</div>
+          <div><strong>Hub:</strong> Active in Mumbai, Delhi, Gurgaon &amp; Dubai</div>
+        </div>
+        <div class="pt-2">
+          <button id="consultation-success-close" type="button" class="px-6 py-2.5 rounded-lg bg-black text-white font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-colors cursor-pointer">
+            Close Window
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <script src="../assets/wireframe.js"></script>
 </body>

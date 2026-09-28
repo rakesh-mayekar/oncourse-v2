@@ -564,9 +564,22 @@ function initConsultationModal() {
     const isStickyBtn = target.id === 'sticky-cta-btn' || target.closest('#sticky-cta-bar a');
     const hasModalAttr = target.matches('[data-open-consultation-modal], [data-open-modal="consultation"]');
     const isRequestConsultation = text === 'request a consultation' || text === 'request consultation' || text.includes('request a consultation') || text.includes('request consultation');
+    const isReserveOrRecording = text.includes('reserve seat') || text.includes('request recording') || text.includes('watch recording');
 
-    if (isStickyBtn || hasModalAttr || isRequestConsultation) {
+    if (isStickyBtn || hasModalAttr || isRequestConsultation || isReserveOrRecording) {
       e.preventDefault();
+      const card = target.closest('[data-category]');
+      if (card) {
+        const cat = card.getAttribute('data-category');
+        const modalEl = document.getElementById('consultation-modal') || ensureModal();
+        const segmentSelect = modalEl ? modalEl.querySelector('#popup-segment') : null;
+        if (segmentSelect) {
+          if (cat === 'ug') segmentSelect.value = 'undergraduate';
+          else if (cat === 'mba') segmentSelect.value = 'mba';
+          else if (cat === 'masters') segmentSelect.value = 'masters';
+          else if (cat === 'test-prep') segmentSelect.value = 'test-prep';
+        }
+      }
       openModal();
     }
   });
