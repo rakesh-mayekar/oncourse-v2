@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initConsultationModal();
   initInstagramFeed();
+  initTimelineDownloadModal();
+  initEventsController();
 });
 
 // 1. Mobile Menu Toggle
@@ -564,22 +566,21 @@ function initConsultationModal() {
     const text = target.textContent ? target.textContent.trim().toLowerCase() : '';
     const isStickyBtn = target.id === 'sticky-cta-btn' || target.closest('#sticky-cta-bar a');
     const hasModalAttr = target.matches('[data-open-consultation-modal], [data-open-modal="consultation"]');
-    const isRequestConsultation = text === 'request a consultation' || text === 'request consultation' || text.includes('request a consultation') || text.includes('request consultation');
+    const isRequestConsultation = text === 'request a consultation' || text === 'request consultation' || text.includes('request a consultation') || text.includes('request consultation') || text.includes('book a parent consultation') || text.includes('book consultation') || text.includes('parent consultation');
     const isReserveOrRecording = text.includes('reserve seat') || text.includes('request recording') || text.includes('watch recording');
 
     if (isStickyBtn || hasModalAttr || isRequestConsultation || isReserveOrRecording) {
       e.preventDefault();
       const card = target.closest('[data-category]');
-      if (card) {
-        const cat = card.getAttribute('data-category');
-        const modalEl = document.getElementById('consultation-modal') || ensureModal();
-        const segmentSelect = modalEl ? modalEl.querySelector('#popup-segment') : null;
-        if (segmentSelect) {
-          if (cat === 'ug') segmentSelect.value = 'undergraduate';
-          else if (cat === 'mba') segmentSelect.value = 'mba';
-          else if (cat === 'masters') segmentSelect.value = 'masters';
-          else if (cat === 'test-prep') segmentSelect.value = 'test-prep';
-        }
+      const dataSeg = target.getAttribute('data-segment') || (card ? card.getAttribute('data-category') : null);
+      const modalEl = document.getElementById('consultation-modal') || ensureModal();
+      const segmentSelect = modalEl ? modalEl.querySelector('#popup-segment') : null;
+      if (segmentSelect && dataSeg) {
+        if (dataSeg === 'parent-advisory' || dataSeg.includes('parent')) segmentSelect.value = 'parent-advisory';
+        else if (dataSeg === 'ug' || dataSeg === 'undergraduate') segmentSelect.value = 'undergraduate';
+        else if (dataSeg === 'mba') segmentSelect.value = 'mba';
+        else if (dataSeg === 'masters') segmentSelect.value = 'masters';
+        else if (dataSeg === 'test-prep') segmentSelect.value = 'test-prep';
       }
       openModal();
     }
@@ -642,14 +643,14 @@ function initInstagramFeed() {
     container.innerHTML = '';
     items.slice(0, 6).forEach(item => {
       const a = document.createElement('a');
-      a.href = item.permalink || 'https://www.instagram.com/oncourseglobal';
+      a.href = item.permalink || 'https://www.instagram.com/oncoursevantage/';
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
       a.className = 'group relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-pink-500/70 transition-all duration-300 flex flex-col justify-between aspect-[9/14] shadow-lg hover:shadow-pink-500/10 hover:-translate-y-1 block';
 
       const mediaUrl = item.media_url || item.thumbnail_url || 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';
       const isVideo = item.media_type === 'VIDEO';
-      const caption = item.caption || '@oncourseglobal reel';
+      const caption = item.caption || '@oncoursevantage reel';
       const views = item.views_count ? `▶ ${(item.views_count / 1000).toFixed(1)}K` : '▶ Reel';
       const likes = item.like_count ? `❤️ ${item.like_count}` : '❤️ OnCourse';
 
@@ -673,13 +674,218 @@ function initInstagramFeed() {
             ${caption}
           </p>
           <div class="flex items-center justify-between mt-1.5 pt-1.5 border-t border-white/10 text-[9px] font-mono text-neutral-300">
-            <span class="text-pink-400 font-bold">@oncourseglobal</span>
+            <span class="text-pink-400 font-bold">@oncoursevantage</span>
             <span>${likes}</span>
           </div>
         </div>
       `;
       container.appendChild(a);
     });
+  }
+}
+
+// 10. Timeline PDF Download Gated Modal Controller
+function initTimelineDownloadModal() {
+  const modal = document.getElementById('timeline-download-modal');
+  if (!modal) return;
+
+  const backdrop = document.getElementById('timeline-modal-backdrop');
+  const closeBtn = document.getElementById('timeline-modal-close');
+  const successCloseBtn = document.getElementById('timeline-success-close');
+  const form = document.getElementById('timeline-download-form');
+  const successBox = document.getElementById('timeline-download-success');
+  const dialogWin = modal.querySelector('.relative.bg-white');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      modal.classList.remove('opacity-0');
+      if (dialogWin) {
+        dialogWin.classList.remove('scale-95');
+        dialogWin.classList.add('scale-100');
+      }
+    });
+    const firstInput = modal.querySelector('input:not([type="hidden"])');
+    if (firstInput) setTimeout(() => firstInput.focus(), 120);
+  }
+
+  function closeModal() {
+    modal.classList.add('opacity-0');
+    if (dialogWin) {
+      dialogWin.classList.remove('scale-100');
+      dialogWin.classList.add('scale-95');
+    }
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+
+  // Delegated trigger click
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-timeline-pdf], [data-open-download-modal="timeline-pdf"]');
+    if (!trigger) return;
+    e.preventDefault();
+    openModal();
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+  if (successCloseBtn) successCloseBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Hide form and show success
+      form.classList.add('hidden');
+      if (successBox) successBox.classList.remove('hidden');
+
+      // Trigger automatic PDF download
+      const downloadUrl = '../assets/docs/OnCourse-Class-8-to-12-Timelines-Guide.pdf';
+      const tempLink = document.createElement('a');
+      tempLink.href = downloadUrl;
+      tempLink.download = 'OnCourse-Class-8-to-12-Timelines-Guide.pdf';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    });
+  }
+}
+
+// 11. Events Filtering, Search & Countdown Controller
+function initEventsController() {
+  const cards = document.querySelectorAll('.event-card');
+  const countdownEl = document.getElementById('event-countdown');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('event-search');
+  const statusFilter = document.getElementById('status-filter');
+  const noResults = document.getElementById('no-results');
+  const resetBtn = document.getElementById('reset-filter-btn');
+
+  if (cards.length > 0) {
+    let currentCategory = 'all';
+    let currentStatus = 'all';
+    let currentQuery = '';
+
+    function applyFilters() {
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardStatus = card.getAttribute('data-status') || 'upcoming';
+        const cardText = card.innerText.toLowerCase();
+
+        const matchesCategory = (currentCategory === 'all') || (cardCategory === currentCategory);
+        const matchesStatus = (currentStatus === 'all') || (cardStatus === currentStatus);
+        const matchesQuery = !currentQuery || cardText.includes(currentQuery);
+
+        if (matchesCategory && matchesStatus && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-black', 'text-white');
+          b.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        btn.classList.add('active', 'bg-black', 'text-white');
+        btn.classList.remove('bg-gray-100', 'text-gray-700');
+        currentCategory = btn.getAttribute('data-category') || 'all';
+        applyFilters();
+      });
+    });
+
+    if (statusFilter) {
+      statusFilter.addEventListener('change', (e) => {
+        currentStatus = e.target.value;
+        applyFilters();
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.toLowerCase().trim();
+        applyFilters();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentQuery = '';
+        if (statusFilter) statusFilter.value = 'all';
+        currentStatus = 'all';
+        const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+        if (allBtn) {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-black', 'text-white');
+            b.classList.add('bg-gray-100', 'text-gray-700');
+          });
+          allBtn.classList.add('active', 'bg-black', 'text-white');
+          allBtn.classList.remove('bg-gray-100', 'text-gray-700');
+          currentCategory = 'all';
+        }
+        applyFilters();
+      });
+    }
+  }
+
+  // Live Countdown Timer
+  if (countdownEl) {
+    const daysEl = document.getElementById('timer-days');
+    const hoursEl = document.getElementById('timer-hours');
+    const minsEl = document.getElementById('timer-mins');
+    const secsEl = document.getElementById('timer-secs');
+    if (daysEl && hoursEl && minsEl && secsEl) {
+      const now = new Date();
+      const target = new Date();
+      const day = now.getDay();
+      let daysUntilSat = (6 - day + 7) % 7;
+      if (daysUntilSat === 0 && now.getHours() >= 17) {
+        daysUntilSat = 7;
+      }
+      target.setDate(now.getDate() + daysUntilSat);
+      target.setHours(17, 0, 0, 0);
+
+      if (target.getTime() - now.getTime() < 12 * 3600 * 1000) {
+        target.setDate(target.getDate() + 7);
+      }
+
+      function update() {
+        const currentTime = new Date().getTime();
+        const diff = Math.max(0, target.getTime() - currentTime);
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(d).padStart(2, '0');
+        hoursEl.textContent = String(h).padStart(2, '0');
+        minsEl.textContent = String(m).padStart(2, '0');
+        secsEl.textContent = String(s).padStart(2, '0');
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
   }
 }
 
