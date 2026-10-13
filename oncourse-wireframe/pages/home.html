@@ -33,41 +33,51 @@
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div id="top-announcement-bar" class="bg-black text-white py-2.5 px-4 text-center text-xs sm:text-sm font-medium relative z-50 transition-all duration-300 border-b border-neutral-800" style="background-color: #000000 !important;">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between">
+      <div class="w-6 hidden sm:block"></div>
+      <div class="flex-1 text-center font-sans tracking-wide">
+        <span>Hundreds of Ivy League Offers! See Our Record-Breaking Class of 2030 Results!</span>
+        <a href="upcoming-events.html" class="underline font-bold ml-1.5 inline-flex items-center gap-1 hover:text-gray-300 transition-colors">
+          <span>View Now</span>
+          <svg class="w-3.5 h-3.5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+      <button id="close-announcement-bar" type="button" class="text-white/80 hover:text-white p-1 text-sm leading-none ml-2 cursor-pointer transition-colors" aria-label="Close Announcement">&times;</button>
+    </div>
+  </div>
+
   <!-- ================= UNIFIED GLOBAL MEGA-MENU HEADER ================= -->
-  <!-- OnCourse Global Reusable Component: Unified Global Navigation Header -->
-<!-- Standardized 80px fixed height, identical across 100% of pages (Wireframe) -->
-<!-- OnCourse Global Reusable Component: Unified Global Navigation Header -->
-<!-- Standardized 80px fixed height, identical across 100% of pages (Wireframe) -->
-<!-- OnCourse Global Reusable Component: Unified Global Navigation Header -->
-<!-- Standardized 80px fixed height, identical across 100% of pages (Wireframe) -->
+  <!-- Standardized 80px fixed height, identical across 100% of pages (Wireframe) -->
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-xs h-20">
-  <div class="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
-    <div class="flex items-center justify-between h-full">
+  <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-8 2xl:px-12 h-full">
+    <div class="flex items-center justify-between h-full gap-4 xl:gap-6 2xl:gap-8">
       
       <!-- Section 1: Brand Logo -->
-      <div class="flex items-center flex-shrink-0">
+      <div class="flex items-center flex-shrink-0 mr-2 xl:mr-4 2xl:mr-8">
         <a href="home.html" title="OnCourse Global Home" class="flex items-center group">
           <img src="../assets/images/oncourse-logo.png" alt="OnCourse Global" class="h-8 sm:h-9 w-auto object-contain">
         </a>
       </div>
 
       <!-- Section 2: Nav Links & CTA Button -->
-      <div class="flex items-center space-x-6 2xl:space-x-8 h-full">
+      <div class="flex items-center space-x-4 xl:space-x-5 2xl:space-x-7 h-full">
         
         <!-- Desktop Nav Links -->
-        <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 text-[13px] 2xl:text-sm font-semibold text-gray-700 h-full">
+        <nav class="hidden xl:flex items-center space-x-3.5 xl:space-x-4 2xl:space-x-6 text-[12.5px] xl:text-[13px] 2xl:text-[14px] font-semibold text-gray-700 h-full">
           
           <!-- 0. HOME (Direct Link) -->
-          <a href="home.html" class="hover:text-black transition-colors py-2 text-gray-800">Home</a>
+          <a href="home.html" class="whitespace-nowrap shrink-0 hover:text-black transition-colors py-2 text-gray-800">Home</a>
 
           <!-- 1. ABOUT US (Direct Link, No Dropdown) -->
-          <a href="about.html" class="hover:text-black transition-colors py-2 text-gray-800">About Us</a>
+          <a href="about.html" class="whitespace-nowrap shrink-0 hover:text-black transition-colors py-2 text-gray-800">About Us</a>
 
           <!-- 2. UNDERGRADUATE (With Programs Dropdown) -->
-          <div class="relative group h-full flex items-center nav-item-has-menu">
-            <a href="undergraduate.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+          <div class="relative group h-full flex items-center nav-item-has-menu shrink-0">
+            <a href="undergraduate.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-black transition-colors py-2 text-gray-800">
               <span>Undergraduate</span>
-              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
               <a href="undergraduate.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -94,10 +104,10 @@
           </div>
 
           <!-- 3. MASTER'S (With Red Dot & Programs Dropdown) -->
-          <div class="relative group h-full flex items-center nav-item-has-menu">
-            <a href="masters.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+          <div class="relative group h-full flex items-center nav-item-has-menu shrink-0">
+            <a href="masters.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-black transition-colors py-2 text-gray-800">
               <span>Master's</span>
-              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
               <a href="masters.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -124,10 +134,10 @@
           </div>
 
           <!-- 4. MBA (With Red Dot & Programs Dropdown) -->
-          <div class="relative group h-full flex items-center nav-item-has-menu">
-            <a href="mba.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
+          <div class="relative group h-full flex items-center nav-item-has-menu shrink-0">
+            <a href="mba.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-black transition-colors py-2 text-gray-800">
               <span>MBA</span>
-              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
               <a href="mba.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -154,10 +164,10 @@
           </div>
 
           <!-- 5. TEST PREP (With Dropdown) -->
-          <div class="relative group h-full flex items-center nav-item-has-menu">
-            <a href="test-prep.html" class="inline-flex items-center gap-1 hover:text-black transition-colors py-2 text-gray-800">
-              <span>Test Prep</span>
-              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <div class="relative group h-full flex items-center nav-item-has-menu shrink-0">
+            <a href="test-prep.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-black transition-colors py-2 text-gray-800">
+              <span class="whitespace-nowrap">Test Prep</span>
+              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
               <a href="test-prep.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
@@ -183,25 +193,51 @@
             </div>
           </div>
 
-          <!-- 6. CONTACT US (Direct Link, No Dropdown) -->
-          <a href="contact.html" class="hover:text-black transition-colors py-2 text-gray-800">Contact Us</a>
+          <!-- 6. EVENTS (Matching Screenshot 2) -->
+          <div class="relative group h-full flex items-center nav-item-has-menu shrink-0">
+            <a href="upcoming-events.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-black transition-colors py-2 text-gray-800">
+              <span class="whitespace-nowrap">Events</span>
+              <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black transition-transform group-hover:rotate-180 duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <div class="absolute top-20 left-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 space-y-1">
+              <a href="upcoming-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">All Live Events</span>
+                <span class="text-[11px] text-gray-500 block">Admissions director panels &amp; masterclasses</span>
+              </a>
+              <a href="undergraduate-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">Undergraduate Events</span>
+                <span class="text-[11px] text-gray-500 block">Class 8–12 Ivy &amp; Oxbridge sessions</span>
+              </a>
+              <a href="masters-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">Master's Events</span>
+                <span class="text-[11px] text-gray-500 block">STEM &amp; postgraduate strategy</span>
+              </a>
+              <a href="mba-events.html" class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <span class="text-xs font-bold text-gray-900 block">MBA Roundtables</span>
+                <span class="text-[11px] text-gray-500 block">M7 admissions director panels</span>
+              </a>
+            </div>
+          </div>
 
-          <!-- 7. JOIN OUR TEAM (Direct Link, No Dropdown) -->
-          <a href="careers.html" class="hover:text-black transition-colors py-2 text-gray-800">
+          <!-- 7. CONTACT US (Direct Link, No Dropdown) -->
+          <a href="contact.html" class="whitespace-nowrap shrink-0 hover:text-black transition-colors py-2 text-gray-800">Contact Us</a>
+
+          <!-- 8. JOIN OUR TEAM (Direct Link, No Dropdown) -->
+          <a href="careers.html" class="whitespace-nowrap shrink-0 hover:text-black transition-colors py-2 text-gray-800">
             Join Our Team
           </a>
 
         </nav>
 
         <!-- CTA Button -->
-        <a href="contact.html#consultation-form" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-md bg-black text-white hover:bg-gray-800 font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all whitespace-nowrap">
-          Book Consultation
+        <a href="contact.html#consultation-form" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-md bg-black text-white hover:bg-neutral-800 font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all whitespace-nowrap shrink-0">
+          Get Started
         </a>
 
         <!-- Mobile / Tablet Hamburger (< xl) -->
         <div class="flex xl:hidden items-center space-x-2">
-          <a href="contact.html#consultation-form" class="sm:hidden px-3 py-1.5 rounded-md bg-black text-white text-xs font-bold">
-            Book
+          <a href="contact.html#consultation-form" class="sm:hidden px-3 py-1.5 rounded-md bg-black text-white text-xs font-bold whitespace-nowrap">
+            Get Started
           </a>
           <button id="mobile-menu-toggle" type="button" class="p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-100" aria-label="Toggle Navigation">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -290,7 +326,15 @@
       </div>
     </div>
 
-    <!-- 6. Contact Us -->
+    <!-- 6. Events (Matching Screenshot 2) -->
+    <div class="border-b border-gray-100 pb-2">
+      <a href="upcoming-events.html" class="text-xs font-black uppercase tracking-wider text-black block py-1 flex items-center justify-between">
+        <span>Events</span>
+        <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-red-100 text-red-700 font-bold">Live &amp; Upcoming</span>
+      </a>
+    </div>
+
+    <!-- 7. Contact Us -->
     <div class="border-b border-gray-100 pb-2">
       <a href="contact.html" class="text-xs font-black uppercase tracking-wider text-black block py-1">Contact Us</a>
     </div>
@@ -315,19 +359,33 @@
 
   <main class="flex-grow">
 
-    <!-- ================= 1. HERO SECTION: FULL-SCREEN BACKGROUND VIDEO/IMAGE (WHITE OVERLAY & BLACK TEXT) ================= -->
-    <section id="hero" class="relative bg-white text-black min-h-[92vh] flex items-center overflow-hidden py-16 lg:py-24 border-b border-gray-200">
-      <!-- Full-screen Background Video / Image Container -->
-      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <!-- Video Element with Fallback Poster Image -->
-        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-students-walking-in-a-university-campus-43387-large.mp4" type="video/mp4">
-        </video>
-        <!-- Fallback Image if video is loading or restricted -->
-        <div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80');"></div>
+    <!-- ================= 1. HERO SECTION: MASTER BANNER SLIDER (VIDEO + 4 CURATED IMAGES) ================= -->
+    <section id="hero" class="relative bg-white text-black min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] flex items-center overflow-hidden py-8 lg:py-10 border-b border-gray-200" aria-label="Master Banner">
+      <!-- Full-screen Background Slider Track (Video Slide + 4 Photography Slides) -->
+      <div id="hero-slider-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        
+        <!-- Slide 0: Campus Atmosphere Video Slide -->
+        <div class="hero-bg-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100" data-hero-slide="0" data-hero-type="video">
+          <video id="hero-bg-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-students-walking-in-a-university-campus-43387-large.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Slide 1: Ivy League & Top 20 Admits Celebration -->
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" data-hero-slide="1" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80');"></div>
+
+        <!-- Slide 2: 1-on-1 Dual Mentorship Strategic Session -->
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" data-hero-slide="2" style="background-image: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1920&q=80');"></div>
+
+        <!-- Slide 3: Oxford & Cambridge Collegiate Quad -->
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" data-hero-slide="3" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80');"></div>
+
+        <!-- Slide 4: MBA & Executive Cohort Seminar -->
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" data-hero-slide="4" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80');"></div>
+
         <!-- High-end White Gradient Overlay: solid on left for text legibility, transparent on right to showcase video/image -->
-        <div class="absolute inset-0" style="background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.98) 32%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0.15) 68%, rgba(255, 255, 255, 0) 100%);"></div>
-        <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 15%, transparent 85%, rgba(255, 255, 255, 0.5) 100%);"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.98) 34%, rgba(255, 255, 255, 0.72) 50%, rgba(255, 255, 255, 0.18) 72%, rgba(255, 255, 255, 0.05) 100%);"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 15%, transparent 85%, rgba(255, 255, 255, 0.6) 100%);"></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -366,9 +424,9 @@
             </div>
           </div>
 
-          <!-- Primary CTA (Book a Consultation) -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="contact.html#consultation-form" class="px-7 py-3.5 rounded-xl bg-black text-white hover:bg-neutral-800 font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center gap-2 group cursor-pointer">
+          <!-- Primary CTA Button -->
+          <div class="pt-2">
+            <a href="contact.html#consultation-form" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-black text-white hover:bg-neutral-800 font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl group cursor-pointer">
               <span>Book a Consultation</span>
               <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
             </a>
@@ -839,87 +897,97 @@
       </div>
     </section>
 
-    <!-- ================= 3. THE 2-MENTOR MODEL (PROMINENT HOME PAGE FEATURE) ================= -->
-    <section id="dual-mentor" class="py-14 lg:py-16 bg-white border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-black text-white mb-2.5">
-            <span>The OnCourse Differentiator</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
-            2 Dedicated Mentors For Every Student
-          </h2>
-          <p class="text-sm sm:text-base text-gray-600 mt-2 leading-relaxed">
-            One advisor cannot do everything. Every student is guided by two specialized mentors: a Senior Counselor for admissions strategy and a Dedicated Mentor for authentic narrative craftsmanship and execution.
-          </p>
-        </div>
+    <!-- ================= 3. WHY FAMILIES WORK WITH US (MATCHING SCREENSHOT 1) ================= -->
+    <section id="why-families" class="py-16 lg:py-24 bg-[#0c0d11] text-white border-b border-neutral-800 relative overflow-hidden">
+      <!-- Technical dot background -->
+      <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
 
-        <!-- 2 Symmetrical Mentor Role Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Mentor 1: Senior Counselor -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-gray-50 border-2 border-gray-300 hover:border-black transition-colors shadow-xs flex flex-col justify-between">
+          <!-- Left Column: Content & 4 Interactive Tabs (5 Cols) -->
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            
+            <!-- Eyebrow (matching styling ref Proven Results) -->
+            <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-neutral-400 block mb-2">The OnCourse Differentiator</span>
+
+            <!-- Main Heading (matching styling ref Proven Results) -->
+            <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-black text-white tracking-tight leading-tight mb-4">
+              2 Dedicated Mentors For Every Student
+            </h2>
+
+            <!-- Supporting Paragraph -->
+            <p class="text-sm sm:text-[15px] text-neutral-400 leading-relaxed mb-7 max-w-xl">
+              One advisor cannot do everything. Every student is guided by two specialized mentors: a Senior Counselor for admissions strategy and a Dedicated Mentor for authentic narrative craftsmanship and execution.
+            </p>
+
+            <!-- 2 Interactive Tab Buttons (Vertical Stack) -->
+            <div id="why-families-tabs" class="space-y-2.5 mb-7">
+              
+              <!-- Tab 0: Senior Counselor (Active by default) -->
+              <button type="button" class="why-tab-btn w-full text-left px-5 py-3.5 rounded-xl border border-neutral-400 bg-[#16181f] text-white font-bold transition-all cursor-pointer text-sm shadow-md flex items-center justify-between" data-index="0">
+                <span>Senior Counselor</span>
+                <span class="text-xs text-[#e11d48] font-mono tab-arrow">&bull;</span>
+              </button>
+
+              <!-- Tab 1: Dedicated Mentor -->
+              <button type="button" class="why-tab-btn w-full text-left px-5 py-3.5 rounded-xl border border-neutral-800 hover:border-neutral-600 bg-transparent text-neutral-300 hover:text-white transition-all cursor-pointer font-medium text-sm flex items-center justify-between" data-index="1">
+                <span>Dedicated Mentor</span>
+                <span class="text-xs text-neutral-500 font-mono tab-arrow hidden">&rarr;</span>
+              </button>
+
+            </div>
+
+            <!-- Section CTA Button -->
             <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-0.5 rounded-full bg-black text-white text-[11px] font-bold uppercase tracking-wider">Mentor 01</span>
-                <span class="text-xs font-mono font-bold text-gray-500">Admissions Strategy</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-1">Senior Counselor</h3>
-              <p class="text-xs font-semibold text-gray-600 mb-4">Admissions Strategy & Timeline Lead</p>
-              <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700">
-                <li class="flex items-start gap-2">
-                  <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>University Shortlisting:</strong> Calibrated dream, target, and safe university lists.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Academic Roadmap:</strong> Curriculum choice and rigor calibration for global targets.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Milestone Governance:</strong> Structured family syncs and deadline management.</span>
-                </li>
-              </ul>
+              <a href="contact.html#consultation-form" data-open-modal="consultation" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-neutral-100 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl cursor-pointer group">
+                <span>Get Started</span>
+                <span class="text-xs transition-transform group-hover:translate-x-1">&rarr;</span>
+              </a>
             </div>
-            <div class="mt-6 pt-3 border-t border-gray-200 text-xs font-bold text-gray-700 flex items-center justify-between">
-              <span>Strategy &amp; Oversight</span>
-              <span class="text-black">&rarr;</span>
-            </div>
+
           </div>
 
-          <!-- Mentor 2: Dedicated Mentor -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-gray-50 border-2 border-gray-300 hover:border-black transition-colors shadow-xs flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-0.5 rounded-full bg-black text-white text-[11px] font-bold uppercase tracking-wider">Mentor 02</span>
-                <span class="text-xs font-mono font-bold text-gray-500">Narrative & Execution</span>
+          <!-- Right Column: Interactive Mentor Slider (NO IMAGE - 4 SLIDERS PER MENTOR) (7 Cols) -->
+          <div class="lg:col-span-7">
+            <div class="relative rounded-[28px] overflow-hidden p-6 sm:p-8 lg:p-10 shadow-2xl border border-neutral-800/80 bg-gradient-to-br from-[#161821] via-[#121319] to-[#0c0d12] flex flex-col justify-between min-h-[460px] group">
+              
+              <!-- Subtle decorative grid & radial glow -->
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(225,29,72,0.1),transparent_70%)] pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+
+              <!-- Mentor Dynamic Slide Content Display -->
+              <div id="mentor-slider-viewport" class="relative z-10 py-6 my-auto transition-opacity duration-300">
+                <div class="flex items-center gap-2 text-xs font-mono text-rose-400 font-bold mb-1.5 uppercase tracking-wider">
+                  <span id="slide-step-number">STEP 01</span>
+                  <span>&bull;</span>
+                  <span id="slide-step-focus">INSTITUTIONAL BENCHMARKING</span>
+                </div>
+
+                <h3 id="slide-title" class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug mb-3">
+                  Target School Matrix &amp; Probability Modeling
+                </h3>
+
+                <p id="slide-description" class="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-2xl font-normal">
+                  Our Senior Counselors analyze 10+ years of historical admit data across 1,200+ offers to architect a balanced university list (Reach, Target, Safety) and optimize Early Decision (ED/EA) timing.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-1">Dedicated Mentor</h3>
-              <p class="text-xs font-semibold text-gray-600 mb-4">Narrative Craftsmanship & Extracurricular Spikes</p>
-              <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700">
-                <li class="flex items-start gap-2">
-                  <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Extracurricular Spikes:</strong> Independent research, initiatives, and community impact.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Essay Crafting:</strong> 1-on-1 drafting for personal statements and institutional supplements.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-black font-bold mt-0.5">&check;</span>
-                  <span><strong>Interview Prep:</strong> Collegiate mock interview simulations and positioning prep.</span>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-6 pt-3 border-t border-gray-200 text-xs font-bold text-gray-700 flex items-center justify-between">
-              <span>Authentic Voice &amp; Craft</span>
-              <span class="text-black">&rarr;</span>
+
+              <!-- Bottom Bar: 4 Carousel Indicator Dots -->
+              <div class="relative z-10 pt-4 border-t border-neutral-800/80 flex items-center justify-end">
+                <!-- 4 Dot Selectors for 4 Sliders -->
+                <div id="mentor-carousel-dots" class="flex items-center gap-2">
+                  <button type="button" class="mentor-dot-btn w-6 h-2 rounded-full bg-[#e11d48] transition-all cursor-pointer" data-slide="0" aria-label="Slide 1"></button>
+                  <button type="button" class="mentor-dot-btn w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all cursor-pointer" data-slide="1" aria-label="Slide 2"></button>
+                  <button type="button" class="mentor-dot-btn w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all cursor-pointer" data-slide="2" aria-label="Slide 3"></button>
+                  <button type="button" class="mentor-dot-btn w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all cursor-pointer" data-slide="3" aria-label="Slide 4"></button>
+                </div>
+              </div>
+
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
 
@@ -950,64 +1018,18 @@
           </div>
         </div>
 
-        <!-- TOP ROW: 4 Columns (Stacked Metrics, Tall Metric, Testimonial Cards) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 items-stretch">
+        <!-- 4 PRIMARY CATEGORY TESTIMONIALS (UNDERGRADUATE, MBA, MASTER'S, TEST PREP) -->
+        <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 items-stretch">
           
-          <!-- Column 1: Two Stacked Black Cards (Metric 01 & Metric 03) -->
-          <div class="flex flex-col gap-4 justify-between h-full">
-            
-            <!-- Metric 01: [XX%] Top-Choice Placement -->
-            <div class="bg-[#14151a] text-white rounded-2xl p-5 border border-neutral-800 shadow-md flex flex-col justify-between flex-1">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">METRIC 01</span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-                </div>
-                <div class="text-4xl sm:text-[40px] font-black tracking-tight text-white leading-none font-mono">[XX%]</div>
-                <div class="text-[10px] font-bold uppercase tracking-wider text-neutral-300 mt-2">TOP-CHOICE PLACEMENT</div>
-              </div>
-              <div class="text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-2.5 mt-3">
-                [Client to confirm]
-              </div>
-            </div>
-
-            <!-- Metric 03: [$XX M+] Merit Aid Secured -->
-            <div class="bg-[#14151a] text-white rounded-2xl p-5 border border-neutral-800 shadow-md flex flex-col justify-between flex-1">
-              <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">METRIC 03</span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-                </div>
-                <div class="text-3xl sm:text-[36px] font-black tracking-tight text-white leading-none font-mono">[$XX M+]</div>
-                <div class="text-[10px] font-bold uppercase tracking-wider text-neutral-300 mt-2">MERIT AID SECURED</div>
-              </div>
-              <div class="text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-2.5 mt-3">
-                [Client to confirm]
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Column 2: One Tall Black Card (Metric 02: [X,XXX+] Offers Received) -->
-          <div class="bg-[#14151a] text-white rounded-2xl p-6 border border-neutral-800 shadow-md flex flex-col justify-between h-full">
-            <div class="flex items-center justify-between">
-              <span class="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">METRIC 02</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-            </div>
-            <div class="my-auto py-8">
-              <div class="text-4xl sm:text-5xl font-black tracking-tight text-white leading-none font-mono">[X,XXX+]</div>
-              <div class="text-xs font-bold uppercase tracking-wider text-neutral-300 mt-2">OFFERS RECEIVED</div>
-            </div>
-            <div class="text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-3">
-              [Client to confirm]
-            </div>
-          </div>
-
-          <!-- Column 3: White Testimonial Card (Tanya K. - Oxford PPE) -->
-          <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm flex flex-col justify-between h-full">
+          <!-- Card 1: UNDERGRADUATE -->
+          <div class="testimonial-card bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:border-black hover:shadow-md transition-all flex flex-col justify-between h-full group" data-category="undergraduate">
             <div>
-              <div class="flex items-center pb-2 mb-2">
-                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[9px] font-bold uppercase font-mono tracking-wider">UNDERGRADUATE</span>
+              <div class="flex items-center justify-between pb-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-[9px] font-bold uppercase font-mono tracking-wider flex items-center gap-1">
+                  <span>🎓</span>
+                  <span>UNDERGRADUATE</span>
+                </span>
+                <span class="text-[10px] font-mono text-gray-400">Class of '28</span>
               </div>
               <div class="text-2xl font-serif text-gray-300 leading-none select-none">&ldquo;</div>
               <blockquote class="text-[11px] font-medium text-gray-800 leading-relaxed italic mt-1">
@@ -1023,19 +1045,23 @@
                   <div class="text-[10px] text-gray-500">PPE &bull; University of Oxford</div>
                 </div>
               </div>
-              <a href="undergraduate-success.html" class="text-black font-bold text-[10px] font-mono hover:underline whitespace-nowrap shrink-0">Read Story &rarr;</a>
+              <a href="testimonials.html" class="text-black font-bold text-[10px] font-mono hover:underline whitespace-nowrap shrink-0">Read Story &rarr;</a>
             </div>
           </div>
 
-          <!-- Column 4: Second White Testimonial Card (Rohan S. - Stanford) -->
-          <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm flex flex-col justify-between h-full">
+          <!-- Card 2: MBA -->
+          <div class="testimonial-card bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:border-black hover:shadow-md transition-all flex flex-col justify-between h-full group" data-category="mba">
             <div>
-              <div class="flex items-center pb-2 mb-2">
-                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[9px] font-bold uppercase font-mono tracking-wider">UNDERGRADUATE</span>
+              <div class="flex items-center justify-between pb-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[9px] font-bold uppercase font-mono tracking-wider flex items-center gap-1">
+                  <span>💼</span>
+                  <span>MBA ADVISORY</span>
+                </span>
+                <span class="text-[10px] font-mono text-gray-400">Class of '26</span>
               </div>
               <div class="text-2xl font-serif text-gray-300 leading-none select-none">&ldquo;</div>
               <blockquote class="text-[11px] font-medium text-gray-800 leading-relaxed italic mt-1">
-                Crafting a distinctive high-conviction narrative around my renewable policy capstone allowed me to stand out in Stanford's most competitive admissions cycle.
+                Crafting a distinctive high-conviction narrative around my renewable policy capstone allowed me to stand out in Stanford GSB's most competitive admissions cycle.
               </blockquote>
             </div>
 
@@ -1044,27 +1070,92 @@
                 <div class="w-7 h-7 rounded-full bg-[#0d121c] text-white flex items-center justify-center font-bold text-[10px] shrink-0">RS</div>
                 <div>
                   <div class="font-bold text-xs text-gray-900 leading-tight">Rohan S.</div>
-                  <div class="text-[10px] text-gray-500">Economics &bull; Stanford University</div>
+                  <div class="text-[10px] text-gray-500">MBA &bull; Stanford GSB</div>
                 </div>
               </div>
-              <a href="undergraduate-success.html" class="text-black font-bold text-[10px] font-mono hover:underline whitespace-nowrap shrink-0">Read Story &rarr;</a>
+              <a href="testimonials.html" class="text-black font-bold text-[10px] font-mono hover:underline whitespace-nowrap shrink-0">Read Story &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Card 3: MASTER'S -->
+          <div class="testimonial-card bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:border-black hover:shadow-md transition-all flex flex-col justify-between h-full group" data-category="masters">
+            <div>
+              <div class="flex items-center justify-between pb-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 text-[9px] font-bold uppercase font-mono tracking-wider flex items-center gap-1">
+                  <span>🔬</span>
+                  <span>MASTER'S</span>
+                </span>
+                <span class="text-[10px] font-mono text-gray-400">Class of '25</span>
+              </div>
+              <div class="text-2xl font-serif text-gray-300 leading-none select-none">&ldquo;</div>
+              <blockquote class="text-[11px] font-medium text-gray-800 leading-relaxed italic mt-1">
+                The specialized technical guidance on articulating my machine learning research papers and lab outreach strategy made all the difference in securing fully funded admits at MIT and CMU.
+              </blockquote>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-[#0d121c] text-white flex items-center justify-center font-bold text-[10px] shrink-0">AR</div>
+                <div>
+                  <div class="font-bold text-xs text-gray-900 leading-tight">Ananya R.</div>
+                  <div class="text-[10px] text-gray-500">MS CS &bull; MIT</div>
+                </div>
+              </div>
+              <a href="testimonials.html" class="text-black font-bold text-[10px] font-mono hover:underline whitespace-nowrap shrink-0">Read Story &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Card 4: TEST PREPARATION -->
+          <div class="testimonial-card bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:border-black hover:shadow-md transition-all flex flex-col justify-between h-full group" data-category="test-prep">
+            <div>
+              <div class="flex items-center justify-between pb-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[9px] font-bold uppercase font-mono tracking-wider flex items-center gap-1">
+                  <span>📊</span>
+                  <span>TEST PREP</span>
+                </span>
+                <span class="text-[10px] font-mono text-emerald-600 font-bold">1580 SAT</span>
+              </div>
+              <div class="text-2xl font-serif text-gray-300 leading-none select-none">&ldquo;</div>
+              <blockquote class="text-[11px] font-medium text-gray-800 leading-relaxed italic mt-1">
+                Targeted diagnostic score analytics and adaptive test drills helped me jump 190 points on the Digital SAT in 8 weeks, giving my profile an undeniable academic foundation.
+              </blockquote>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-[#0d121c] text-white flex items-center justify-center font-bold text-[10px] shrink-0">DP</div>
+                <div>
+                  <div class="font-bold text-xs text-gray-900 leading-tight">Dev P.</div>
+                  <div class="text-[10px] text-gray-500">Digital SAT 1580 / ACT 35</div>
+                </div>
+              </div>
+              <a href="testimonials.html" class="text-black font-bold text-[10px] font-mono hover:underline whitespace-nowrap shrink-0">Read Story &rarr;</a>
             </div>
           </div>
 
         </div>
 
-        <!-- BOTTOM ROW: 4 9:16 Vertical Instagram Reel Cards (Exactly As In Image) -->
+        <!-- BOTTOM ROW: 4 9:16 Vertical Instagram Reel Cards (Linked to @oncoursevantage) -->
         <div id="carousel-track" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
           
           <!-- Reel 1: Advait M. -->
-          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+          <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950 block">
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+
+            <!-- Top Reel & Handle Badge -->
+            <div class="relative z-10 p-3 flex justify-between items-center">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur text-white text-[9px] font-mono font-bold uppercase tracking-wider border border-white/20 flex items-center gap-1">
+                <svg class="w-2.5 h-2.5 fill-pink-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                <span>@oncoursevantage</span>
+              </span>
+              <span class="text-[10px] text-white/90 font-mono font-bold drop-shadow">▶ 24.5K</span>
+            </div>
 
             <!-- Center Play Button -->
             <div class="relative z-10 my-auto text-center">
-              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+              <div class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 border border-white/40">
                 ▶
-              </button>
+              </div>
             </div>
             
             <!-- Bottom Details Overlay -->
@@ -1074,20 +1165,29 @@
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">AM</div>
-                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Advait M.</div>
+                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Advait M. &bull; Harvard Admit Story</div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- Reel 2: Tanya K. -->
-          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+          <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950 block">
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+
+            <!-- Top Reel & Handle Badge -->
+            <div class="relative z-10 p-3 flex justify-between items-center">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur text-white text-[9px] font-mono font-bold uppercase tracking-wider border border-white/20 flex items-center gap-1">
+                <svg class="w-2.5 h-2.5 fill-pink-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                <span>@oncoursevantage</span>
+              </span>
+              <span class="text-[10px] text-white/90 font-mono font-bold drop-shadow">▶ 18.2K</span>
+            </div>
 
             <!-- Center Play Button -->
             <div class="relative z-10 my-auto text-center">
-              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+              <div class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 border border-white/40">
                 ▶
-              </button>
+              </div>
             </div>
             
             <!-- Bottom Details Overlay -->
@@ -1097,20 +1197,29 @@
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">TK</div>
-                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Tanya K.</div>
+                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Tanya K. &bull; Oxford PPE Admit</div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- Reel 3: Rohan S. -->
-          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+          <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950 block">
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+
+            <!-- Top Reel & Handle Badge -->
+            <div class="relative z-10 p-3 flex justify-between items-center">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur text-white text-[9px] font-mono font-bold uppercase tracking-wider border border-white/20 flex items-center gap-1">
+                <svg class="w-2.5 h-2.5 fill-pink-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                <span>@oncoursevantage</span>
+              </span>
+              <span class="text-[10px] text-white/90 font-mono font-bold drop-shadow">▶ 28.7K</span>
+            </div>
 
             <!-- Center Play Button -->
             <div class="relative z-10 my-auto text-center">
-              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+              <div class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 border border-white/40">
                 ▶
-              </button>
+              </div>
             </div>
             
             <!-- Bottom Details Overlay -->
@@ -1120,20 +1229,29 @@
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">RS</div>
-                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Rohan S.</div>
+                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Rohan S. &bull; Stanford GSB Admit</div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- Reel 4: Kabir D. -->
-          <div class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950">
+          <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="h-[460px] rounded-2xl border border-gray-200 shadow-md hover:border-black transition-all flex flex-col justify-between overflow-hidden group relative bg-slate-950 block">
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&h=1067&q=80');"></div>
+
+            <!-- Top Reel & Handle Badge -->
+            <div class="relative z-10 p-3 flex justify-between items-center">
+              <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur text-white text-[9px] font-mono font-bold uppercase tracking-wider border border-white/20 flex items-center gap-1">
+                <svg class="w-2.5 h-2.5 fill-pink-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                <span>@oncoursevantage</span>
+              </span>
+              <span class="text-[10px] text-white/90 font-mono font-bold drop-shadow">▶ 15.9K</span>
+            </div>
 
             <!-- Center Play Button -->
             <div class="relative z-10 my-auto text-center">
-              <button type="button" class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 cursor-pointer border border-white/40" aria-label="Play Reel">
+              <div class="w-12 h-12 rounded-full bg-white/95 text-black flex items-center justify-center mx-auto text-lg shadow-2xl group-hover:scale-115 group-hover:bg-white transition-all pl-0.5 border border-white/40">
                 ▶
-              </button>
+              </div>
             </div>
             
             <!-- Bottom Details Overlay -->
@@ -1143,10 +1261,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-6 h-6 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center font-bold text-[9px] text-white">KD</div>
-                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Kabir D.</div>
+                <div class="font-bold text-xs sm:text-sm text-white leading-tight">Kabir D. &bull; Columbia SEAS Admit</div>
               </div>
             </div>
-          </div>
+          </a>
 
         </div>
 
@@ -1158,11 +1276,11 @@
           <button type="button" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all cursor-pointer" data-index="3" aria-label="Slide 4"></button>
         </div>
 
-        <!-- Centered Case Studies Link (As in Mockup) -->
-        <div class="text-center mt-6">
-          <a href="undergraduate-success.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:underline">
-            <span>Explore All Verified Case Studies</span>
-            <span>&rarr;</span>
+        <!-- View All Testimonials Button (Direct link to Testimonials Landing Page Under Video Reels) -->
+        <div class="text-center mt-8">
+          <a href="testimonials.html" class="px-8 py-3.5 rounded-xl bg-black text-white hover:bg-neutral-800 font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2 group cursor-pointer">
+            <span>View All Testimonials</span>
+            <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
           </a>
         </div>
 
@@ -1263,102 +1381,403 @@
       </div>
     </section>
 
-    <!-- ================= 6. INSTITUTIONAL OUTCOMES & PROVEN TRACK RECORD (EXACT AS USER MOCKUP) ================= -->
-    <section class="py-16 lg:py-20 bg-white border-b border-gray-200">
+    <!-- ================= 6. ONCOURSE KNOWLEDGE CENTRES (UNDERGRADUATE, MBA, MASTER'S) ================= -->
+    <section id="knowledge-centres" class="py-16 lg:py-24 bg-white border-b border-gray-200 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-gray-500">INSTITUTIONAL OUTCOMES &amp; PROVEN TRACK RECORD</span>
-          <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-black text-gray-900 tracking-tight mt-2 leading-tight">
-            Our Students Have Earned Offers From Leading Institutions Worldwide
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-black text-white mb-2.5">
+            <span>OnCourse Knowledge Centres</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-black text-gray-900 tracking-tight leading-tight">
+            Admissions Intelligence &amp; Playbooks
           </h2>
-          <p class="text-xs sm:text-sm text-gray-500 mt-2.5">
-            Empirical admissions outcomes across the world's most competitive undergraduate, graduate, and business programs.
+          <p class="text-sm sm:text-base text-gray-600 mt-2.5 leading-relaxed">
+            Data-backed admissions frameworks, essay blueprints, and curriculum timelines engineered from 1,200+ global admissions outcomes.
           </p>
         </div>
 
-        <!-- 10 Institutional Outcome Cards (2 Rows of 5 on Desktop) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5 max-w-6xl mx-auto">
+        <!-- 1. UNDERGRADUATE ARTICLES (Active Default) -->
+        <div id="playbooks-undergraduate" class="playbook-category-panel grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto transition-opacity duration-300">
           
-          <!-- 1. Harvard University -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">H</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Harvard University</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Cambridge, MA &bull; Ivy League</div>
-          </div>
+          <!-- Article 1: UG Spike Design -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-mono font-bold uppercase tracking-wider border border-blue-200">
+                  Extracurricular Spike
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">8 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                The Class 8–12 Ivy League Profile: Designing Authentic Research Spikes Over Generic Activity Lists
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                How top applicants construct independent research capstones and published papers that withstand committee skepticism at Harvard, Yale, and Princeton.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Faculty cold-outreach protocols</div>
+                <div>&bull; Journal review rubrics</div>
+                <div>&bull; 4-year progression matrix</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Senior UG Advisory Lead</span>
+              <a href="undergraduate-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
 
-          <!-- 2. Stanford University -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">S</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Stanford University</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Stanford, CA &bull; Top 5 US</div>
-          </div>
+          <!-- Article 2: UG Common App Essays -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-mono font-bold uppercase tracking-wider border border-blue-200">
+                  Essay Masterclass
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">6 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Common App &amp; UCAS Personal Statements: 5 Clichés That Immediately Reject Strong Candidates
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                Deconstructing overused metaphors in college admissions essays and rebuilding authentic intellectual curiosity with our Dedicated Mentor framework.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Deconstruction of 12 winning essays</div>
+                <div>&bull; Voice calibration techniques</div>
+                <div>&bull; The "Why Major" trap analysis</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Lead Storytelling Mentor</span>
+              <a href="undergraduate-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
 
-          <!-- 3. University of Oxford -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-lg text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">Ox</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">University of Oxford</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Oxford, UK &bull; Oxbridge</div>
-          </div>
-
-          <!-- 4. University of Cambridge -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-base text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">Cam</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">University of Cambridge</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Cambridge, UK &bull; Oxbridge</div>
-          </div>
-
-          <!-- 5. The Wharton School -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">W</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">The Wharton School</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">UPenn &bull; Ivy League</div>
-          </div>
-
-          <!-- 6. MIT -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-mono font-black text-sm text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">MIT</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">MIT</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">Cambridge, MA &bull; Global #1 STEM</div>
-          </div>
-
-          <!-- 7. Columbia University -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-base text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">CU</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Columbia University</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">New York, NY &bull; Ivy League</div>
-          </div>
-
-          <!-- 8. Yale University -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-xl text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">Y</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Yale University</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">New Haven, CT &bull; Ivy League</div>
-          </div>
-
-          <!-- 9. INSEAD -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-sans font-black text-xs text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">INS</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">INSEAD</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">France &amp; Singapore &bull; Top MBA</div>
-          </div>
-
-          <!-- 10. Imperial College London -->
-          <div class="p-5 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-black hover:shadow-md transition-all flex flex-col justify-center items-center text-center group">
-            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center font-serif font-black text-sm text-gray-900 mb-3 group-hover:bg-black group-hover:text-white transition-colors">ICL</div>
-            <div class="font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Imperial College London</div>
-            <div class="text-[10px] sm:text-[11px] font-mono text-gray-400 mt-1">London, UK &bull; Russell Group</div>
-          </div>
+          <!-- Article 3: UG Oxbridge Interviews -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-mono font-bold uppercase tracking-wider border border-blue-200">
+                  Oxbridge Advisory
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">7 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Oxford &amp; Cambridge Tutorial Prep: Navigating Unscripted Socratic Interview Scenarios
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                What UK admissions tutors look for during collegiate interviews for PPE, Economics, Natural Sciences, and Law, including mock breakdown frameworks.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; TSA &amp; MAT entrance test strategy</div>
+                <div>&bull; Handling intellectual pushback</div>
+                <div>&bull; Collegiate selection strategy</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Oxford Alum &bull; Senior Counselor</span>
+              <a href="undergraduate-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
 
         </div>
 
-        <!-- Bottom Centered Subtitle / Note -->
-        <div class="text-center mt-8">
-          <p class="text-xs font-mono text-gray-400">
-            Direct mentorship outcomes across undergraduate, postgraduate, and business school admissions.
-          </p>
+        <!-- 2. MBA ARTICLES (Hidden By Default) -->
+        <div id="playbooks-mba" class="playbook-category-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto transition-opacity duration-300">
+          
+          <!-- Article 1: M7 Leadership Narrative -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-amber-200">
+                  M7 Leadership
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">9 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                The M7 Leadership Essay Blueprint: Transforming Corporate Progression into Visionary Narrative
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                How to differentiate private equity, management consulting, and Big Tech backgrounds when applying to Harvard Business School, Stanford GSB, and Wharton.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; What Wharton's committee looks for</div>
+                <div>&bull; Stanford GSB "What Matters Most"</div>
+                <div>&bull; Quantifying enterprise leadership</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Former Wharton Interviewer</span>
+              <a href="mba-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2: Recommender Packs -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-amber-200">
+                  Recommender Strategy
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">6 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Executive Recommender Briefs: Preparing Senior Partners &amp; MDs to Write Decisive Letters
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                A structured methodology for equipping your busy C-suite managers with concrete examples, benchmarking metrics, and constructive feedback prompts.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Recommendation brief templates</div>
+                <div>&bull; Addressing weaknesses constructively</div>
+                <div>&bull; Peer comparative rating guidelines</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: MBA Admissions Director</span>
+              <a href="mba-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3: Career Pivot Strategy -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-amber-200">
+                  Career Pivot
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">7 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Transitioning into Climate Tech, VC &amp; AI: Building Credible Post-MBA Trajectories
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                How non-traditional candidates craft realistic yet ambitious career goals that business school career management offices eagerly endorse.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Short-term vs. Long-term goals</div>
+                <div>&bull; Coursework &amp; club integration</div>
+                <div>&bull; Industry networking frameworks</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Senior MBA Mentor</span>
+              <a href="mba-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
         </div>
+
+        <!-- 3. MASTER'S ARTICLES (Hidden By Default) -->
+        <div id="playbooks-masters" class="playbook-category-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto transition-opacity duration-300">
+          
+          <!-- Article 1: Master's SOP Deconstruction -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-700 text-[10px] font-mono font-bold uppercase tracking-wider border border-purple-200">
+                  SOP Masterclass
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">8 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Deconstructing the Technical Statement of Purpose: How We Win Admits at MIT, CMU &amp; Stanford
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                Moving beyond undergraduate storytelling into rigorous research articulation, laboratory alignment, and technical publication summaries.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Technical depth vs. Accessibility</div>
+                <div>&bull; Literature review synthesis</div>
+                <div>&bull; Specific lab proposal frameworks</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: MIT Alum &bull; STEM Specialist</span>
+              <a href="masters-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2: Faculty Lab Outreach -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-700 text-[10px] font-mono font-bold uppercase tracking-wider border border-purple-200">
+                  Research Labs
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">6 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Cold Outreach to Principal Investigators (PIs): Getting Replies from Top US Faculty Chairs
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                Field-tested email structures, paper citations, and project proposals that demonstrate immediate lab value without sounding transactional.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; High-response email templates</div>
+                <div>&bull; Analyzing active research grants</div>
+                <div>&bull; Following up professionally</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Former ETH Researcher</span>
+              <a href="masters-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3: Funding & Fellowships -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-700 text-[10px] font-mono font-bold uppercase tracking-wider border border-purple-200">
+                  Funding &amp; RA/TA
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">7 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Funding Postgraduate STEM: Securing Research Assistantships (RA) and Merit Fellowships
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                Navigating departmental funding allocations, teaching assistantship interviews, and external scholarship foundations across the US and Europe.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Full tuition waiver protocols</div>
+                <div>&bull; Teaching assistantship applications</div>
+                <div>&bull; Departmental grant matching</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Postgraduate Fellow</span>
+              <a href="masters-knowledge.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- 4. TEST PREP ARTICLES (Hidden By Default) -->
+        <div id="playbooks-test-prep" class="playbook-category-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto transition-opacity duration-300">
+          
+          <!-- Article 1: Digital SAT Strategies -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-200">
+                  Digital SAT
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">6 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                Digital SAT Adaptive Module Tactics: Cracking Hard Math &amp; Rhetorical Synthesis
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                How the College Board's multi-stage adaptive algorithm triggers higher scoring tracks, and tactics for pacing during high-pressure Section 2 modules.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Adaptive threshold question points</div>
+                <div>&bull; Desmos graphing shortcuts</div>
+                <div>&bull; Vocabulary in context mastery</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: 1590 Scorer &bull; Test Lead</span>
+              <a href="test-prep-sat-act.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2: GMAT Focus Edition 705+ -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-200">
+                  GMAT Focus
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">8 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                GMAT Focus 705+ Blueprint: Mastering Data Insights &amp; Advanced Quant Pacing
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                The strategic adjustments needed to place into the 99th percentile on the new GMAT Focus Edition, focusing on Multi-Source Reasoning and Data Sufficiency.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; Data Insights scoring algorithms</div>
+                <div>&bull; Question-edit feature tactics</div>
+                <div>&bull; Quant pacing benchmark drills</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: GMAT 770 / INSEAD Alum</span>
+              <a href="test-prep-gmat-gre.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3: Diagnostic Decision Matrix -->
+          <article class="p-6 rounded-2xl bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-200">
+                  Diagnostic Matrix
+                </span>
+                <span class="text-[11px] font-mono text-gray-400">5 Min Read</span>
+              </div>
+              <h3 class="text-lg font-black text-gray-900 group-hover:text-black leading-snug mb-2">
+                SAT vs. ACT / GMAT vs. GRE: The Diagnostic Decision Matrix for Premier Admissions
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                How student processing speeds, quantitative fundamentals, and target university policies dictate the optimal test choice before investing prep hours.
+              </p>
+              <div class="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 font-mono">
+                <div>&bull; 2-hour comparative diagnostic</div>
+                <div>&bull; Reading speed vs. Trick difficulty</div>
+                <div>&bull; University score conversion tables</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Author: Standardized Test Director</span>
+              <a href="test-prep.html" class="text-xs font-bold text-black group-hover:underline flex items-center gap-1">
+                <span>Read Article</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
 
       </div>
     </section>
@@ -1531,261 +1950,7 @@
     </div>
   </div>
 
-  <!-- ================= TIER 2: ONCOURSE BRAND BLOCK + REORGANIZED NAVIGATION ================= -->
-  <!-- Deep Graphite Background (#121316) with Reduced Vertical Space -->
-  <div class="border-b border-neutral-800 bg-[#121316] py-10 lg:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-    
-    <!-- Subtle technical dot grid texture -->
-    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-        
-        <!-- Brand Column Card (5 Cols) -->
-        <div class="lg:col-span-5 bg-neutral-900/85 border border-neutral-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl backdrop-blur-md relative overflow-hidden space-y-5">
-          <div class="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-neutral-500 to-transparent"></div>
-          
-          <div class="space-y-4">
-            <!-- Logo & Brand Device -->
-            <div class="space-y-2.5">
-              <a href="home.html" title="OnCourse Global Home" class="inline-block focus:outline-none">
-                <img src="../assets/images/oncourse-logo-white.png" alt="OnCourse Global" class="h-9 sm:h-10 w-auto object-contain">
-              </a>
-              
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-black/60 border border-neutral-700/80 text-[11px] text-neutral-300 font-mono">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>[XX+ Years Track Record &bull; Global Hubs &bull; Client to confirm]</span>
-              </div>
-            </div>
-
-            <!-- Positioning Statement -->
-            <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-              India's recognized admissions thought leader. We pair every student with two specialized mentors—combining strategic roadmap governance with authentic narrative craftsmanship for Ivy League, Oxbridge, and global top 30 universities.
-            </p>
-
-            <!-- Social Icons -->
-            <div class="space-y-1.5 pt-0.5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block font-semibold">Connect With Our Advisory</span>
-              <div class="flex items-center gap-2">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="LinkedIn">
-                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                  </svg>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="Instagram">
-                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                  </svg>
-                </a>
-                <!-- YouTube -->
-                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="YouTube">
-                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </a>
-                <!-- X / Twitter -->
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="X (Twitter)">
-                  <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hiring Callout -->
-          <div class="pt-3.5 border-t border-neutral-800">
-            <a href="careers.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-neutral-500 text-xs text-neutral-200 hover:text-white transition-all group shadow-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-              <span class="font-medium">We're Hiring: Join our mentor network</span>
-              <span class="text-neutral-400 group-hover:text-white transition-transform group-hover:translate-x-0.5">&rarr;</span>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Navigation Columns Card (7 Cols) -->
-        <div class="lg:col-span-7 bg-neutral-900/65 border border-neutral-800 rounded-2xl p-6 sm:p-7 shadow-xl backdrop-blur-md relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-neutral-600 to-transparent"></div>
-          
-          <!-- Desktop Grid View (Visible on sm and larger) -->
-          <div class="hidden sm:grid sm:grid-cols-3 gap-6">
-            
-            <!-- Column 1: Explore -->
-            <div>
-              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
-                Explore
-              </h4>
-              <ul class="space-y-3 text-sm">
-                <li>
-                  <a href="undergraduate.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Undergraduate</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Class 8–12 Advisory</span>
-                </li>
-                <li>
-                  <a href="masters.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Master’s</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">MS &bull; MiM &bull; Postgrad</span>
-                </li>
-                <li>
-                  <a href="mba.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">MBA</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">M7 &bull; INSEAD &bull; Executive</span>
-                </li>
-                <li>
-                  <a href="test-prep.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Test Prep</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">SAT &bull; ACT &bull; GMAT &bull; GRE</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 2: OnCourse -->
-            <div>
-              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
-                OnCourse
-              </h4>
-              <ul class="space-y-3 text-sm">
-                <li>
-                  <a href="about.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">About Us</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Story &amp; Governance</span>
-                </li>
-                <li>
-                  <a href="about.html#team" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Our Mentors</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Dual-Mentor Council</span>
-                </li>
-                <li>
-                  <a href="undergraduate-success.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Success Stories</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">1,200+ Case Studies</span>
-                </li>
-                <li>
-                  <a href="undergraduate-knowledge.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Knowledge Centre</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Playbooks &amp; Data</span>
-                </li>
-                <li>
-                  <a href="careers.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Careers</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Join Global Team</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 3: Resources -->
-            <div>
-              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
-                Resources
-              </h4>
-              <ul class="space-y-3 text-sm">
-                <li>
-                  <a href="undergraduate-knowledge.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Insights</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Guides &amp; Whitepapers</span>
-                </li>
-                <li>
-                  <a href="upcoming-events.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Live Events</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Upcoming Live Events</span>
-                </li>
-                <li>
-                  <a href="contact.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Contact Us</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Admissions Inquiries</span>
-                </li>
-                <li>
-                  <a href="about.html#faq" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
-                    <span class="transition-transform group-hover:translate-x-1 font-semibold">FAQs</span>
-                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
-                  </a>
-                  <span class="text-[11px] text-neutral-400 block">Quick Answers</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          <!-- Mobile Accordion View (Visible on mobile only) -->
-          <div class="sm:hidden space-y-2.5">
-            <!-- Accordion 1: Explore -->
-            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
-              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
-                <span>Explore</span>
-                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
-              </summary>
-              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
-                <a href="undergraduate.html" class="block text-neutral-200 hover:text-white py-0.5">Undergraduate (Class 8–12)</a>
-                <a href="masters.html" class="block text-neutral-200 hover:text-white py-0.5">Master’s (MS/MA)</a>
-                <a href="mba.html" class="block text-neutral-200 hover:text-white py-0.5">MBA Advisory</a>
-                <a href="test-prep.html" class="block text-neutral-200 hover:text-white py-0.5">Test Prep</a>
-              </div>
-            </details>
-
-            <!-- Accordion 2: OnCourse -->
-            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
-              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
-                <span>OnCourse</span>
-                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
-              </summary>
-              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
-                <a href="about.html" class="block text-neutral-200 hover:text-white py-0.5">About Us</a>
-                <a href="about.html#team" class="block text-neutral-200 hover:text-white py-0.5">Our Mentors</a>
-                <a href="undergraduate-success.html" class="block text-neutral-200 hover:text-white py-0.5">Success Stories</a>
-                <a href="undergraduate-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5">Knowledge Centre</a>
-                <a href="careers.html" class="block text-neutral-200 hover:text-white py-0.5">Careers</a>
-              </div>
-            </details>
-
-            <!-- Accordion 3: Resources -->
-            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
-              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
-                <span>Resources</span>
-                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
-              </summary>
-              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
-                <a href="undergraduate-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5">Admissions Insights</a>
-                <a href="upcoming-events.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">Upcoming Live Events</a>
-                <a href="contact.html" class="block text-neutral-200 hover:text-white py-0.5">Contact Us</a>
-                <a href="about.html#faq" class="block text-neutral-200 hover:text-white py-0.5">FAQs</a>
-              </div>
-            </details>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= TIER: INSTAGRAM REELS & POSTS FEED (INSTAGRAM API) ================= -->
+  <!-- ================= TIER: INSTAGRAM REELS & POSTS FEED (PLACED AFTER YOUR AMBITION SECTION) ================= -->
   <div class="border-b border-neutral-800 bg-[#0c0d11] py-10 sm:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden" id="instagram-feed-section">
     <!-- Subtle radial gradient atmosphere -->
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(225,48,108,0.07),transparent_70%)] pointer-events-none"></div>
@@ -1793,32 +1958,67 @@
 
     <div class="max-w-7xl mx-auto relative z-10">
       
-      <!-- Instagram Header -->
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 p-[2px] shadow-lg flex-shrink-0">
-            <div class="w-full h-full bg-neutral-950 rounded-[10px] flex items-center justify-center text-white">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <!-- Instagram Header with Real @oncoursevantage Account Meta -->
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3.5">
+          <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 p-[2.5px] shadow-lg flex-shrink-0 group hover:scale-105 transition-transform" title="Visit @oncoursevantage on Instagram">
+            <div class="w-full h-full bg-neutral-950 rounded-[13px] flex items-center justify-center text-white">
+              <svg class="w-6 h-6 fill-current text-white group-hover:text-pink-400 transition-colors" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
               </svg>
             </div>
-          </div>
+          </a>
           <div>
-            <div class="flex items-center gap-2">
-              <span class="text-white font-extrabold text-sm sm:text-base tracking-tight">@oncoursevantage</span>
+            <div class="flex flex-wrap items-center gap-2">
+              <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pink-400 transition-colors font-extrabold text-base sm:text-lg tracking-tight">
+                @oncoursevantage
+              </a>
               <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-pink-500/15 text-pink-400 border border-pink-500/30 flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse"></span>
-                <span>Instagram API</span>
+                <span>23.5K Followers</span>
+              </span>
+              <span class="text-[11px] font-mono text-neutral-400 hidden sm:inline">
+                &bull; 16+ Years of Admissions Expertise
               </span>
             </div>
-            <p class="text-xs text-neutral-400 mt-0.5">Admissions reels, Ivy League reveals, student wins &amp; live strategy clips</p>
+            <p class="text-xs text-neutral-300 mt-1 leading-relaxed">
+              <span class="text-white font-semibold">OnCourse Global:</span> UG | PG | MBA | Boarding School | SAT, GMAT, GRE &bull; Mumbai | Gurgaon | Delhi | Dubai
+            </p>
           </div>
         </div>
 
-        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-neutral-200 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-md flex-shrink-0 group">
-          <svg class="w-3.5 h-3.5 fill-current text-pink-600" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          <span>Follow @oncoursevantage</span>
-          <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+        <div class="flex items-center gap-2.5 flex-shrink-0">
+          <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-neutral-200 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-md group">
+            <svg class="w-3.5 h-3.5 fill-current text-pink-600" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span>Follow @oncoursevantage</span>
+            <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Story Highlights Bar matching real Instagram Account -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-5 scrollbar-none text-[11px] font-mono text-neutral-300">
+        <span class="text-neutral-500 uppercase font-bold text-[10px] tracking-wider shrink-0">Highlights:</span>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>🎓</span><span>UG Admits</span>
+        </a>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>💼</span><span>MBA Strategy</span>
+        </a>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>🔬</span><span>Postgraduate</span>
+        </a>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>📊</span><span>Test Prep</span>
+        </a>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>🌟</span><span>Testimonials</span>
+        </a>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>🇦🇪</span><span>Dubai Hub</span>
+        </a>
+        <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-500 hover:text-white transition-all shrink-0 flex items-center gap-1.5">
+          <span>🇮🇳</span><span>Mumbai &amp; Delhi</span>
         </a>
       </div>
 
@@ -1830,7 +2030,6 @@
           <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Harvard Admit Story Reel" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-95">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/30"></div>
           
-          <!-- Top Badges -->
           <div class="relative z-10 p-2.5 flex items-center justify-between">
             <span class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] font-mono font-bold tracking-wider uppercase border border-white/20 flex items-center gap-1">
               <svg class="w-2.5 h-2.5 fill-pink-400" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M10 8v8l6-4-6-4z"/></svg>
@@ -1839,14 +2038,12 @@
             <span class="text-[10px] font-mono font-bold text-white/90 drop-shadow">▶ 24.5K</span>
           </div>
 
-          <!-- Center Play Overlay -->
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
             <div class="w-10 h-10 rounded-full bg-white/95 text-black flex items-center justify-center shadow-xl transform scale-90 group-hover:scale-100 transition-transform pl-0.5">
               ▶
             </div>
           </div>
 
-          <!-- Bottom Meta & Caption -->
           <div class="relative z-10 p-2.5 bg-gradient-to-t from-black via-black/90 to-transparent">
             <p class="text-[11px] font-bold text-white leading-snug line-clamp-2 drop-shadow">
               Harvard College '29: How Aarav built a computational economics spike.
@@ -2025,6 +2222,311 @@
     </div>
   </div>
 
+  <!-- ================= TIER 2: ONCOURSE BRAND BLOCK + REORGANIZED NAVIGATION ================= -->
+  <!-- Deep Graphite Background (#121316) with Reduced Vertical Space -->
+  <div class="border-b border-neutral-800 bg-[#121316] py-10 lg:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    
+    <!-- Subtle technical dot grid texture -->
+    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        
+        <!-- Brand Column Card (5 Cols) -->
+        <div class="lg:col-span-5 bg-neutral-900/85 border border-neutral-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl backdrop-blur-md relative overflow-hidden space-y-5">
+          <div class="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-neutral-500 to-transparent"></div>
+          
+          <div class="space-y-4">
+            <!-- Logo & Brand Device -->
+            <div class="space-y-2.5">
+              <a href="home.html" title="OnCourse Global Home" class="inline-block focus:outline-none">
+                <img src="../assets/images/oncourse-logo-white.png" alt="OnCourse Global" class="h-9 sm:h-10 w-auto object-contain">
+              </a>
+              
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-black/60 border border-neutral-700/80 text-[11px] text-neutral-300 font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>[XX+ Years Track Record &bull; Global Hubs &bull; Client to confirm]</span>
+              </div>
+            </div>
+
+            <!-- Positioning Statement -->
+            <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              India's recognized admissions thought leader. We pair every student with two specialized mentors—combining strategic roadmap governance with authentic narrative craftsmanship for Ivy League, Oxbridge, and global top 30 universities.
+            </p>
+
+            <!-- Social Icons -->
+            <div class="space-y-1.5 pt-0.5">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block font-semibold">Connect With Our Advisory</span>
+              <div class="flex items-center gap-2">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="LinkedIn">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/oncoursevantage/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="Instagram">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                  </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="YouTube">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+                <!-- X / Twitter -->
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-white text-neutral-300 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="X (Twitter)">
+                  <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hiring Callout -->
+          <div class="pt-3.5 border-t border-neutral-800">
+            <a href="careers.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/60 border border-neutral-700/80 hover:border-neutral-500 text-xs text-neutral-200 hover:text-white transition-all group shadow-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              <span class="font-medium">We're Hiring: Join our mentor network</span>
+              <span class="text-neutral-400 group-hover:text-white transition-transform group-hover:translate-x-0.5">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Navigation Columns Card (7 Cols) -->
+        <div class="lg:col-span-7 bg-neutral-900/65 border border-neutral-800 rounded-2xl p-6 sm:p-7 shadow-xl backdrop-blur-md relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-neutral-600 to-transparent"></div>
+          
+          <!-- Desktop Grid View (Visible on sm and larger) -->
+          <div class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Column 1: Programs -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
+                Programs
+              </h4>
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="undergraduate.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Undergraduate</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Class 8–12 Advisory</span>
+                </li>
+                <li>
+                  <a href="masters.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Master’s</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">STEM &bull; MS &bull; MiM</span>
+                </li>
+                <li>
+                  <a href="mba.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">MBA</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">M7 &bull; Executive</span>
+                </li>
+                <li>
+                  <a href="test-prep.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Test Prep</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">SAT &bull; ACT &bull; GMAT &bull; GRE</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 2: Knowledge Centres -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
+                Knowledge
+              </h4>
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="undergraduate-knowledge.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Undergraduate Hub</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Ivy &bull; Oxbridge Playbooks</span>
+                </li>
+                <li>
+                  <a href="mba-knowledge.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">MBA Knowledge</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">M7 Blueprints &bull; Essays</span>
+                </li>
+                <li>
+                  <a href="masters-knowledge.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Master's Knowledge</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">SOP Guides &bull; Lab Outreach</span>
+                </li>
+                <li>
+                  <a href="undergraduate-success.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Success Stories</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">1,200+ Verified Case Studies</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Events -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
+                Events
+              </h4>
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="upcoming-events.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Live Events</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Upcoming Live Events</span>
+                </li>
+                <li>
+                  <a href="masterclasses.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Masterclasses</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Admissions Director Panels</span>
+                </li>
+                <li>
+                  <a href="undergraduate-events.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Parent Briefings</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Curriculum &bull; Spike Strategy</span>
+                </li>
+                <li>
+                  <a href="contact.html#consultation-form" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Diagnostic Meeting</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">1-on-1 Profile Strategy</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 4: OnCourse -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-3.5 border-l-2 border-white pl-2">
+                Company
+              </h4>
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="about.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">About Us</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Story &amp; Governance</span>
+                </li>
+                <li>
+                  <a href="about.html#team" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Our Mentors</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Dual-Mentor Council</span>
+                </li>
+                <li>
+                  <a href="contact.html#offices" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Strategic Hubs</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Mumbai &bull; Delhi &bull; Gurgaon &bull; Dubai</span>
+                </li>
+                <li>
+                  <a href="careers.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Careers</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Join Global Team</span>
+                </li>
+                <li>
+                  <a href="contact.html" class="text-neutral-200 hover:text-white transition-all flex items-center gap-1 group">
+                    <span class="transition-transform group-hover:translate-x-1 font-semibold">Contact Us</span>
+                    <span class="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-400 transition-opacity">&rarr;</span>
+                  </a>
+                  <span class="text-[11px] text-neutral-400 block">Admissions Inquiries</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Mobile Accordion View (Visible on mobile only) -->
+          <div class="sm:hidden space-y-2.5">
+            <!-- Accordion 1: Programs -->
+            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
+              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
+                <span>Programs</span>
+                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
+              </summary>
+              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
+                <a href="undergraduate.html" class="block text-neutral-200 hover:text-white py-0.5">Undergraduate (Class 8–12)</a>
+                <a href="masters.html" class="block text-neutral-200 hover:text-white py-0.5">Master’s (MS/MA/STEM)</a>
+                <a href="mba.html" class="block text-neutral-200 hover:text-white py-0.5">MBA Advisory (M7/Exec)</a>
+                <a href="test-prep.html" class="block text-neutral-200 hover:text-white py-0.5">Test Prep (SAT/ACT/GRE/GMAT)</a>
+              </div>
+            </details>
+
+            <!-- Accordion 2: Knowledge Centres -->
+            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
+              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
+                <span>Knowledge Centres</span>
+                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
+              </summary>
+              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
+                <a href="undergraduate-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">Undergraduate Knowledge Centre</a>
+                <a href="mba-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">MBA Knowledge Centre</a>
+                <a href="masters-knowledge.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">Master's Knowledge Centre</a>
+                <a href="undergraduate-success.html" class="block text-neutral-200 hover:text-white py-0.5">Success Stories (1,200+ admits)</a>
+              </div>
+            </details>
+
+            <!-- Accordion 3: Events -->
+            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
+              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
+                <span>Live Events</span>
+                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
+              </summary>
+              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
+                <a href="upcoming-events.html" class="block text-neutral-200 hover:text-white py-0.5 font-bold">Upcoming Live Events</a>
+                <a href="masterclasses.html" class="block text-neutral-200 hover:text-white py-0.5">Admissions Masterclasses</a>
+                <a href="undergraduate-events.html" class="block text-neutral-200 hover:text-white py-0.5">Parent Strategy Briefings</a>
+              </div>
+            </details>
+
+            <!-- Accordion 4: Company -->
+            <details class="group bg-black/60 border border-neutral-800 rounded-xl overflow-hidden transition-all">
+              <summary class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-white flex items-center justify-between cursor-pointer list-none">
+                <span>OnCourse Global</span>
+                <span class="text-neutral-400 transition-transform group-open:rotate-180">&darr;</span>
+              </summary>
+              <div class="px-4 pb-3.5 pt-1 space-y-2 text-xs border-t border-neutral-800">
+                <a href="about.html" class="block text-neutral-200 hover:text-white py-0.5">About Us &amp; Governance</a>
+                <a href="about.html#team" class="block text-neutral-200 hover:text-white py-0.5">Our Mentors</a>
+                <a href="contact.html#offices" class="block text-neutral-200 hover:text-white py-0.5">Strategic Hubs</a>
+                <a href="careers.html" class="block text-neutral-200 hover:text-white py-0.5">Careers</a>
+                <a href="contact.html" class="block text-neutral-200 hover:text-white py-0.5">Contact Us</a>
+                <a href="about.html#faq" class="block text-neutral-200 hover:text-white py-0.5">FAQs</a>
+              </div>
+            </details>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- ================= TIER 3: DESIGNED GLOBAL PRESENCE (4 STRATEGIC HUBS) ================= -->
   <!-- Dark Slate Background (#16171c) with Architectural Grid & 4 Strategic Hub Cards -->
   <div class="border-b border-neutral-800 bg-[#16171c] py-10 sm:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -2065,10 +2567,6 @@
           <div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-white font-extrabold text-sm group-hover:text-white">Mumbai</span>
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-neutral-900 border border-neutral-700 text-emerald-400 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                HQ Center
-              </span>
             </div>
             <div class="text-xs font-semibold text-neutral-200">Nariman Point &amp; Bandra West</div>
             <p class="text-[11px] text-neutral-400 mt-1 leading-relaxed">Executive leadership &amp; counselling suites.</p>
@@ -2095,10 +2593,6 @@
           <div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-white font-extrabold text-sm group-hover:text-white">New Delhi</span>
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-neutral-900 border border-neutral-700 text-neutral-200 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Active Hub
-              </span>
             </div>
             <div class="text-xs font-semibold text-neutral-200">Connaught Place Central Hub</div>
             <p class="text-[11px] text-neutral-400 mt-1 leading-relaxed">North India admissions strategy center.</p>
@@ -2125,10 +2619,6 @@
           <div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-white font-extrabold text-sm group-hover:text-white">Gurgaon</span>
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-neutral-900 border border-neutral-700 text-neutral-200 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Active Hub
-              </span>
             </div>
             <div class="text-xs font-semibold text-neutral-200">DLF Cyber City Corporate Center</div>
             <p class="text-[11px] text-neutral-400 mt-1 leading-relaxed">Corporate &amp; STEM postgraduate advisory.</p>
@@ -2155,10 +2645,6 @@
           <div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-white font-extrabold text-sm group-hover:text-white">Dubai (UAE)</span>
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-neutral-900 border border-neutral-700 text-neutral-200 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Regional Hub
-              </span>
             </div>
             <div class="text-xs font-semibold text-neutral-200">DIFC / Downtown Dubai</div>
             <p class="text-[11px] text-neutral-400 mt-1 leading-relaxed">Middle East candidate &amp; family advisory.</p>
@@ -2465,6 +2951,445 @@
 
       updateControls();
       window.addEventListener('resize', updateControls);
+    })();
+
+    // 1. Top Announcement Bar Dismissal
+    (function initAnnouncementBar() {
+      const annBar = document.getElementById('top-announcement-bar');
+      const closeBtn = document.getElementById('close-announcement-bar');
+      if (!annBar || !closeBtn) return;
+
+      closeBtn.addEventListener('click', () => {
+        annBar.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        annBar.style.opacity = '0';
+        annBar.style.transform = 'translateY(-100%)';
+        setTimeout(() => {
+          annBar.style.display = 'none';
+        }, 300);
+      });
+    })();
+
+    // 2. Master Hero Banner Slider (1 Video + 4 Image Slides)
+    (function initHeroBannerSlider() {
+      const slides = document.querySelectorAll('.hero-bg-slide');
+      const prevBtn = document.getElementById('hero-prev-btn');
+      const nextBtn = document.getElementById('hero-next-btn');
+      const indicators = document.querySelectorAll('.hero-indicator-btn');
+      const captionText = document.getElementById('hero-slide-caption-text');
+      const video = document.getElementById('hero-bg-video');
+
+      if (slides.length === 0) return;
+
+      let currentSlide = 0;
+      let slideTimer = null;
+      const totalSlides = slides.length;
+
+      const slideCaptions = [
+        "Master Slide 1 of 5 • Campus Video Experience",
+        "Master Slide 2 of 5 • Ivy League & Top 20 Admits Celebration",
+        "Master Slide 3 of 5 • 1-on-1 Dual Mentorship Strategic Session",
+        "Master Slide 4 of 5 • Oxford & Cambridge Collegiate Quad",
+        "Master Slide 5 of 5 • MBA & Executive Cohort Seminar"
+      ];
+
+      function goToSlide(index) {
+        currentSlide = (index + totalSlides) % totalSlides;
+
+        slides.forEach((slide, idx) => {
+          if (idx === currentSlide) {
+            slide.classList.remove('opacity-0');
+            slide.classList.add('opacity-100');
+          } else {
+            slide.classList.remove('opacity-100');
+            slide.classList.add('opacity-0');
+          }
+        });
+
+        // Update indicators
+        indicators.forEach((btn, idx) => {
+          if (idx === currentSlide) {
+            btn.className = 'hero-indicator-btn px-2.5 py-1 rounded-md text-[11px] font-mono font-bold transition-all bg-black text-white shadow-2xs cursor-pointer flex items-center gap-1';
+          } else {
+            btn.className = 'hero-indicator-btn px-2.5 py-1 rounded-md text-[11px] font-mono font-bold transition-all bg-white text-gray-700 hover:text-black border border-gray-200 cursor-pointer flex items-center gap-1';
+          }
+        });
+
+        // Update Caption
+        if (captionText && slideCaptions[currentSlide]) {
+          captionText.textContent = slideCaptions[currentSlide];
+        }
+
+        // Handle video playback
+        if (video) {
+          if (currentSlide === 0) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+
+        resetTimer();
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      function resetTimer() {
+        if (slideTimer) clearInterval(slideTimer);
+        const duration = currentSlide === 0 ? 8000 : 5500;
+        slideTimer = setInterval(nextSlide, duration);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); });
+
+      indicators.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-slide-index'), 10);
+          if (!isNaN(idx)) goToSlide(idx);
+        });
+      });
+
+      const navContainer = document.getElementById('hero-slide-nav');
+      if (navContainer) {
+        navContainer.addEventListener('mouseenter', () => clearInterval(slideTimer));
+        navContainer.addEventListener('mouseleave', resetTimer);
+      }
+
+      resetTimer();
+    })();
+
+    // 3. "2 Dedicated Mentors For Every Student" - Senior Counselor & Dedicated Mentor (4 Sliders Each)
+    (function initWhyFamiliesSliders() {
+      const tabBtns = document.querySelectorAll('.why-tab-btn');
+      const prevSlideBtn = document.getElementById('mentor-prev-slide');
+      const nextSlideBtn = document.getElementById('mentor-next-slide');
+      const dotBtns = document.querySelectorAll('.mentor-dot-btn');
+
+      const roleBadge = document.getElementById('mentor-role-badge');
+      const pillarBadge = document.getElementById('mentor-pillar-badge');
+      const slideCounter = document.getElementById('mentor-slide-counter');
+      const stepNumber = document.getElementById('slide-step-number');
+      const stepFocus = document.getElementById('slide-step-focus');
+      const slideTitle = document.getElementById('slide-title');
+      const slideDescription = document.getElementById('slide-description');
+      const deliverablesBox = document.getElementById('slide-deliverables');
+      const metricBadge = document.getElementById('slide-metric-badge');
+      const viewport = document.getElementById('mentor-slider-viewport');
+
+      if (tabBtns.length === 0) return;
+
+      // Auto-rotation timer
+      let mentorTimer = null;
+      function startMentorTimer() {
+        if (mentorTimer) clearInterval(mentorTimer);
+        mentorTimer = setInterval(() => {
+          activeSlideIndex = (activeSlideIndex + 1) % 4;
+          renderSlide();
+        }, 5000);
+      }
+      function stopMentorTimer() {
+        if (mentorTimer) clearInterval(mentorTimer);
+      }
+
+      // 4 distinct sliders for Senior Counselor & 4 distinct sliders for Dedicated Mentor
+      const mentorData = {
+        0: { // Senior Counselor
+          roleName: "SENIOR COUNSELOR",
+          pillar: "Strategy & Governance",
+          roleColorClass: "bg-[#e11d48]/20 text-[#fb7185] border-[#e11d48]/30",
+          slides: [
+            {
+              step: "STEP 01",
+              focus: "INSTITUTIONAL BENCHMARKING",
+              title: "Target School Matrix & Probability Modeling",
+              desc: "Our Senior Counselors analyze 10+ years of historical admit data across 1,200+ offers to architect a balanced university list (Reach, Target, Safety) and optimize Early Decision (ED/EA) timing.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Acceptance Odds Modeling" },
+                { num: "Deliverable 2", title: "Curriculum Evaluation" },
+                { num: "Deliverable 3", title: "ED & EA Tactical Calendar" }
+              ],
+              metric: "Metric: 6.9x Higher Acceptance Rate"
+            },
+            {
+              step: "STEP 02",
+              focus: "INTELLECTUAL SPIKE ARCHITECTURE",
+              title: "Independent Research & Capstone Governance",
+              desc: "Direct guidance on securing faculty-led research affiliations, university lab credentials, and peer-reviewed journal submissions that establish clear academic distinction.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Faculty Cold-Outreach System" },
+                { num: "Deliverable 2", title: "Paper Publication Target" },
+                { num: "Deliverable 3", title: "Capstone Milestone Reviews" }
+              ],
+              metric: "Metric: 88% Students Publish or Present"
+            },
+            {
+              step: "STEP 03",
+              focus: "CURRICULUM & HONORS OPTIMIZATION",
+              title: "Transcript Rigor & International Olympiad Roadmap",
+              desc: "Strategic advisory on IB/AP course selection, AMC/Olympiad test targets, and academic distinctions to maximize the academic rating on Ivy League scorecards.",
+              deliverables: [
+                { num: "Deliverable 1", title: "IB/AP Coursework Calibration" },
+                { num: "Deliverable 2", title: "National Honors Roadmap" },
+                { num: "Deliverable 3", title: "Transcript Rigor Indexing" }
+              ],
+              metric: "Metric: 99th Percentile Standardized Index"
+            },
+            {
+              step: "STEP 04",
+              focus: "COMMITTEE GOVERNANCE & ED STRATEGY",
+              title: "Final Dossier Review & High-Stakes Application Sign-Off",
+              desc: "Rigorous mock admissions committee review where former admissions officers cross-examine every component of the file before submission to ensure zero strategic vulnerabilities.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Admissions Committee Simulation" },
+                { num: "Deliverable 2", title: "LOR Positioning Briefs" },
+                { num: "Deliverable 3", title: "Final Dossier Sign-Off" }
+              ],
+              metric: "Metric: 100% Top-3 Choice Placement"
+            }
+          ]
+        },
+        1: { // Dedicated Mentor
+          roleName: "DEDICATED MENTOR",
+          pillar: "Narrative Craftsmanship & Voice",
+          roleColorClass: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+          slides: [
+            {
+              step: "STEP 01",
+              focus: "NARRATIVE ARCHAEOLOGY",
+              title: "Excavating Unscripted Personal Stories & Core Values",
+              desc: "Intensive 1-on-1 narrative excavation sessions uncovering formative vulnerabilities, cultural nuances, and intellectual quirks that make your story completely unforgettable.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Narrative Discovery Workshop" },
+                { num: "Deliverable 2", title: "Core Theme Storyboard" },
+                { num: "Deliverable 3", title: "Cliché-Elimination Audit" }
+              ],
+              metric: "Metric: Zero Generic Tropes or Metaphors"
+            },
+            {
+              step: "STEP 02",
+              focus: "ESSAY CRAFTSMANSHIP",
+              title: "Line-by-Line Personal Statement & Supplemental Sculpting",
+              desc: "Rigorous iterative drafting sessions refining rhythm, syntactic voice, and emotional resonance across Common App, UCAS, and 40+ institutional supplemental essays.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Weekly 1-on-1 Scribe Hours" },
+                { num: "Deliverable 2", title: "Collegiate Voice Calibration" },
+                { num: "Deliverable 3", title: "Supplemental Matrix Drafting" }
+              ],
+              metric: "Metric: 12-15 Drafts per Main Essay"
+            },
+            {
+              step: "STEP 03",
+              focus: "ACTIVITIES & RESUME ELEVATION",
+              title: "Common App 150-Character High-Impact Activity Descriptions",
+              desc: "Precision wordsmithing of every activity entry, leadership bullet, and honors descriptor to highlight initiative, quantitative scale, and undeniable campus value.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Action-Verb Impact Framing" },
+                { num: "Deliverable 2", title: "Leadership Scale Verification" },
+                { num: "Deliverable 3", title: "Activity Order Hierarchy" }
+              ],
+              metric: "Metric: 3.4x Reader Engagement Rating"
+            },
+            {
+              step: "STEP 04",
+              focus: "INTERVIEW REHEARSAL & CONFIDENCE",
+              title: "Socratic Collegiate & Alumni Interview Preparation",
+              desc: "Realistic video simulations for Ivy League, Oxbridge tutorial, and MBA alumni interviews, teaching students how to articulate complex ideas with calm intellectual agility.",
+              deliverables: [
+                { num: "Deliverable 1", title: "Video Mock Interview Drills" },
+                { num: "Deliverable 2", title: "Body Language & Presence" },
+                { num: "Deliverable 3", title: "Curated Question Bank" }
+              ],
+              metric: "Metric: 94% Positive Interview Feedback"
+            }
+          ]
+        }
+      };
+
+      let activeMentorIndex = 0; // 0: Senior Counselor, 1: Dedicated Mentor
+      let activeSlideIndex = 0;  // 0 to 3
+
+      function renderSlide() {
+        const mentor = mentorData[activeMentorIndex];
+        const slide = mentor.slides[activeSlideIndex];
+
+        if (viewport) viewport.style.opacity = '0.3';
+
+        setTimeout(() => {
+          if (roleBadge) {
+            roleBadge.textContent = mentor.roleName;
+            roleBadge.className = `px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase border ${mentor.roleColorClass}`;
+          }
+          if (pillarBadge) pillarBadge.textContent = mentor.pillar;
+          if (slideCounter) slideCounter.textContent = `Slide ${activeSlideIndex + 1} of 4`;
+          if (stepNumber) stepNumber.textContent = slide.step;
+          if (stepFocus) stepFocus.textContent = slide.focus;
+          if (slideTitle) slideTitle.textContent = slide.title;
+          if (slideDescription) slideDescription.textContent = slide.desc;
+          if (metricBadge) metricBadge.textContent = slide.metric;
+
+          if (deliverablesBox && slide.deliverables) {
+            deliverablesBox.innerHTML = slide.deliverables.map(del => `
+              <div class="bg-neutral-900/80 border border-neutral-800 rounded-xl p-3">
+                <div class="text-[10px] font-mono text-neutral-400 uppercase font-bold">${del.num}</div>
+                <div class="text-xs font-bold text-white mt-1">${del.title}</div>
+              </div>
+            `).join('');
+          }
+
+          dotBtns.forEach((dot, idx) => {
+            if (idx === activeSlideIndex) {
+              dot.className = 'mentor-dot-btn w-6 h-2 rounded-full bg-[#e11d48] transition-all cursor-pointer';
+            } else {
+              dot.className = 'mentor-dot-btn w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all cursor-pointer';
+            }
+          });
+
+          if (viewport) viewport.style.opacity = '1';
+        }, 120);
+      }
+
+      function updateMentorTabs() {
+        tabBtns.forEach((tab, idx) => {
+          const arrow = tab.querySelector('.tab-arrow');
+          if (idx === activeMentorIndex) {
+            tab.className = 'why-tab-btn w-full text-left px-5 py-3.5 rounded-xl border border-neutral-400 bg-[#16181f] text-white font-bold transition-all cursor-pointer text-sm shadow-md flex items-center justify-between';
+            if (arrow) {
+              arrow.className = 'text-xs text-[#e11d48] font-mono tab-arrow';
+              arrow.innerHTML = '&bull;';
+              arrow.classList.remove('hidden');
+            }
+          } else {
+            tab.className = 'why-tab-btn w-full text-left px-5 py-3.5 rounded-xl border border-neutral-800 hover:border-neutral-600 bg-transparent text-neutral-300 hover:text-white transition-all cursor-pointer font-medium text-sm flex items-center justify-between';
+            if (arrow) {
+              arrow.className = 'text-xs text-neutral-500 font-mono tab-arrow hidden';
+              arrow.innerHTML = '&rarr;';
+            }
+          }
+        });
+      }
+
+      tabBtns.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const idx = parseInt(tab.getAttribute('data-index'), 10);
+          if (!isNaN(idx) && idx !== activeMentorIndex) {
+            activeMentorIndex = idx;
+            activeSlideIndex = 0;
+            updateMentorTabs();
+            renderSlide();
+          }
+        });
+      });
+
+      if (prevSlideBtn) {
+        prevSlideBtn.addEventListener('click', () => {
+          activeSlideIndex = (activeSlideIndex - 1 + 4) % 4;
+          renderSlide();
+          startMentorTimer();
+        });
+      }
+
+      if (nextSlideBtn) {
+        nextSlideBtn.addEventListener('click', () => {
+          activeSlideIndex = (activeSlideIndex + 1) % 4;
+          renderSlide();
+          startMentorTimer();
+        });
+      }
+
+      dotBtns.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
+          if (!isNaN(slideIdx)) {
+            activeSlideIndex = slideIdx;
+            renderSlide();
+            startMentorTimer();
+          }
+        });
+      });
+
+      if (viewport) {
+        viewport.parentElement.addEventListener('mouseenter', stopMentorTimer);
+        viewport.parentElement.addEventListener('mouseleave', startMentorTimer);
+      }
+
+      updateMentorTabs();
+      renderSlide();
+      startMentorTimer();
+    })();
+
+    // 4. Testimonials Filtering on Home (Category Selector)
+    (function initTestimonialFilters() {
+      const filterBtns = document.querySelectorAll('.testimonial-filter-btn');
+      const allCards = document.querySelectorAll('.testimonial-card');
+
+      if (filterBtns.length === 0 || allCards.length === 0) return;
+
+      function applyFilter(category) {
+        allCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (cardCat === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        filterBtns.forEach(btn => {
+          const btnCat = btn.getAttribute('data-category');
+          if (btnCat === category) {
+            btn.className = 'testimonial-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-black text-white shadow-xs cursor-pointer';
+          } else {
+            btn.className = 'testimonial-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-gray-700 border border-gray-200 hover:border-black cursor-pointer';
+          }
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category');
+          applyFilter(cat);
+        });
+      });
+
+      applyFilter('undergraduate');
+    })();
+
+    // 5. Admissions Intelligence & Playbooks Category Switcher
+    (function initPlaybookArticles() {
+      const categoryBtns = document.querySelectorAll('.playbook-category-btn');
+      const panels = document.querySelectorAll('.playbook-category-panel');
+
+      if (categoryBtns.length === 0 || panels.length === 0) return;
+
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category');
+
+          categoryBtns.forEach(b => {
+            if (b === btn) {
+              b.className = 'playbook-category-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-black text-white shadow-md cursor-pointer flex items-center gap-2';
+            } else {
+              b.className = 'playbook-category-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-gray-700 hover:text-black border border-gray-200 hover:border-black cursor-pointer flex items-center gap-2';
+            }
+          });
+
+          panels.forEach(panel => {
+            if (panel.id === `playbooks-${cat}`) {
+              panel.classList.remove('hidden');
+              panel.style.opacity = '0';
+              setTimeout(() => { panel.style.opacity = '1'; }, 20);
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
+        });
+      });
     })();
   </script>
 </body>
